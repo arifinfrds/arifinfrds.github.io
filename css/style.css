@@ -1,0 +1,24 @@
+#title_portfolio, #title_overview {
+    text-align: center;
+}
+
+#content_overview {
+    text-align: center;
+}
+
+#title_display_3 {
+    position: absolute; 
+    top: 690px;
+    text-align: center; 
+    width: 100%; 
+    color: white;
+}
+
+#subtitle_display {
+    position: absolute; 
+    top: 650px;
+    text-align: center; 
+    width: 100%; 
+    color: white;
+}
+
