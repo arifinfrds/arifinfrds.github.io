@@ -1,5 +1,6 @@
 {
-    "chapter": {
+  "chapters": [
+    {
       "id": 1,
       "title": "Introductions",
       "description": "Learn essential phrases to introduce yourself and start a conversation.",
@@ -12,12 +13,7 @@
             { "chinese": "早上好", "pinyin": "zǎoshàng hǎo", "english": "Good morning" },
             { "chinese": "下午好", "pinyin": "xiàwǔ hǎo", "english": "Good afternoon" },
             { "chinese": "晚上好", "pinyin": "wǎnshàng hǎo", "english": "Good evening" },
-            { "chinese": "再见", "pinyin": "zàijiàn", "english": "Goodbye" },
-            { "chinese": "晚安", "pinyin": "wǎn'ān", "english": "Good night" },
-            { "chinese": "很高兴见到你", "pinyin": "hěn gāoxìng jiàndào nǐ", "english": "Nice to see you" },
-            { "chinese": "欢迎", "pinyin": "huānyíng", "english": "Welcome" },
-            { "chinese": "最近怎么样？", "pinyin": "zuìjìn zěnmeyàng?", "english": "How have you been?" },
-            { "chinese": "我很好，谢谢！", "pinyin": "wǒ hěn hǎo, xièxiè!", "english": "I’m very good, thank you!" }
+            { "chinese": "再见", "pinyin": "zàijiàn", "english": "Goodbye" }
           ]
         },
         {
@@ -26,48 +22,70 @@
           "phrases": [
             { "chinese": "你叫什么名字？", "pinyin": "nǐ jiào shénme míngzì?", "english": "What’s your name?" },
             { "chinese": "您贵姓？", "pinyin": "nín guìxìng?", "english": "What’s your surname? (formal)" },
-            { "chinese": "他的名字是什么？", "pinyin": "tā de míngzì shì shénme?", "english": "What is his name?" },
-            { "chinese": "你可以告诉我你的名字吗？", "pinyin": "nǐ kěyǐ gàosù wǒ nǐ de míngzì ma?", "english": "Can you tell me your name?" },
-            { "chinese": "叫我小李吧", "pinyin": "jiào wǒ xiǎo lǐ ba", "english": "Just call me Xiao Li." },
-            { "chinese": "我不知道他的名字", "pinyin": "wǒ bù zhīdào tā de míngzì", "english": "I don’t know his name." },
+            { "chinese": "她叫什么名字？", "pinyin": "tā jiào shénme míngzì?", "english": "What is her name?" },
             { "chinese": "我叫李华", "pinyin": "wǒ jiào lǐ huá", "english": "My name is Li Hua." },
-            { "chinese": "我的中文名字是王伟", "pinyin": "wǒ de zhōngwén míngzì shì wáng wěi", "english": "My Chinese name is Wang Wei." },
-            { "chinese": "她叫安娜", "pinyin": "tā jiào ānnà", "english": "Her name is Anna." },
             { "chinese": "请再说一遍", "pinyin": "qǐng zài shuō yī biàn", "english": "Please say it again." }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Everyday Conversations",
+      "description": "Learn phrases for everyday interactions.",
+      "topics": [
         {
-          "id": 3,
-          "title": "Introducing Yourself",
+          "id": 1,
+          "title": "Common Questions",
           "phrases": [
-            { "chinese": "我叫李华", "pinyin": "wǒ jiào lǐ huá", "english": "My name is Li Hua." },
-            { "chinese": "我是学生", "pinyin": "wǒ shì xuéshēng", "english": "I am a student." },
-            { "chinese": "我来自中国", "pinyin": "wǒ láizì zhōngguó", "english": "I am from China." },
-            { "chinese": "我的家乡是上海", "pinyin": "wǒ de jiāxiāng shì shànghǎi", "english": "My hometown is Shanghai." },
-            { "chinese": "我在北京工作", "pinyin": "wǒ zài běijīng gōngzuò", "english": "I work in Beijing." },
-            { "chinese": "很高兴认识你", "pinyin": "hěn gāoxìng rènshí nǐ", "english": "Nice to meet you." },
-            { "chinese": "我是老师", "pinyin": "wǒ shì lǎoshī", "english": "I am a teacher." },
-            { "chinese": "我对学习汉语感兴趣", "pinyin": "wǒ duì xuéxí hànyǔ gǎn xìngqù", "english": "I am interested in learning Chinese." },
-            { "chinese": "我的爱好是读书", "pinyin": "wǒ de àihào shì dúshū", "english": "My hobby is reading books." },
-            { "chinese": "我是初学者", "pinyin": "wǒ shì chūxuézhě", "english": "I am a beginner." }
+            { "chinese": "你好吗？", "pinyin": "nǐ hǎo ma?", "english": "How are you?" },
+            { "chinese": "今天怎么样？", "pinyin": "jīntiān zěnme yàng?", "english": "How’s your day?" },
+            { "chinese": "你来自哪里？", "pinyin": "nǐ láizì nǎlǐ?", "english": "Where are you from?" },
+            { "chinese": "你喜欢做什么？", "pinyin": "nǐ xǐhuān zuò shénme?", "english": "What do you like to do?" },
+            { "chinese": "你会说英语吗？", "pinyin": "nǐ huì shuō yīngyǔ ma?", "english": "Can you speak English?" }
           ]
         },
         {
-          "id": 4,
-          "title": "Asking for Contact Information",
+          "id": 2,
+          "title": "Expressing Gratitude",
           "phrases": [
-            { "chinese": "你的电话号码是多少？", "pinyin": "nǐ de diànhuà hàomǎ shì duōshǎo?", "english": "What is your phone number?" },
-            { "chinese": "你有电子邮件地址吗？", "pinyin": "nǐ yǒu diànzǐ yóujiàn dìzhǐ ma?", "english": "Do you have an email address?" },
-            { "chinese": "你住在哪里？", "pinyin": "nǐ zhù zài nǎlǐ?", "english": "Where do you live?" },
-            { "chinese": "我们可以交换微信吗？", "pinyin": "wǒmen kěyǐ jiāohuàn wēixìn ma?", "english": "Can we exchange WeChat?" },
-            { "chinese": "请告诉我你的地址", "pinyin": "qǐng gàosù wǒ nǐ de dìzhǐ", "english": "Please tell me your address." },
-            { "chinese": "你能发短信给我吗？", "pinyin": "nǐ néng fā duǎnxìn gěi wǒ ma?", "english": "Can you send me a text message?" },
-            { "chinese": "我住在北京", "pinyin": "wǒ zhù zài běijīng", "english": "I live in Beijing." },
-            { "chinese": "这是我的电话号码", "pinyin": "zhè shì wǒ de diànhuà hàomǎ", "english": "This is my phone number." },
-            { "chinese": "你有微信吗？", "pinyin": "nǐ yǒu wēixìn ma?", "english": "Do you have WeChat?" },
-            { "chinese": "我的电子邮件地址是...", "pinyin": "wǒ de diànzǐ yóujiàn dìzhǐ shì...", "english": "My email address is..." }
+            { "chinese": "谢谢", "pinyin": "xièxiè", "english": "Thank you" },
+            { "chinese": "非常感谢", "pinyin": "fēicháng gǎnxiè", "english": "Thank you very much" },
+            { "chinese": "谢谢你的帮助", "pinyin": "xièxiè nǐ de bāngzhù", "english": "Thank you for your help" },
+            { "chinese": "不客气", "pinyin": "bù kèqì", "english": "You’re welcome" },
+            { "chinese": "没问题", "pinyin": "méi wèntí", "english": "No problem" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Shopping",
+      "description": "Learn phrases for shopping and bargaining.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Asking About Prices",
+          "phrases": [
+            { "chinese": "这个多少钱？", "pinyin": "zhège duōshǎo qián?", "english": "How much is this?" },
+            { "chinese": "便宜一点可以吗？", "pinyin": "piányí yīdiǎn kěyǐ ma?", "english": "Can it be cheaper?" },
+            { "chinese": "有没有折扣？", "pinyin": "yǒu méiyǒu zhékòu?", "english": "Is there a discount?" },
+            { "chinese": "我想买这个", "pinyin": "wǒ xiǎng mǎi zhège", "english": "I want to buy this" },
+            { "chinese": "可以刷卡吗？", "pinyin": "kěyǐ shuākǎ ma?", "english": "Can I pay with a card?" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "At a Restaurant",
+          "phrases": [
+            { "chinese": "菜单在哪里？", "pinyin": "càidān zài nǎlǐ?", "english": "Where is the menu?" },
+            { "chinese": "我要点菜", "pinyin": "wǒ yào diǎncài", "english": "I want to order food" },
+            { "chinese": "这个菜好吃吗？", "pinyin": "zhège cài hǎochī ma?", "english": "Is this dish delicious?" },
+            { "chinese": "我需要筷子", "pinyin": "wǒ xūyào kuàizi", "english": "I need chopsticks" },
+            { "chinese": "可以打包吗？", "pinyin": "kěyǐ dǎbāo ma?", "english": "Can I take this to go?" }
           ]
         }
       ]
     }
-  }
+  ]
+}
