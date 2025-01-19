@@ -86,6 +86,93 @@
           ]
         }
       ]
+    },
+    {
+      "id": 4,
+      "title": "Traveling",
+      "description": "Learn essential phrases for traveling and transportation.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Transportation",
+          "phrases": [
+            { "chinese": "地铁站在哪里？", "pinyin": "dìtiě zhàn zài nǎlǐ?", "english": "Where is the subway station?" },
+            { "chinese": "我需要一辆出租车", "pinyin": "wǒ xūyào yī liàng chūzūchē", "english": "I need a taxi" },
+            { "chinese": "这个车去机场吗？", "pinyin": "zhège chē qù jīchǎng ma?", "english": "Does this bus go to the airport?" },
+            { "chinese": "票多少钱？", "pinyin": "piào duōshǎo qián?", "english": "How much is the ticket?" },
+            { "chinese": "几点发车？", "pinyin": "jǐ diǎn fāchē?", "english": "What time does it depart?" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Directions",
+          "phrases": [
+            { "chinese": "怎么去火车站？", "pinyin": "zěnme qù huǒchē zhàn?", "english": "How do I get to the train station?" },
+            { "chinese": "往左走", "pinyin": "wǎng zuǒ zǒu", "english": "Go left" },
+            { "chinese": "往右走", "pinyin": "wǎng yòu zǒu", "english": "Go right" },
+            { "chinese": "直走", "pinyin": "zhí zǒu", "english": "Go straight" },
+            { "chinese": "请问这里有地图吗？", "pinyin": "qǐngwèn zhèlǐ yǒu dìtú ma?", "english": "Excuse me, do you have a map?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Health and Emergencies",
+      "description": "Learn important phrases for emergencies and health situations.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "At the Doctor's",
+          "phrases": [
+            { "chinese": "我感觉不舒服", "pinyin": "wǒ gǎnjué bù shūfú", "english": "I’m not feeling well" },
+            { "chinese": "我需要看医生", "pinyin": "wǒ xūyào kàn yīshēng", "english": "I need to see a doctor" },
+            { "chinese": "我的头很疼", "pinyin": "wǒ de tóu hěn téng", "english": "I have a headache" },
+            { "chinese": "有没有药店？", "pinyin": "yǒu méiyǒu yàodiàn?", "english": "Is there a pharmacy?" },
+            { "chinese": "我要买感冒药", "pinyin": "wǒ yào mǎi gǎnmào yào", "english": "I want to buy medicine for a cold" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Emergencies",
+          "phrases": [
+            { "chinese": "救命！", "pinyin": "jiùmìng!", "english": "Help!" },
+            { "chinese": "请叫救护车", "pinyin": "qǐng jiào jiùhùchē", "english": "Please call an ambulance" },
+            { "chinese": "报警", "pinyin": "bàojǐng", "english": "Call the police" },
+            { "chinese": "我的钱包丢了", "pinyin": "wǒ de qiánbāo diūle", "english": "My wallet is lost" },
+            { "chinese": "我需要帮助", "pinyin": "wǒ xūyào bāngzhù", "english": "I need help" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Numbers and Time",
+      "description": "Learn how to talk about numbers, dates, and time.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Numbers",
+          "phrases": [
+            { "chinese": "一", "pinyin": "yī", "english": "One" },
+            { "chinese": "二", "pinyin": "èr", "english": "Two" },
+            { "chinese": "三", "pinyin": "sān", "english": "Three" },
+            { "chinese": "四", "pinyin": "sì", "english": "Four" },
+            { "chinese": "五", "pinyin": "wǔ", "english": "Five" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Telling Time",
+          "phrases": [
+            { "chinese": "现在几点了？", "pinyin": "xiànzài jǐ diǎn le?", "english": "What time is it now?" },
+            { "chinese": "早上七点", "pinyin": "zǎoshàng qī diǎn", "english": "7 a.m." },
+            { "chinese": "下午两点半", "pinyin": "xiàwǔ liǎng diǎn bàn", "english": "2:30 p.m." },
+            { "chinese": "今天是几号？", "pinyin": "jīntiān shì jǐ hào?", "english": "What’s the date today?" },
+            { "chinese": "明天是星期几？", "pinyin": "míngtiān shì xīngqī jǐ?", "english": "What day is tomorrow?" }
+          ]
+        }
+      ]
     }
   ]
 }
