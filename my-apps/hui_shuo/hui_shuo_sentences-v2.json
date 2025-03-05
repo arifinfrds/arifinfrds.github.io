@@ -1,73 +1,193 @@
 {
-  "chapter": {
-    "id": 1,
-    "title": "Introductions",
-    "description": "Learn essential phrases to introduce yourself and start a conversation.",
-    "topics": [
-      {
-        "id": 1,
-        "title": "Greetings",
-        "phrases": [
-          { "id": 1, "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello" },
-          { "id": 2, "chinese": "早上好", "pinyin": "zǎoshàng hǎo", "english": "Good morning" },
-          { "id": 3, "chinese": "下午好", "pinyin": "xiàwǔ hǎo", "english": "Good afternoon" },
-          { "id": 4, "chinese": "晚上好", "pinyin": "wǎnshàng hǎo", "english": "Good evening" },
-          { "id": 5, "chinese": "再见", "pinyin": "zàijiàn", "english": "Goodbye" },
-          { "id": 6, "chinese": "晚安", "pinyin": "wǎn'ān", "english": "Good night" },
-          { "id": 7, "chinese": "很高兴见到你", "pinyin": "hěn gāoxìng jiàndào nǐ", "english": "Nice to see you" },
-          { "id": 8, "chinese": "欢迎", "pinyin": "huānyíng", "english": "Welcome" },
-          { "id": 9, "chinese": "最近怎么样？", "pinyin": "zuìjìn zěnmeyàng?", "english": "How have you been?" },
-          { "id": 10, "chinese": "我很好，谢谢！", "pinyin": "wǒ hěn hǎo, xièxiè!", "english": "I’m very good, thank you!" }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Asking Someone's Name",
-        "phrases": [
-          { "id": 11, "chinese": "你叫什么名字？", "pinyin": "nǐ jiào shénme míngzì?", "english": "What’s your name?" },
-          { "id": 12, "chinese": "您贵姓？", "pinyin": "nín guìxìng?", "english": "What’s your surname? (formal)" },
-          { "id": 13, "chinese": "他的名字是什么？", "pinyin": "tā de míngzì shì shénme?", "english": "What is his name?" },
-          { "id": 14, "chinese": "你可以告诉我你的名字吗？", "pinyin": "nǐ kěyǐ gàosù wǒ nǐ de míngzì ma?", "english": "Can you tell me your name?" },
-          { "id": 15, "chinese": "叫我小李吧", "pinyin": "jiào wǒ xiǎo lǐ ba", "english": "Just call me Xiao Li." },
-          { "id": 16, "chinese": "我不知道他的名字", "pinyin": "wǒ bù zhīdào tā de míngzì", "english": "I don’t know his name." },
-          { "id": 17, "chinese": "我叫李华", "pinyin": "wǒ jiào lǐ huá", "english": "My name is Li Hua." },
-          { "id": 18, "chinese": "我的中文名字是王伟", "pinyin": "wǒ de zhōngwén míngzì shì wáng wěi", "english": "My Chinese name is Wang Wei." },
-          { "id": 19, "chinese": "她叫安娜", "pinyin": "tā jiào ānnà", "english": "Her name is Anna." },
-          { "id": 20, "chinese": "请再说一遍", "pinyin": "qǐng zài shuō yī biàn", "english": "Please say it again." }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Introducing Yourself",
-        "phrases": [
-          { "id": 21, "chinese": "我叫李华", "pinyin": "wǒ jiào lǐ huá", "english": "My name is Li Hua." },
-          { "id": 22, "chinese": "我是学生", "pinyin": "wǒ shì xuéshēng", "english": "I am a student." },
-          { "id": 23, "chinese": "我来自中国", "pinyin": "wǒ láizì zhōngguó", "english": "I am from China." },
-          { "id": 24, "chinese": "我的家乡是上海", "pinyin": "wǒ de jiāxiāng shì shànghǎi", "english": "My hometown is Shanghai." },
-          { "id": 25, "chinese": "我在北京工作", "pinyin": "wǒ zài běijīng gōngzuò", "english": "I work in Beijing." },
-          { "id": 26, "chinese": "很高兴认识你", "pinyin": "hěn gāoxìng rènshí nǐ", "english": "Nice to meet you." },
-          { "id": 27, "chinese": "我是老师", "pinyin": "wǒ shì lǎoshī", "english": "I am a teacher." },
-          { "id": 28, "chinese": "我对学习汉语感兴趣", "pinyin": "wǒ duì xuéxí hànyǔ gǎn xìngqù", "english": "I am interested in learning Chinese." },
-          { "id": 29, "chinese": "我的爱好是读书", "pinyin": "wǒ de àihào shì dúshū", "english": "My hobby is reading books." },
-          { "id": 30, "chinese": "我是初学者", "pinyin": "wǒ shì chūxuézhě", "english": "I am a beginner." }
-        ]
-      },
-      {
-        "id": 4,
-        "title": "Asking for Contact Information",
-        "phrases": [
-          { "id": 31, "chinese": "你的电话号码是多少？", "pinyin": "nǐ de diànhuà hàomǎ shì duōshǎo?", "english": "What is your phone number?" },
-          { "id": 32, "chinese": "你有电子邮件地址吗？", "pinyin": "nǐ yǒu diànzǐ yóujiàn dìzhǐ ma?", "english": "Do you have an email address?" },
-          { "id": 33, "chinese": "你住在哪里？", "pinyin": "nǐ zhù zài nǎlǐ?", "english": "Where do you live?" },
-          { "id": 34, "chinese": "我们可以交换微信吗？", "pinyin": "wǒmen kěyǐ jiāohuàn wēixìn ma?", "english": "Can we exchange WeChat?" },
-          { "id": 35, "chinese": "请告诉我你的地址", "pinyin": "qǐng gàosù wǒ nǐ de dìzhǐ", "english": "Please tell me your address." },
-          { "id": 36, "chinese": "你能发短信给我吗？", "pinyin": "nǐ néng fā duǎnxìn gěi wǒ ma?", "english": "Can you send me a text message?" },
-          { "id": 37, "chinese": "我住在北京", "pinyin": "wǒ zhù zài běijīng", "english": "I live in Beijing." },
-          { "id": 38, "chinese": "这是我的电话号码", "pinyin": "zhè shì wǒ de diànhuà hàomǎ", "english": "This is my phone number." },
-          { "id": 39, "chinese": "你有微信吗？", "pinyin": "nǐ yǒu wēixìn ma?", "english": "Do you have WeChat?" },
-          { "id": 40, "chinese": "我的电子邮件地址是...", "pinyin": "wǒ de diànzǐ yóujiàn dìzhǐ shì...", "english": "My email address is..." }
-        ]
-      }
-    ]
-  }
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Introductions",
+      "description": "Learn essential phrases to introduce yourself and start a conversation.",
+      "topics": [
+        {
+          "id": 1,
+          "title": "Greetings",
+          "phrases": [
+            { "id": 1, "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello" },
+            { "id": 2, "chinese": "早上好", "pinyin": "zǎoshàng hǎo", "english": "Good morning" },
+            { "id": 3, "chinese": "下午好", "pinyin": "xiàwǔ hǎo", "english": "Good afternoon" },
+            { "id": 4, "chinese": "晚上好", "pinyin": "wǎnshàng hǎo", "english": "Good evening" },
+            { "id": 5, "chinese": "再见", "pinyin": "zàijiàn", "english": "Goodbye" }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Asking Someone's Name",
+          "phrases": [
+            { "id": 6, "chinese": "你叫什么名字？", "pinyin": "nǐ jiào shénme míngzì?", "english": "What’s your name?" },
+            { "id": 7, "chinese": "您贵姓？", "pinyin": "nín guìxìng?", "english": "What’s your surname? (formal)" },
+            { "id": 8, "chinese": "她叫什么名字？", "pinyin": "tā jiào shénme míngzì?", "english": "What is her name?" },
+            { "id": 9, "chinese": "我叫李华", "pinyin": "wǒ jiào lǐ huá", "english": "My name is Li Hua." },
+            { "id": 10, "chinese": "请再说一遍", "pinyin": "qǐng zài shuō yī biàn", "english": "Please say it again." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Everyday Conversations",
+      "description": "Learn phrases for everyday interactions.",
+      "topics": [
+        {
+          "id": 3,
+          "title": "Common Questions",
+          "phrases": [
+            { "id": 11, "chinese": "你好吗？", "pinyin": "nǐ hǎo ma?", "english": "How are you?" },
+            { "id": 12, "chinese": "今天怎么样？", "pinyin": "jīntiān zěnme yàng?", "english": "How’s your day?" },
+            { "id": 13, "chinese": "你来自哪里？", "pinyin": "nǐ láizì nǎlǐ?", "english": "Where are you from?" },
+            { "id": 14, "chinese": "你喜欢做什么？", "pinyin": "nǐ xǐhuān zuò shénme?", "english": "What do you like to do?" },
+            { "id": 15, "chinese": "你会说英语吗？", "pinyin": "nǐ huì shuō yīngyǔ ma?", "english": "Can you speak English?" }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Expressing Gratitude",
+          "phrases": [
+            { "id": 16, "chinese": "谢谢", "pinyin": "xièxiè", "english": "Thank you" },
+            { "id": 17, "chinese": "非常感谢", "pinyin": "fēicháng gǎnxiè", "english": "Thank you very much" },
+            { "id": 18, "chinese": "谢谢你的帮助", "pinyin": "xièxiè nǐ de bāngzhù", "english": "Thank you for your help" },
+            { "id": 19, "chinese": "不客气", "pinyin": "bù kèqì", "english": "You’re welcome" },
+            { "id": 20, "chinese": "没问题", "pinyin": "méi wèntí", "english": "No problem" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Shopping",
+      "description": "Learn phrases for shopping and bargaining.",
+      "topics": [
+        {
+          "id": 5,
+          "title": "Asking About Prices",
+          "phrases": [
+            { "id": 21, "chinese": "这个多少钱？", "pinyin": "zhège duōshǎo qián?", "english": "How much is this?" },
+            { "id": 22, "chinese": "便宜一点可以吗？", "pinyin": "piányí yīdiǎn kěyǐ ma?", "english": "Can it be cheaper?" },
+            { "id": 23, "chinese": "有没有折扣？", "pinyin": "yǒu méiyǒu zhékòu?", "english": "Is there a discount?" },
+            { "id": 24, "chinese": "我想买这个", "pinyin": "wǒ xiǎng mǎi zhège", "english": "I want to buy this" },
+            { "id": 25, "chinese": "可以刷卡吗？", "pinyin": "kěyǐ shuākǎ ma?", "english": "Can I pay with a card?" }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "At a Restaurant",
+          "phrases": [
+            { "id": 26, "chinese": "菜单在哪里？", "pinyin": "càidān zài nǎlǐ?", "english": "Where is the menu?" },
+            { "id": 27, "chinese": "我要点菜", "pinyin": "wǒ yào diǎncài", "english": "I want to order food" },
+            { "id": 28, "chinese": "这个菜好吃吗？", "pinyin": "zhège cài hǎochī ma?", "english": "Is this dish delicious?" },
+            { "id": 29, "chinese": "我需要筷子", "pinyin": "wǒ xūyào kuàizi", "english": "I need chopsticks" },
+            { "id": 30, "chinese": "可以打包吗？", "pinyin": "kěyǐ dǎbāo ma?", "english": "Can I take this to go?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Traveling",
+      "description": "Learn essential phrases for traveling and transportation.",
+      "topics": [
+        {
+          "id": 7,
+          "title": "Transportation",
+          "phrases": [
+            { "id": 31, "chinese": "地铁站在哪里？", "pinyin": "dìtiě zhàn zài nǎlǐ?", "english": "Where is the subway station?" },
+            { "id": 32, "chinese": "我需要一辆出租车", "pinyin": "wǒ xūyào yī liàng chūzūchē", "english": "I need a taxi" },
+            { "id": 33, "chinese": "这个车去机场吗？", "pinyin": "zhège chē qù jīchǎng ma?", "english": "Does this bus go to the airport?" },
+            { "id": 34, "chinese": "票多少钱？", "pinyin": "piào duōshǎo qián?", "english": "How much is the ticket?" },
+            { "id": 35, "chinese": "几点发车？", "pinyin": "jǐ diǎn fāchē?", "english": "What time does it depart?" }
+          ]
+        },
+        {
+          "id": 8,
+          "title": "Directions",
+          "phrases": [
+            { "id": 36, "chinese": "怎么去火车站？", "pinyin": "zěnme qù huǒchē zhàn?", "english": "How do I get to the train station?" },
+            { "id": 37, "chinese": "往左走", "pinyin": "wǎng zuǒ zǒu", "english": "Go left" },
+            { "id": 38, "chinese": "往右走", "pinyin": "wǎng yòu zǒu", "english": "Go right" },
+            { "id": 39, "chinese": "直走", "pinyin": "zhí zǒu", "english": "Go straight" },
+            { "id": 40, "chinese": "请问这里有地图吗？", "pinyin": "qǐngwèn zhèlǐ yǒu dìtú ma?", "english": "Excuse me, do you have a map?" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Health and Emergencies",
+      "description": "Learn important phrases for emergencies and health situations.",
+      "topics": [
+        {
+          "id": 9,
+          "title": "At the Doctor's",
+          "phrases": [
+            { "id": 41, "chinese": "我感觉不舒服", "pinyin": "wǒ gǎnjué bù shūfú", "english": "I’m not feeling well" },
+            { "id": 42, "chinese": "我需要看医生", "pinyin": "wǒ xūyào kàn yīshēng", "english": "I need to see a doctor" },
+            { "id": 43, "chinese": "我的头很疼", "pinyin": "wǒ de tóu hěn téng", "english": "I have a headache" },
+            { "id": 44, "chinese": "有没有药店？", "pinyin": "yǒu méiyǒu yàodiàn?", "english": "Is there a pharmacy?" },
+            { "id": 45, "chinese": "我要买感冒药", "pinyin": "wǒ yào mǎi gǎnmào yào", "english": "I want to buy medicine for a cold" }
+          ]
+        },
+        {
+          "id": 10,
+          "title": "Emergencies",
+          "phrases": [
+            { "id": 46, "chinese": "救命！", "pinyin": "jiùmìng!", "english": "Help!" },
+            { "id": 47, "chinese": "请叫救护车", "pinyin": "qǐng jiào jiùhùchē", "english": "Please call an ambulance" },
+            { "id": 48, "chinese": "报警", "pinyin": "bàojǐng", "english": "Call the police" },
+            { "id": 49, "chinese": "我的钱包丢了", "pinyin": "wǒ de qiánbāo diūle", "english": "My wallet is lost" },
+            { "id": 50, "chinese": "我需要帮助", "pinyin": "wǒ xūyào bāngzhù", "english": "I need help" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Numbers and Time",
+      "description": "Learn how to talk about numbers, dates, and time.",
+      "topics": [
+        {
+          "id": 11,
+          "title": "Numbers",
+          "phrases": [
+            { "id": 51, "chinese": "一", "pinyin": "yī", "english": "One" },
+            { "id": 52, "chinese": "二", "pinyin": "èr", "english": "Two" },
+            { "id": 53, "chinese": "三", "pinyin": "sān", "english": "Three" },
+            { "id": 54, "chinese": "四", "pinyin": "sì", "english": "Four" },
+            { "id": 55, "chinese": "五", "pinyin": "wǔ", "english": "Five" },
+            { "id": 56, "chinese": "六", "pinyin": "liù", "english": "Six" },
+            { "id": 57, "chinese": "七", "pinyin": "qī", "english": "Seven" },
+            { "id": 58, "chinese": "八", "pinyin": "bā", "english": "Eight" },
+            { "id": 59, "chinese": "九", "pinyin": "jiǔ", "english": "Nine" },
+            { "id": 60, "chinese": "十", "pinyin": "shí", "english": "Ten" },
+            { "id": 61, "chinese": "十一", "pinyin": "shíyī", "english": "Eleven" },
+            { "id": 62, "chinese": "十二", "pinyin": "shí'èr", "english": "Twelve" },
+            { "id": 63, "chinese": "十三", "pinyin": "shísān", "english": "Thirteen" },
+            { "id": 64, "chinese": "十四", "pinyin": "shísì", "english": "Fourteen" },
+            { "id": 65, "chinese": "十五", "pinyin": "shíwǔ", "english": "Fifteen" },
+            { "id": 66, "chinese": "十六", "pinyin": "shíliù", "english": "Sixteen" },
+            { "id": 67, "chinese": "十七", "pinyin": "shíqī", "english": "Seventeen" },
+            { "id": 68, "chinese": "十八", "pinyin": "shíbā", "english": "Eighteen" },
+            { "id": 69, "chinese": "十九", "pinyin": "shíjiǔ", "english": "Nineteen" },
+            { "id": 70, "chinese": "二十", "pinyin": "èrshí", "english": "Twenty" }
+          ]
+        },
+        {
+          "id": 12,
+          "title": "Telling Time",
+          "phrases": [
+            { "id": 71, "chinese": "现在几点了？", "pinyin": "xiànzài jǐ diǎn le?", "english": "What time is it now?" },
+            { "id": 72, "chinese": "早上七点", "pinyin": "zǎoshàng qī diǎn", "english": "7 a.m." },
+            { "id": 73, "chinese": "下午两点半", "pinyin": "xiàwǔ liǎng diǎn bàn", "english": "2:30 p.m." },
+            { "id": 74, "chinese": "今天是几号？", "pinyin": "jīntiān shì jǐ hào?", "english": "What’s the date today?" },
+            { "id": 75, "chinese": "明天是星期几？", "pinyin": "míngtiān shì xīngqī jǐ?", "english": "What day is tomorrow?" }
+          ]
+        }
+      ]
+    }
+  ]
 }
