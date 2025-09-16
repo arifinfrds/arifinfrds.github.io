@@ -1,0 +1,45 @@
+.navbar {
+    z-index: 2;
+}
+
+.jumbotron {
+    background-image: url(img/jumbotron_background.png);
+    background-size: cover;
+    height: 840px;
+    position: relative;
+}
+
+.jumbotron .container {
+    margin-top: 300px;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0px;
+}
+
+section {
+    padding: 24px;
+}
+
+#section-overview {
+    margin-top: -30px;
+    background-color: aliceblue;
+}
+
+#section_footer {
+    background-color: green;
+}
+
+#section_portfolio {
+    background-color: white;
+}
+
