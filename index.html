@@ -1,412 +1,698 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arifin Firdaus — iOS Engineer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --dark:    #0f172a;
+      --dark2:   #1e293b;
+      --accent:  #3B82F6;
+      --muted:   #94a3b8;
+    }
 
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous"> -->
+    * { box-sizing: border-box; }
 
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1e293b;
+      background: #fff;
+    }
 
-    <link rel="stylesheet" href="bootstrap.css" type="text/css">
+    /* ── Navbar ── */
+    .navbar {
+      background: var(--dark);
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #1e293b;
+    }
+    .navbar-brand { font-weight: 800; font-size: 1rem; color: #fff !important; letter-spacing: -.3px; }
+    .nav-link-custom {
+      color: var(--muted);
+      font-size: .85rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color .15s;
+    }
+    .nav-link-custom:hover { color: #fff; }
 
-    <link rel="stylesheet" href="style.css" type='text/css'>
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #0c1a3a 50%, #0f172a 100%);
+      color: #fff;
+      padding: 96px 0 80px;
+    }
+    .hero h1 {
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      letter-spacing: -.5px;
+    }
+    .hero .role {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: .3px;
+      margin-bottom: 16px;
+    }
+    .hero p { color: #94a3b8; max-width: 560px; font-size: 1rem; line-height: 1.7; }
 
-    <title>Arifin Firdaus - Software Engineer - iOS</title>
+    .company-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin: 3px;
+      letter-spacing: .3px;
+    }
+
+    .hero-cta a {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 4px;
+      transition: opacity .15s;
+    }
+    .hero-cta a:hover { opacity: .85; }
+    .btn-primary-cta { background: var(--accent); color: #fff; }
+    .btn-outline-cta { border: 1.5px solid #334155; color: #94a3b8; }
+    .btn-outline-cta:hover { border-color: #64748b; color: #fff; }
+
+    /* ── Section headers ── */
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+
+    /* ── Experience strip ── */
+    .experience-section { background: #f8fafc; padding: 56px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+    .exp-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px 22px;
+      height: 100%;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .exp-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(59,130,246,.1); }
+    .exp-card .company { font-weight: 800; font-size: .95rem; margin-bottom: 2px; }
+    .exp-card .role-tag { font-size: .78rem; color: #64748b; font-weight: 500; }
+    .exp-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      display: inline-block; margin-right: 6px;
+    }
+
+    /* ── Portfolio cards ── */
+    .portfolio-section { padding: 72px 0; }
+
+    .app-card {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      height: 100%;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color .15s, box-shadow .15s, transform .15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--card-color, #3B82F6);
+      border-radius: 16px 16px 0 0;
+    }
+    .app-card:hover {
+      border-color: var(--card-color, #3B82F6);
+      box-shadow: 0 8px 32px rgba(0,0,0,.08);
+      transform: translateY(-2px);
+      color: inherit;
+    }
+
+    .app-card .app-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: .7rem; color: #fff;
+      margin-bottom: 14px;
+      background: var(--card-color, #3B82F6);
+    }
+    .app-card .app-icon img {
+      width: 100%; height: 100%;
+      object-fit: contain; border-radius: 10px;
+      background: #fff; padding: 4px;
+    }
+
+    .app-card h5 { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+    .app-card .app-desc { font-size: .82rem; color: #64748b; margin-bottom: 14px; line-height: 1.55; }
+
+    .badge-platform {
+      font-size: .65rem; font-weight: 700; letter-spacing: .6px;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 50px;
+      margin-right: 4px;
+    }
+
+    .tech-mini {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      border-radius: 5px;
+      padding: 2px 8px;
+      font-size: .72rem;
+      font-weight: 600;
+      margin: 2px;
+    }
+
+    .card-link-label {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--card-color, #3B82F6);
+      margin-top: 14px;
+      display: block;
+    }
+
+    .badge-unlisted-mini {
+      font-size: .6rem; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; padding: 2px 6px; border-radius: 4px;
+      background: #1565C0; color: #fff; vertical-align: middle;
+      margin-left: 4px;
+    }
+
+    /* ── Older projects ── */
+    .older-section { padding: 56px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+    .older-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .older-item:last-child { border-bottom: none; }
+    .older-dot {
+      width: 36px; height: 36px; min-width: 36px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .65rem; font-weight: 800; color: #fff;
+      background: #64748b;
+    }
+    .older-item h6 { font-weight: 700; font-size: .9rem; margin-bottom: 3px; }
+    .older-item p  { font-size: .82rem; color: #64748b; margin: 0; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      padding: 56px 0 40px;
+    }
+    footer h5 { color: #fff; font-weight: 800; margin-bottom: 4px; }
+    .footer-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px;
+      border: 1.5px solid #1e293b;
+      border-radius: 8px;
+      font-size: .83rem;
+      font-weight: 600;
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 5px;
+      transition: border-color .15s, color .15s;
+    }
+    .footer-link:hover { border-color: #3B82F6; color: #fff; }
+    .divider { border-color: #1e293b; }
+  </style>
 </head>
-
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container text-center">
-            <h1 class="display-1">Arifin Firdaus</h1>
-            <p class="h2">Software Engineer - iOS</p>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ── Navbar ── -->
+<nav class="navbar d-flex justify-content-between align-items-center">
+  <span class="navbar-brand">Arifin Firdaus</span>
+  <div class="d-none d-md-flex">
+    <a href="#experience" class="nav-link-custom">Experience</a>
+    <a href="#portfolio" class="nav-link-custom">Portfolio</a>
+    <a href="#contact" class="nav-link-custom">Contact</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-8">
+        <div class="role">iOS Engineer</div>
+        <h1>Arifin Firdaus</h1>
+        <p class="mt-3">
+          iOS Engineer with hands-on experience across fintech, e-commerce, cloud storage,
+          healthcare, and productivity — shipping apps used by millions.
+          Passionate about clean architecture, test-driven development, and building
+          software that scales.
+        </p>
+
+        <div class="mt-4 mb-2" style="font-size:.72rem; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#475569;">
+          Previously at
         </div>
+        <div>
+          <span class="company-tag">MEGA The Privacy Company</span>
+          <span class="company-tag">Tokopedia</span>
+          <span class="company-tag">Ice House</span>
+          <span class="company-tag">ICTechnology Pty Ltd</span>
+          <span class="company-tag">Apple Developer Academy</span>
+        </div>
+
+        <div class="hero-cta mt-5">
+          <a href="mailto:arifinfrds.engineer@gmail.com" class="btn-primary-cta">Email me</a>
+          <a href="https://www.linkedin.com/in/arifinfrds" target="_blank" rel="noopener" class="btn-outline-cta">LinkedIn</a>
+          <a href="https://github.com/arifinfrds" target="_blank" rel="noopener" class="btn-outline-cta">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Experience ── -->
+<section class="experience-section" id="experience">
+  <div class="container">
+    <p class="section-eyebrow">Career</p>
+    <h2 class="fw-bold mb-5">Experience</h2>
+    <div class="row g-3">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span class="exp-dot" style="background:#D9001E;"></span>MEGA The Privacy Company
+          </div>
+          <div class="role-tag mt-1">iOS Engineer</div>
+          <div class="mt-2">
+            <span class="tech-mini">SwiftUI</span><span class="tech-mini">UIKit</span>
+            <span class="tech-mini">AVKit</span><span class="tech-mini">Combine</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span class="exp-dot" style="background:#00AA5B;"></span>Tokopedia
+          </div>
+          <div class="role-tag mt-1">iOS Engineer</div>
+          <div class="mt-2">
+            <span class="tech-mini">Texture</span><span class="tech-mini">RxSwift</span>
+            <span class="tech-mini">GraphQL</span><span class="tech-mini">Moya</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span class="exp-dot" style="background:#006494;"></span>Ice House
+          </div>
+          <div class="role-tag mt-1">iOS Engineer · Prodia Project</div>
+          <div class="mt-2">
+            <span class="tech-mini">RxSwift</span><span class="tech-mini">GraphQL</span>
+            <span class="tech-mini">Moya</span><span class="tech-mini">MVVM</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span class="exp-dot" style="background:#1565C0;"></span>ICTechnology Pty Ltd
+          </div>
+          <div class="role-tag mt-1">iOS Engineer · TimeARK &amp; Boxwise</div>
+          <div class="mt-2">
+            <span class="tech-mini">SwiftUI</span><span class="tech-mini">CoreLocation</span>
+            <span class="tech-mini">AVKit</span><span class="tech-mini">Moya</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span class="exp-dot" style="background:#555;"></span>Apple Developer Academy
+          </div>
+          <div class="role-tag mt-1">Student / Developer</div>
+          <div class="mt-2">
+            <span class="tech-mini">Swift</span><span class="tech-mini">iOS</span>
+            <span class="tech-mini">macOS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Portfolio ── -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <p class="section-eyebrow">Work</p>
+    <h2 class="fw-bold mb-2">Portfolio</h2>
+    <p class="text-muted mb-5">Apps I built or contributed to.</p>
+
+    <div class="row g-4">
+
+      <!-- Boxwise -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/boxwise/index.html" class="app-card" style="--card-color:#C0392B;">
+          <div class="app-icon">
+            <img src="https://box-wise.org/wp-content/uploads/2024/09/Boxwise-logo-1.png" alt="Boxwise">
+          </div>
+          <h5>Boxwise</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge bg-danger">iOS</span>
+          </div>
+          <p class="app-desc">Educational platform for boxers — financial literacy, life skills, and video-based course content. Built at ICTechnology Pty Ltd.</p>
+          <div>
+            <span class="tech-mini">SwiftUI</span>
+            <span class="tech-mini">AVKit</span>
+            <span class="tech-mini">Moya</span>
+            <span class="tech-mini">Combine</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">TDD</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- TimeARK -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/timeark/index.html" class="app-card" style="--card-color:#1565C0;">
+          <div class="app-icon" style="font-size:.6rem; background:#1565C0;">TimeArk</div>
+          <h5>TimeARK <span class="badge-unlisted-mini">Unlisted</span></h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#1565C0;">iOS</span>
+          </div>
+          <p class="app-desc">Workforce management — clock in/out, attendance tracking, and leave requests. Distributed as an Apple Unlisted App (B2B enterprise model).</p>
+          <div>
+            <span class="tech-mini">SwiftUI</span>
+            <span class="tech-mini">CoreLocation</span>
+            <span class="tech-mini">Moya</span>
+            <span class="tech-mini">Combine</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">TDD</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- MEGA -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/mega/index.html" class="app-card" style="--card-color:#D9001E;">
+          <div class="app-icon" style="background:#D9001E; font-size:.75rem;">MEGA</div>
+          <h5>MEGA</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge bg-danger">iOS</span>
+          </div>
+          <p class="app-desc">Secure cloud storage platform trusted by millions. Contributed to the Media Content feature and performance improvements at MEGA The Privacy Company.</p>
+          <div>
+            <span class="tech-mini">SwiftUI</span>
+            <span class="tech-mini">UIKit</span>
+            <span class="tech-mini">AVFoundation</span>
+            <span class="tech-mini">CoreData</span>
+            <span class="tech-mini">Combine</span>
+            <span class="tech-mini">TDD</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Tokopedia -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/tokopedia/index.html" class="app-card" style="--card-color:#00AA5B;">
+          <div class="app-icon" style="background:#00AA5B; font-size:.6rem; text-align:center; padding:4px;">Tokopedia</div>
+          <h5>Tokopedia</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#00AA5B;">iOS</span>
+          </div>
+          <p class="app-desc">Indonesia's leading e-commerce platform. Contributed to features serving millions of users daily, using high-performance async UI.</p>
+          <div>
+            <span class="tech-mini">Texture</span>
+            <span class="tech-mini">RxSwift</span>
+            <span class="tech-mini">GraphQL</span>
+            <span class="tech-mini">Moya</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">TDD</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Prodia -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/prodia/index.html" class="app-card" style="--card-color:#006494;">
+          <div class="app-icon" style="background:#006494; font-size:.75rem;">Prodia</div>
+          <h5>Prodia</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#006494;">iOS</span>
+          </div>
+          <p class="app-desc">Healthcare and diagnostic app — book tests, view results, and manage appointments. Built at Ice House for Indonesia's leading diagnostic provider.</p>
+          <div>
+            <span class="tech-mini">RxSwift</span>
+            <span class="tech-mini">GraphQL</span>
+            <span class="tech-mini">Moya</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">Clean Arch</span>
+            <span class="tech-mini">TDD</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Sketra -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/sketra/index.html" class="app-card" style="--card-color:#7C3AED;">
+          <div class="app-icon" style="background:#7C3AED; font-size:.7rem;">Sketra</div>
+          <h5>Sketra</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#06B6D4;">iOS</span>
+            <span class="badge-platform badge" style="background:#3DDC84; color:#000;">Android</span>
+          </div>
+          <p class="app-desc">Modern wallpaper app — curated high-quality wallpapers to browse, download, and set. Built with Flutter for both iOS and Android.</p>
+          <div>
+            <span class="tech-mini">Flutter</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">Hive</span>
+            <span class="tech-mini">dio</span>
+            <span class="tech-mini">Material 3</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Quran Firdaus -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/QuranFirdaus-landing-page/index.html" class="app-card" style="--card-color:#30B0C7;">
+          <div class="app-icon" style="background:#30B0C7; color:#fff; font-size:.48rem; text-align:center; padding:4px; line-height:1.3;">Quran<br>Firdaus</div>
+          <h5>Quran Firdaus</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#30B0C7;">iOS</span>
+            <span class="badge-platform badge bg-secondary">iPadOS</span>
+            <span class="badge-platform badge bg-secondary">macOS</span>
+          </div>
+          <p class="app-desc">Offline Quran reader for the full Apple ecosystem — iPhone, iPad, and Mac. Dark mode, 100% offline, native SwiftUI experience.</p>
+          <div>
+            <span class="tech-mini">SwiftUI</span>
+            <span class="tech-mini">CoreData</span>
+            <span class="tech-mini">async / await</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Nawawi 40 -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/Nawawi-40/index.html" class="app-card" style="--card-color:#34C759;">
+          <div class="app-icon" style="background:#34C759; font-size:.6rem; text-align:center; padding:4px;">Nawawi 40</div>
+          <h5>Nawawi 40 Hadith</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#34C759;">iOS</span>
+          </div>
+          <p class="app-desc">The 40 Hadith of Imam Nawawi — Arabic text, translations, explanations, and recommended references. A focused Islamic learning companion.</p>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Hui Shuo -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/hui_shuo/hui-shuo.html" class="app-card" style="--card-color:#FF3B30;">
+          <div class="app-icon" style="background:#FF3B30; font-size:.75rem; text-align:center;">会说</div>
+          <h5>Hui Shuo (会说)</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#FF3B30;">iOS</span>
+          </div>
+          <p class="app-desc">Chinese phrase learning companion — search phrases, explore topics, and learn pronunciations and meanings on Apple platforms.</p>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
+      <!-- Tabunganku -->
+      <div class="col-md-6 col-lg-4">
+        <a href="./my-apps/tabunganku/index.html" class="app-card" style="--card-color:#D97706;">
+          <div class="app-icon" style="background:#ffffff; color:#000000; border:1.5px solid #d1d5db; font-size:.55rem; text-align:center; padding:4px;">Tabunganku</div>
+          <h5>Tabunganku</h5>
+          <div class="mb-2">
+            <span class="badge-platform badge" style="background:#D97706;">iOS</span>
+          </div>
+          <p class="app-desc">Personal savings and transaction tracker. Fully offline-first with local CoreData storage and smooth async operations.</p>
+          <div>
+            <span class="tech-mini">SwiftUI</span>
+            <span class="tech-mini">CoreData</span>
+            <span class="tech-mini">async / await</span>
+          </div>
+          <span class="card-link-label">View details →</span>
+        </a>
+      </div>
+
     </div>
 
+    <!-- Older / Academic Projects -->
+    <div class="mt-5 pt-4">
+      <p class="section-eyebrow mb-1">Earlier Work</p>
+      <h4 class="fw-bold mb-4">Academic &amp; Early Projects</h4>
 
-    <section id="section-overview">
-        <div class="container text-center mb-5">
-            <h1 class="display-4">Overview</h1>
-            <p class="lead">
-                Hi! I am Arifin Firdaus, iOS Engineer previously worked at <a href="https://mega.nz">MEGA The Privacy
-                    Company</a>, <a href="https://www.tokopedia.com">Tokopedia</a>, <a
-                    href="https://icehousecorp.com">Ice House</a>, and <a
-                    href="https://appledeveloperacademy.uc.ac.id">Apple Developer Academy</a> with experienced iOS
-                Development.
-                Enjoy learning software engineering and crafting remarkable, scalable software by following good
-                engineering principles that can support long-term business goals.
-                Reach me personally on <a
-                    href="mailto: arifinfrds.engineer@gmail.com">arifinfrds.engineer@gmail.com</a>.
+      <div class="row">
+        <div class="col-lg-10">
+
+          <div class="older-item">
+            <div class="older-dot">RA</div>
+            <div style="flex:1;">
+              <h6>Readdy — Reading Assistant (iOS)</h6>
+              <p>An assistive reading app designed to improve the reading experience for people with dyslexia.
+                <a href="https://www.behance.net/gallery/108476049/Readdy-Reading-Assistant-App" target="_blank" rel="noopener" class="ms-1" style="color:var(--accent);">Behance ↗</a>
+              </p>
+            </div>
+            <img src="img/portfolio_readdy.png" alt="Readdy" style="height:100px; width:auto; max-width:70px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0; flex-shrink:0;">
+          </div>
+
+          <div class="older-item">
+            <div class="older-dot">HC</div>
+            <div style="flex:1;">
+              <h6><a href="./my-apps/hemocs/index.html" style="color:inherit; text-decoration:none;">HEMOCS Entertainment Terminal App (iOS)</a></h6>
+              <p>Head Movement Control System — navigate an entertainment interface using head gestures via the front camera. Swift, UIKit, Vision.
+                <a href="https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/6636" target="_blank" rel="noopener" class="ms-1" style="color:var(--accent);">Research Paper ↗</a>
+                <a href="./my-apps/hemocs/index.html" class="ms-1" style="color:var(--accent);">Details →</a>
+              </p>
+            </div>
+            <img src="img/portfolio_hemocs_entertaiment_terminal_ios_1.png" alt="HEMOCS" style="height:100px; width:auto; max-width:70px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0; flex-shrink:0;">
+          </div>
+
+          <div class="older-item">
+            <div class="older-dot">CM</div>
+            <div style="flex:1;">
+              <h6>Come (iOS)</h6>
+              <p>Social app for finding friends with shared interests and group buying. Built at <strong>PT Global Teknokreasi Indonesia</strong>. Swift, UIKit.
+                <a href="https://comeapp.id" target="_blank" rel="noopener" class="ms-1" style="color:var(--accent);">comeapp.id ↗</a>
+              </p>
+            </div>
+            <img src="img/portfolio_come.png" alt="Come" style="height:100px; width:auto; max-width:70px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0; flex-shrink:0;">
+          </div>
+
+          <div class="older-item">
+            <div class="older-dot">MI</div>
+            <div style="flex:1;">
+              <h6>Mang.id (Android)</h6>
+              <p>Marketplace app for Indonesian SMEs (UMKM) — enabling local sellers to list and sell products. Java, Retrofit, XML.
+                <a href="https://play.google.com/store/apps/details?id=mang.id" target="_blank" rel="noopener" class="ms-1" style="color:var(--accent);">Play Store ↗</a>
+              </p>
+            </div>
+            <img src="img/portfolio_mang_id_android.png" alt="Mang.id" style="height:100px; width:auto; max-width:70px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0; flex-shrink:0;">
+          </div>
+
+          <div class="older-item">
+            <div class="older-dot">TV</div>
+            <div style="flex:1;">
+              <h6>UB TV (iOS &amp; iPadOS)</h6>
+              <p>University of Brawijaya's video streaming app — YouTube video player and live streams. iPhone and iPad support. Swift, UIKit, Storyboard.</p>
+            </div>
+            <img src="img/portfolio_ubtv_ios_2.png" alt="UB TV" style="height:100px; width:auto; max-width:70px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0; flex-shrink:0;">
+          </div>
+
+          <div class="older-item">
+            <div class="older-dot">OB</div>
+            <div style="flex:1;">
+              <h6>Olimpiade Brawijaya 2017 — iOS &amp; Android</h6>
+              <p>Official app for Universitas Brawijaya's sports event — schedules, medal tally, real-time results. iOS in Swift, Android in Java.</p>
+            </div>
+            <div style="display:flex; gap:6px; flex-shrink:0;">
+              <img src="img/portfolio_ob_ios.png" alt="OB iOS" style="height:100px; width:auto; max-width:65px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0;">
+              <img src="img/portfolio_ob_android.png" alt="OB Android" style="height:100px; width:auto; max-width:65px; border-radius:10px; object-fit:contain; background:#f1f5f9; border:1px solid #e2e8f0;">
+            </div>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
 
+  </div>
+</section>
 
-    <section id="section_portfolio">
-        <div class="container text-center mb-5">
-            <h1 class="display-4">Portfolio</h1>
-            <p class="lead text-center">Some apps I was invovled.</p>
+<!-- ── Footer ── -->
+<footer id="contact">
+  <div class="container">
+    <div class="row align-items-start g-5">
+      <div class="col-lg-4">
+        <h5>Arifin Firdaus</h5>
+        <p class="mt-2" style="font-size:.9rem;">iOS Engineer. Open to new opportunities and collaborations.</p>
+        <p style="font-size:.85rem;">
+          <a href="mailto:arifinfrds.engineer@gmail.com" style="color:var(--accent); text-decoration:none;">
+            arifinfrds.engineer@gmail.com
+          </a>
+        </p>
+      </div>
+      <div class="col-lg-8">
+        <p class="section-eyebrow mb-3" style="color:#475569;">Find me on</p>
+        <div>
+          <a href="https://www.linkedin.com/in/arifinfrds" target="_blank" rel="noopener" class="footer-link">
+            LinkedIn
+          </a>
+          <a href="https://github.com/arifinfrds" target="_blank" rel="noopener" class="footer-link">
+            GitHub
+          </a>
+          <a href="https://medium.com/@arifinfrds" target="_blank" rel="noopener" class="footer-link">
+            Medium
+          </a>
+          <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="footer-link">
+            arifinfrds.com
+          </a>
+          <a href="https://www.youtube.com/@arifinfrds" target="_blank" rel="noopener" class="footer-link">
+            YouTube
+          </a>
+          <a href="https://www.youtube.com/channel/UC7CAmna4bcOtl1tCfsVHjCQ" target="_blank" rel="noopener" class="footer-link">
+            Learnmake.app YouTube
+          </a>
+          <a href="mailto:arifinfrds.engineer@gmail.com" class="footer-link">
+            Email
+          </a>
         </div>
+      </div>
+    </div>
+    <hr class="divider mt-5">
+    <p class="text-center mb-0 mt-4" style="font-size:.8rem; color:#334155;">
+      Portfolio by Arifin Firdaus
+    </p>
+  </div>
+</footer>
 
-        <div class="container text-left">
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Sketra</h4>
-                    </div>
-                    <div class="row">
-                        <p>Bring your screen to life with Sketra — a modern wallpaper app built with Flutter for both iOS and Android. 
-                        It offers a wide range of beautiful, high-quality wallpapers to choose from and download. 
-                        Discover cityscapes, nature, abstract, and more to personalize your device effortlessly.
-                        </p>
-                        Visit <a href="./my-apps/sketra/index.html"> Sketra product page </a> for more details.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./my-apps/sketra/android-sketra-portrait-1.png" width="320" alt="Sketra wallpaper app" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Nawawi 40 Hadith</h4>
-                    </div>
-                    <div class="row">
-                        <p>Deepen your faith of Islam with Nawawi 40 — the 40 Hadith of Imam Nawawi with Arabic, translations, and explanations, and recommended external references.
-                        </p>
-                        Visit <a href="./my-apps/Nawawi-40/index.html"> Nawawi 40 product page </a> for more details.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./my-apps/Nawawi-40/ios-nawawi_40-portrait-1.png" width="320" alt="Nawawi 40 app" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Hui Shuo (会说) - iOS</h4>
-                    </div>
-                    <div class="row">
-                        <p>Hui Shuo (会说) is your companion for learning Chinese phrases. The app makes it easy to search
-                            for phrases,
-                            explore various topics, and dive into their meanings and pronunciations.
-                            Built for Apple platforms, Hui Shuo offers an intuitive and user-friendly experience to help
-                            you master Chinese.
-                        </p>
-                        Visit <a href="./my-apps/hui_shuo/hui-shuo.html"> Hui Shuo product page </a> for more details.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./img/portfolio_hui-shuo.png" width="320" alt="Hui Shuo App" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>MEGA (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>MEGA is a cloud service company that provides secure cloud storage and file hosting services.
-                            During my time there, I was involved in the Media Content feature, revamping existing
-                            features, fixing bugs, and resolving performance issues like app hangs.
-                            My work contributed to improving the overall user experience and stability of the platform.
-                        </p>
-                        Visit <a href="https://mega.io/mobile"> MEGA mobile apps product page </a> for more detail.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./img/portfolio_mega.png" width="320" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Tokopedia (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Tokopedia is one of Indonesia's leading e-commerce platforms that connects millions of buyers
-                            and sellers. It provides a wide range of services, from shopping to digital payments, and
-                            has become a major player in the Southeast Asian market. Tokopedia’s iOS app allows users to
-                            browse and shop across various categories, track purchases, and receive updates in
-                            real-time.</p>
-                        Visit <a href="https://www.tokopedia.com">Tokopedia </a> for more details.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./img/portfolio_tokopedia.png" width="320" alt="Tokopedia Mobile iOS" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Prodia (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Prodia is a leading healthcare and diagnostic service provider in Indonesia, offering
-                            laboratory and diagnostic testing. During my time at <a href="https://icehousecorp.com">Ice
-                                House</a>, I was involved in the development of the Prodia iOS app, which enables users
-                            to easily book medical tests, view results, and manage appointments. The app is designed to
-                            provide users with a seamless, convenient experience for monitoring their health, bringing
-                            healthcare services to the palm of their hands. My contributions helped ensure the app's
-                            smooth functionality and user-centric design.</p>
-                        Visit <a href="https://www.prodia.co.id">Prodia </a> for more details.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./img/portfolio_prodia.png" width="320" alt="Prodia Mobile iOS" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Quran Firdaus (iOS, iPadOS & macOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Quran Firdaus is an app that helps people to read offline Quran. Read Quran with native iOS,
-                            iPadOS, macOS, and Android Flutter experience, works 100% offline, with dark mode.</p>
-                        Visit <a href="./my-apps/QuranFirdaus-landing-page/index.html"> Quran Firdaus page </a> for more
-                        detail.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="./my-apps/QuranFirdaus-landing-page/ipad-dark-master-detail.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Tabunganku (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Apikasi "Tabunganku", aplikasi yang memudahkan untuk meyimpan transaksi dan tabungan Anda
-                            dalam genggaman Anda!. Nikmati fitur untuk melihat nominal tabungan Anda, transaksi,
-                            menambah transas dan menghapus transaksi.</p>
-                        Visit <a href="./tabunganku.html"> Tabungaku page </a> for more detail.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/img_tabunganku_light.png" width="320" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Readdy - Reading Assistant (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Readdy is an app to helps people with dyslexia to have a better reading experience while
-                            reading.
-                            Visit <a href="https://www.behance.net/gallery/108476049/Readdy-Reading-Assistant-App?tracking_source=project_owner_other_projects"> Readdy page </a> for more detail.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/portfolio_readdy.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>HEMOCS Entertaiment Terminal App (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>An Application for entertaiment purpose using HEMOCS (Head Movement Control System) for the
-                            control input. This app is an enhancement from the previous version.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md">
-                            <img src="img/portfolio_hemocs_entertaiment_terminal_ios_1.png" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <img src="img/portfolio_hemocs_entertaiment_terminal_ios_2.png" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <img src="img/portfolio_hemocs_entertaiment_terminal_ios_3.png" alt="" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Come (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>An application for finding friend with same interest and buy some stuff to save more money!
-                            and
-                            friend with same interest actually.
-                            Visit <a href="https://comeapp.id"> comeapp.id </a> for more detail.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/portfolio_come.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Mang.id (Android)</h4>
-                    </div>
-                    <div class="row">
-                        <p>MANG.ID adalah aplikasi yang mewadahi pelaku UMKM untuk memasarkan produk. Di dalam aplikasi
-                            ini
-                            terdapat berbagai macam produk lokal yang dapat ditemukan. Tersedia berbagai fitur untuk
-                            memudahkan
-                            pembeli dan penjual berkomunikasi.
-                            Kunjungi <a href="https://play.google.com/store/apps/details?id=mang.id">Google Play
-                                Store</a>
-                            untuk
-                            lebih detail.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/portfolio_mang_id_android.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>UB TV (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Aplikasi UB TV adalah aplikasi yang menampilkan video milik Universitas Brawijaya dari
-                            YouTube
-                            maupun
-                            Live Streaming. Aplikasi ini dibuat oleh Tim Student Employee MGM. Saya disini sebagai
-                            salah
-                            satu
-                            developer untuk UB TV pada platform iOS.
-                            Aplikasi ini ditulis dalam bahasa Swift.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/portfolio_ubtv_ios_2.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <!-- MARK: - Row Item -->
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Olimpiade Brawijaya 2017 App (iOS)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Aplikasi Olimpiade Brawijaya 2017 App yang ditulis ulang untuk versi iOS. Saya disini
-                            sebagai
-                            programmer di Olimpiade Brawijaya 2017 App versi iOS. Aplikasi ini ditulis dengan bahasa
-                            pemrograman
-                            Swift.</p>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <img src="img/portfolio_ob_ios.png" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="row mb-4 text-justify">
-                <div class="col-md">
-                    <div class="row">
-                        <h4>Olimpiade Brawijaya 2017 App (Android)</h4>
-                    </div>
-                    <div class="row">
-                        <p>Olimpiade Brawijaya 2017 App Adalah aplikasi resmi untuk semua elemen dari Olimpiade
-                            Brawijaya
-                            2017
-                            baik Panitia, Atlet,
-                            Official, Supporter dan seluruh mahasiswa Universitas Brawijaya. Aplikasi ini memudahkan
-                            kamu
-                            untuk
-                            mengetahui
-                            jadwal pertandingan, perolehan medali, berita serta hasil pertandingan secara real time
-                            bahkan
-                            kamu
-                            akan
-                            selalu diberikan nofitikasi jika fakultas kesayanganmu sedang bermain dengan tampilan
-                            aplikasi
-                            yang
-                            menarik
-                            dan sesuai dengan tema Olimpiade Brawijaya 2017.</p>
-
-                        <p>Aplikasi ini di buat atas nama Raion Community. Saya disini sebagai salah satu programmer di
-                            aplikasi Olimpiade Brawijaya
-                            2017 App. Aplikasi ini ditulis dengan bahasa pemrograman Java.</p>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <img src="img/portfolio_ob_android.png" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MARK: - Footer -->
-    <section id="section_footer">
-        <div class="container text-center mb-5 mt-2">
-            <h3>Arifin Firdaus - iOS Engineer</h3>
-            <p class="lead">Contact</p>
-            <p>You can find me on :</p>
-            <a href="https://www.linkedin.com/in/arifinfrds" class="btn btn-info">LinkedIn</a>
-            <a href="https://arifinfrds.com" class="btn btn-secondary">My Website</a>
-            <a href="https://github.com/arifinfrds" class="btn btn-dark">GitHub</a>
-            <a href="https://medium.com/@arifinfrds" class="btn btn-success">Medium</a>
-            <a href="mailto: arifinfrds.engineer@gmail.com" class="btn btn-info">Email</a>
-            <a href="https://www.youtube.com/channel/UC7CAmna4bcOtl1tCfsVHjCQ" class="btn btn-danger">Learnmake.app
-                YouTube</a>
-            <a href="https://www.youtube.com/@arifinfrds" class="btn btn-danger">My
-                YouTube</a>
-        </div>
-    </section>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>

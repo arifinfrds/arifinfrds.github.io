@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEMOCS — Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --card-color: #5B5EA6;
+      --dark:  #0f172a;
+      --dark2: #1e293b;
+      --accent: #5B5EA6;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1e293b; background: #fff; }
+
+    /* Navbar */
+    .navbar { background: var(--dark); padding: 14px 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1e293b; }
+    .navbar-brand { font-weight: 800; font-size: 1rem; color: #fff !important; letter-spacing: -.3px; }
+    .nav-link-custom { color: #94a3b8; font-size: .85rem; font-weight: 500; text-decoration: none; margin-left: 20px; transition: color .15s; }
+    .nav-link-custom:hover { color: #fff; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1a1040 50%, #0f172a 100%);
+      color: #fff;
+      padding: 80px 0 64px;
+    }
+    .hero h1 { font-weight: 800; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.1; letter-spacing: -.5px; }
+    .hero .role { font-size: 1.05rem; font-weight: 600; color: #a78bfa; margin-bottom: 12px; }
+    .hero p { color: #94a3b8; max-width: 600px; font-size: .95rem; line-height: 1.7; }
+
+    .badge-platform {
+      font-size: .65rem; font-weight: 700; letter-spacing: .6px;
+      text-transform: uppercase; padding: 3px 8px; border-radius: 50px; margin-right: 4px;
+    }
+    .badge-academic {
+      display: inline-block;
+      background: rgba(167,139,250,.18); border: 1px solid rgba(167,139,250,.4);
+      border-radius: 6px; padding: 4px 12px; font-size: .78rem;
+      font-weight: 700; color: #c4b5fd; letter-spacing: .3px; margin-right: 6px;
+    }
+
+    /* Sections */
+    .section-eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .content-section { padding: 64px 0; }
+    .content-section:nth-child(even) { background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+
+    /* Tech cards */
+    .tech-card {
+      border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 22px;
+      height: 100%; position: relative; overflow: hidden;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .tech-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--card-color); border-radius: 14px 14px 0 0;
+    }
+    .tech-card.highlight { border-color: var(--card-color); background: #faf8ff; }
+    .tech-card.highlight::before { background: var(--card-color); }
+    .tech-card h6 { font-weight: 800; font-size: .88rem; margin-bottom: 6px; }
+    .tech-card p { font-size: .82rem; color: #64748b; margin: 0; line-height: 1.55; }
+    .tech-pill {
+      display: inline-block; background: var(--card-color); color: #fff;
+      border-radius: 6px; padding: 3px 10px; font-size: .72rem; font-weight: 700; margin: 2px;
+    }
+    .tech-pill.secondary { background: #f1f5f9; color: #475569; }
+
+    /* Architecture */
+    .arch-layer {
+      border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 14px 20px;
+      margin-bottom: 8px; display: flex; align-items: center; gap: 14px;
+    }
+    .arch-layer .layer-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--card-color); }
+    .arch-layer h6 { font-weight: 700; font-size: .85rem; margin: 0 0 2px; }
+    .arch-layer p { font-size: .79rem; color: #64748b; margin: 0; }
+    .arch-arrow { text-align: center; color: #94a3b8; font-size: .75rem; margin: -2px 0; }
+
+    /* Screenshot */
+    .screenshot-frame { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,.12); max-width: 280px; margin: 0 auto; }
+    .screenshot-frame img { width: 100%; display: block; }
+
+    /* Journal callout */
+    .journal-callout {
+      border: 1.5px solid rgba(91,94,166,.3);
+      background: rgba(91,94,166,.06);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .journal-callout h6 { font-weight: 800; color: #5B5EA6; margin-bottom: 6px; }
+    .journal-callout p { font-size: .85rem; color: #475569; margin: 0; }
+
+    /* Footer */
+    footer { background: var(--dark); color: #94a3b8; padding: 40px 0 28px; }
+    footer p { font-size: .82rem; text-align: center; margin: 0; }
+    .back-link { color: #a78bfa; text-decoration: none; font-weight: 600; font-size: .85rem; }
+    .back-link:hover { color: #c4b5fd; }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar -->
+<nav class="navbar d-flex align-items-center">
+  <a class="navbar-brand" href="../../index.html">← Arifin Firdaus</a>
+  <div class="ms-auto d-flex">
+    <a href="#tech" class="nav-link-custom">Tech Stack</a>
+    <a href="#research" class="nav-link-custom">Research</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="mb-3">
+      <span class="badge-academic">Academic Project</span>
+      <span class="badge-platform badge" style="background:#5B5EA6;">iOS</span>
+    </div>
+    <div class="role">iOS Developer · Universitas Brawijaya</div>
+    <h1>HEMOCS<br>Entertainment Terminal</h1>
+    <p class="mt-3">
+      Head Movement Control System — an iOS app that lets users navigate and control an entertainment interface purely through head gestures, captured via the device's front camera. Built as an academic research project at Universitas Brawijaya.
+    </p>
+    <div class="mt-4">
+      <a href="https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/6636" target="_blank" rel="noopener"
+         style="display:inline-block; padding:10px 22px; border-radius:8px; font-size:.88rem; font-weight:600; text-decoration:none; background:#5B5EA6; color:#fff; margin-right:8px;">
+        Read Research Paper ↗
+      </a>
+      <a href="../../index.html"
+         style="display:inline-block; padding:10px 22px; border-radius:8px; font-size:.88rem; font-weight:600; text-decoration:none; border:1.5px solid #334155; color:#94a3b8;">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="content-section" id="tech">
+  <div class="container">
+    <p class="section-eyebrow">Engineering</p>
+    <h2 class="fw-bold mb-2">Tech Stack</h2>
+    <p class="text-muted mb-5">Core technologies and frameworks used to build HEMOCS.</p>
+
+    <div class="row g-4">
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="tech-card">
+          <h6>Platform</h6>
+          <p>iOS application written in Swift. Xcode as the development environment.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Swift</span>
+            <span class="tech-pill secondary">Xcode</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="tech-card highlight">
+          <h6>Head Gesture Detection ★</h6>
+          <p>Uses the device front camera and Vision framework to detect and track head pose in real time — driving navigation without touch input.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Vision</span>
+            <span class="tech-pill">AVFoundation</span>
+            <span class="tech-pill secondary">ARKit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="tech-card">
+          <h6>UI Layer</h6>
+          <p>UIKit-based interface for the entertainment terminal display — media tiles, navigation controls, and gesture feedback overlays.</p>
+          <div class="mt-3">
+            <span class="tech-pill">UIKit</span>
+            <span class="tech-pill secondary">Storyboard</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="tech-card">
+          <h6>Architecture</h6>
+          <p>MVC pattern used for this academic prototype — keeping gesture processing logic decoupled from the view layer.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4">
+        <div class="tech-card">
+          <h6>Media Playback</h6>
+          <p>AVKit used for in-app video content playback within the entertainment terminal interface.</p>
+          <div class="mt-3">
+            <span class="tech-pill">AVKit</span>
+            <span class="tech-pill secondary">AVPlayer</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Screenshot -->
+<section class="content-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="screenshot-frame">
+          <img src="../../img/portfolio_hemocs_entertaiment_terminal_ios_1.png" alt="HEMOCS screenshot">
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="section-eyebrow">Interface</p>
+        <h2 class="fw-bold mb-3">Hands-Free Navigation</h2>
+        <p class="text-muted" style="line-height:1.7;">
+          The app's entertainment terminal interface is designed to be operated entirely through head movement. The front camera continuously tracks the user's head position to translate tilts and nods into navigation commands — scrolling, selecting, and triggering media playback without touching the screen.
+        </p>
+        <p class="text-muted" style="line-height:1.7;">
+          This makes the app especially useful in accessibility scenarios where conventional touch interaction is limited or not possible.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Research -->
+<section class="content-section" id="research">
+  <div class="container">
+    <p class="section-eyebrow">Publication</p>
+    <h2 class="fw-bold mb-4">Research Paper</h2>
+
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="journal-callout">
+          <h6>J-PTIIK — Jurnal Pengembangan Teknologi Informasi dan Ilmu Komputer</h6>
+          <p class="mt-2">
+            This project was published as an academic paper in the Journal of Information Technology and Computer Science (J-PTIIK) at Universitas Brawijaya. The paper covers the system design, head pose estimation approach, and evaluation results.
+          </p>
+          <a href="https://j-ptiik.ub.ac.id/index.php/j-ptiik/article/view/6636" target="_blank" rel="noopener"
+             class="mt-3 d-inline-block" style="color:#5B5EA6; font-weight:700; font-size:.88rem; text-decoration:none;">
+            View Article on J-PTIIK ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>Portfolio page by Arifin Firdaus</p>
+  </div>
+</footer>
+
+</body>
+</html>

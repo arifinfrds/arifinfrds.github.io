@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEGA – iOS App | Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --mg-red:    #D9001E;
+      --mg-dark:   #0a0a0a;
+      --mg-card:   #f5f6f7;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; }
+
+    .navbar { background: var(--mg-dark); }
+
+    .hero {
+      background: linear-gradient(140deg, #0a0a0a 0%, #1a0008 60%, #0a0a0a 100%);
+      color: #fff;
+      padding: 72px 0 56px;
+    }
+    .hero h1 { font-weight: 800; font-size: 2.6rem; }
+    .hero p.lead { color: #aaa; max-width: 560px; }
+
+    .app-icon-mega {
+      width: 96px; height: 96px; border-radius: 22px;
+      background: var(--mg-red);
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; font-size: 1.1rem; letter-spacing: -1px;
+      box-shadow: 0 6px 28px rgba(217,0,30,.45);
+    }
+
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--mg-red);
+    }
+
+    .tech-pill {
+      display: inline-block; background: #fff;
+      border: 1.5px solid #e0e0e0; border-radius: 8px;
+      padding: 6px 14px; font-size: .82rem; font-weight: 600; color: #333;
+      margin: 4px 3px; transition: border-color .15s, color .15s;
+    }
+    .tech-pill:hover { border-color: var(--mg-red); color: var(--mg-red); }
+    .tech-pill.highlight { background: #fdecea; border-color: var(--mg-red); color: var(--mg-red); }
+
+    .resp-card {
+      background: var(--mg-card); border-radius: 14px;
+      padding: 24px; height: 100%; border: none;
+    }
+    .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+
+    .arch-layer {
+      border-left: 3px solid var(--mg-red); padding: 12px 18px;
+      margin-bottom: 12px; background: #fff; border-radius: 0 10px 10px 0;
+    }
+    .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
+    .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    footer { background: var(--mg-dark); color: #888; padding: 40px 0; }
+    footer a { color: #ccc; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
+  <span class="navbar-brand fw-bold">MEGA</span>
+  <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="mb-3">
+          <span class="badge bg-danger me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px;">iOS</span>
+          <span class="badge bg-secondary" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px;">Swift</span>
+        </div>
+        <h1>MEGA</h1>
+        <p class="lead mt-2">
+          MEGA is a secure cloud storage and file hosting platform trusted by millions.
+          I was working at <strong style="color:#fff;">MEGA The Privacy Company</strong> as an iOS Engineer,
+          contributing to the Media Content feature, revamping existing features, and resolving
+          performance issues including app hangs.
+        </p>
+        <div class="mt-4">
+          <a href="https://mega.io/mobile" target="_blank" rel="noopener"
+             class="btn btn-outline-light btn-sm">mega.io ↗</a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <div class="app-icon-mega mx-auto">MEGA</div>
+        <img src="../../img/portfolio_mega.png" alt="MEGA iOS App" class="img-fluid mt-4 rounded-3"
+             style="max-width:260px; box-shadow:0 8px 32px rgba(0,0,0,.5);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering</p>
+    <h2 class="fw-bold mb-1">Tech Stack</h2>
+    <p class="text-muted mb-4">Technologies and frameworks used while working on the MEGA iOS app.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🎨</div>
+          <h6>UI &amp; Presentation</h6>
+          <p>Built with both <strong>SwiftUI</strong> and <strong>UIKit</strong> — SwiftUI for modern declarative screens, UIKit for legacy components and complex custom interactions that require fine-grained control.</p>
+          <div class="mt-3">
+            <span class="tech-pill">SwiftUI</span>
+            <span class="tech-pill">UIKit</span>
+            <span class="tech-pill">Xcode</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🏛️</div>
+          <h6>Architecture</h6>
+          <p>Applied <strong>MVVM</strong> with <strong>Clean Architecture</strong> layering to maintain separation of concerns across Presentation, Domain, and Data — critical for a codebase of MEGA's scale.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVVM</span>
+            <span class="tech-pill">Clean Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">📦</div>
+          <h6>Dependency Management</h6>
+          <p>Managed third-party and internal library dependencies with <strong>Swift Package Manager (SPM)</strong> for a clean, reproducible build environment.</p>
+          <div class="mt-3">
+            <span class="tech-pill">SPM</span>
+            <span class="tech-pill">Swift Package Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">💾</div>
+          <h6>Local Persistence</h6>
+          <p>Used <strong>CoreData</strong> for structured local storage — caching user data, offline-accessible content, and persistent app state across sessions.</p>
+          <div class="mt-3">
+            <span class="tech-pill">CoreData</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">▶️</div>
+          <h6>Media — AVKit &amp; AVFoundation</h6>
+          <p>Contributed to the <strong>Media Content feature</strong> using <strong>AVKit</strong>, <strong>AVPlayer</strong>, and <strong>AVFoundation</strong> — enabling in-app video/audio playback directly from MEGA's secure cloud storage.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">AVKit</span>
+            <span class="tech-pill highlight">AVPlayer</span>
+            <span class="tech-pill highlight">AVFoundation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">⚡</div>
+          <h6>Concurrency &amp; Reactivity</h6>
+          <p>Adopted <strong>async/await</strong> (Swift Concurrency) for structured async operations and network calls. Used <strong>Combine</strong> for reactive state pipelines and data binding between layers.</p>
+          <div class="mt-3">
+            <span class="tech-pill">async / await</span>
+            <span class="tech-pill">Swift Concurrency</span>
+            <span class="tech-pill">Combine</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🔔</div>
+          <h6>Push Notifications</h6>
+          <p>Integrated <strong>Push Notifications</strong> via APNs to deliver real-time file sharing alerts, collaboration updates, and account security notices.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Push Notifications</span>
+            <span class="tech-pill">APNs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🧪</div>
+          <h6>Testing — TDD &amp; Unit Tests</h6>
+          <p>Practised <strong>Test-Driven Development (TDD)</strong> throughout. Unit tests written with <strong>XCTest</strong> covering ViewModels, Use Cases, and repository logic.</p>
+          <div class="mt-3">
+            <span class="tech-pill">XCTest</span>
+            <span class="tech-pill">TDD</span>
+            <span class="tech-pill">Unit Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture + Role -->
+<section class="py-5" style="background:#f5f6f7;">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="section-eyebrow mb-1">Structure</p>
+        <h2 class="fw-bold mb-3">Clean Architecture Layers</h2>
+        <p class="text-muted">Strict layer separation ensures testability and long-term scalability across MEGA's large iOS codebase.</p>
+        <div class="mt-4">
+          <div class="arch-layer">
+            <h6>Presentation Layer</h6>
+            <p>SwiftUI &amp; UIKit Views, ViewModels. State-driven, no business logic.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Domain Layer</h6>
+            <p>Use Cases &amp; Entities. Pure Swift — zero framework dependencies. Fully XCTest-covered.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Data Layer</h6>
+            <p>Repositories, network services, CoreData storage. Maps DTOs to domain models.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <p class="section-eyebrow mb-1">Complete Stack</p>
+        <h2 class="fw-bold mb-3">All Technologies</h2>
+        <div>
+          <span class="tech-pill">SwiftUI</span>
+          <span class="tech-pill">UIKit</span>
+          <span class="tech-pill">Xcode</span>
+          <span class="tech-pill">MVVM</span>
+          <span class="tech-pill">Clean Architecture</span>
+          <span class="tech-pill">SPM</span>
+          <span class="tech-pill">CoreData</span>
+          <span class="tech-pill highlight">AVKit</span>
+          <span class="tech-pill highlight">AVPlayer</span>
+          <span class="tech-pill highlight">AVFoundation</span>
+          <span class="tech-pill">async / await</span>
+          <span class="tech-pill">Swift Concurrency</span>
+          <span class="tech-pill">Combine</span>
+          <span class="tech-pill">Push Notifications</span>
+          <span class="tech-pill">XCTest</span>
+          <span class="tech-pill">TDD</span>
+          <span class="tech-pill">Unit Testing</span>
+        </div>
+
+        <div class="mt-4 p-4 rounded-3 bg-white border">
+          <p class="section-eyebrow mb-2">My Role</p>
+          <p class="mb-0 text-muted" style="font-size:.92rem;">
+            I was working at <strong>MEGA The Privacy Company</strong> as an iOS Engineer.
+            Key contributions included the <strong>Media Content feature</strong> (AVKit/AVPlayer/AVFoundation),
+            revamping existing screens in SwiftUI and UIKit, resolving performance issues and app hangs,
+            and improving the overall stability of the iOS platform. Followed TDD with XCTest throughout,
+            with Clean Architecture enforcing clean separation across all layers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="https://mega.io/mobile" target="_blank" rel="noopener" class="me-3">mega.io ↗</a>
+      <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
+      <a href="../../index.html">← Back to Portfolio</a>
+    </div>
+    <small style="color:#555;">Portfolio page by Arifin Firdaus.</small>
+  </div>
+</footer>
+</body>
+</html>

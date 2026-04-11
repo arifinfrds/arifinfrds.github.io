@@ -1,215 +1,274 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type='text/css'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketra – Flutter App | Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --sk-purple: #7C3AED;
+      --sk-dark:   #0f0820;
+      --sk-card:   #f7f5ff;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; }
+
+    .navbar { background: var(--sk-dark); }
+
+    .hero {
+      background: linear-gradient(140deg, #0f0820 0%, #2d1b69 60%, #0f0820 100%);
+      color: #fff;
+      padding: 72px 0 56px;
+    }
+    .hero h1 { font-weight: 800; font-size: 2.6rem; }
+    .hero p.lead { color: #c4b5fd; max-width: 560px; }
+
+    .app-icon-sk {
+      width: 96px; height: 96px; border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(124,58,237,.5);
+    }
+
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--sk-purple);
+    }
+
+    .tech-pill {
+      display: inline-block; background: #fff;
+      border: 1.5px solid #e0e0e0; border-radius: 8px;
+      padding: 6px 14px; font-size: .82rem; font-weight: 600; color: #333;
+      margin: 4px 3px; transition: border-color .15s, color .15s;
+    }
+    .tech-pill:hover { border-color: var(--sk-purple); color: var(--sk-purple); }
+    .tech-pill.highlight { background: #f3f0ff; border-color: var(--sk-purple); color: var(--sk-purple); }
+
+    .resp-card {
+      background: var(--sk-card); border-radius: 14px;
+      padding: 24px; height: 100%; border: none;
+    }
+    .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+
+    .arch-layer {
+      border-left: 3px solid var(--sk-purple); padding: 12px 18px;
+      margin-bottom: 12px; background: #fff; border-radius: 0 10px 10px 0;
+    }
+    .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
+    .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    footer { background: var(--sk-dark); color: #888; padding: 40px 0; }
+    footer a { color: #c4b5fd; }
+    footer a:hover { color: #fff; }
+
+    .screens-row {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
+    .screens-row img {
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+  </style>
 </head>
-
 <body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+<!-- Navbar -->
+<nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
+  <span class="navbar-brand fw-bold">Sketra</span>
+  <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
+</nav>
 
-    <!-- As a heading -->
-    <nav class="navbar bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Sketra</span>
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="mb-3">
+          <span class="badge me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#06B6D4;">iOS</span>
+          <span class="badge me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#3DDC84; color:#000;">Android</span>
+          <span class="badge" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:var(--sk-purple);">Flutter</span>
         </div>
-    </nav>
-
-    <!-- MARK: - Hero -->
-    <div class="text-bg-dark p-3">
-
-        <div class="container text-center mb-5 mt-2">
-            <br>
-            <img src="ic_sketra_app-rounded-corner-(for-portfolio-website).png" alt="" width="150" height="150">
-            <br>
+        <h1>Sketra</h1>
+        <p class="lead mt-2">
+          A modern wallpaper app built with <strong style="color:#fff;">Flutter</strong> for both iOS and Android.
+          Offers a curated collection of high-quality wallpapers across categories —
+          cityscapes, nature, abstract, outer space, and more.
+        </p>
+        <div class="mt-4 d-flex gap-2 flex-wrap">
+          <a href="app-store-badge.png" class="btn btn-outline-light btn-sm" aria-label="Download on App Store">
+            <img src="app-store-badge.png" alt="Download on the App Store" height="28" style="vertical-align:middle;">
+          </a>
+          <a href="google-play-badge.png" class="btn btn-outline-light btn-sm" aria-label="Get on Google Play">
+            <img src="google-play-badge.png" alt="Get it on Google Play" height="28" style="vertical-align:middle;">
+          </a>
         </div>
-
-        <div class="container text-center">
-            <div class="row">
-                <div class="col">
-                    <h1>Sketra Wallpapers</h1>
-                    <br>
-                    <h5>Bring your screen to life with Sketra — a curated collection of high-quality wallpapers across nature, cities, outer space, and more. Choose, preview, and download your favorites effortlessly.</h5>
-                </div>
-            </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <img src="ic_sketra_app-rounded-corner-(for-portfolio-website).png" alt="Sketra App Icon"
+             class="app-icon-sk" style="width:96px; height:96px; object-fit:cover;">
+        <div class="screens-row mt-4">
+          <img src="ios-sketra-portrait-1.png" alt="Sketra Screen 1" height="220">
+          <img src="ios-sketra-portrait-2.png" alt="Sketra Screen 2" height="220">
         </div>
-        <br><br>
+      </div>
     </div>
+  </div>
+</section>
 
-    <br><br><br>
+<!-- Tech Stack -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering</p>
+    <h2 class="fw-bold mb-1">Tech Stack</h2>
+    <p class="text-muted mb-4">Technologies and packages used to build Sketra across iOS and Android.</p>
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <h1>Anywhere, Anytime, on Your iPhone.</h1>
-                <br>
-                <h5>Discover and set beautiful wallpapers directly from your iPhone, updated with fresh designs regularly.</h5>
-                <br>
-                <div class="container center">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="app-store-badge.png" class="rounded float-start" alt="Download on the App Store" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="google-play-badge.png" class="rounded float-start" alt="Get it on Google Play" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <img src="ios-sketra-portrait-1.png" alt="" width="275" height="575">
-            </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">💙</div>
+          <h6>Framework — Flutter</h6>
+          <p><strong>Flutter</strong> powers both the iOS and Android apps from a single codebase. Built with <strong>Material 3</strong> design principles — offering a modern, platform-adaptive UI across both platforms.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">Flutter</span>
+            <span class="tech-pill highlight">Material 3</span>
+            <span class="tech-pill">Dart</span>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🏛️</div>
+          <h6>Architecture — MVVM</h6>
+          <p>Structured with <strong>MVVM</strong>, separating Views from ViewModels and business logic — keeping the UI layer declarative and the state management testable.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVVM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">💾</div>
+          <h6>Local Storage — Hive</h6>
+          <p><strong>Hive</strong> is used as a lightweight, high-performance NoSQL local database for caching wallpaper data and storing user preferences — no native code required.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">Hive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🌐</div>
+          <h6>Networking — dio</h6>
+          <p><strong>dio</strong> handles all HTTP networking — fetching wallpaper data, paginated image lists, and categories from the backend API with interceptors, error handling, and timeout control.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">dio</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🖼️</div>
+          <h6>Image — Save &amp; Wallpaper</h6>
+          <p><strong>image_gallery_saver_plus</strong> enables saving wallpapers to the device gallery. <strong>wallpaper_manager_flutter</strong> allows setting downloaded images as the device wallpaper directly from the app.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">image_gallery_saver_plus</span>
+            <span class="tech-pill highlight">wallpaper_manager_flutter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">📱</div>
+          <h6>Cross-Platform</h6>
+          <p>A single Flutter codebase targets both iOS and Android — delivering a consistent wallpaper browsing, download, and set-as-wallpaper experience across platforms.</p>
+          <div class="mt-3">
+            <span class="tech-pill">iOS</span>
+            <span class="tech-pill">Android</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <br><br><br>
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <img src="ios-sketra-portrait-2.png" alt="" width="275" height="575">
-            </div>
-            <div class="col">
-                <h1>Wide Range of Categories</h1>
-                <br>
-                <h5>From nature’s beauty to futuristic cities and cosmic wonders, Sketra brings wallpapers that suit every mood and style.</h5>
-                <br>
-                <div class="container center">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="app-store-badge.png" class="rounded float-start" alt="Download on the App Store" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="google-play-badge.png" class="rounded float-start" alt="Get it on Google Play" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-                </div>
-            </div>
+<!-- Architecture + Role -->
+<section class="py-5" style="background:#f7f5ff;">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="section-eyebrow mb-1">Structure</p>
+        <h2 class="fw-bold mb-3">MVVM Layers</h2>
+        <p class="text-muted">MVVM keeps each layer focused — Views react to state, ViewModels coordinate business rules, and the data layer handles persistence and networking.</p>
+        <div class="mt-4">
+          <div class="arch-layer">
+            <h6>View Layer</h6>
+            <p>Flutter widgets. Declarative, reactive to ViewModel state. No business logic.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>ViewModel Layer</h6>
+            <p>State management and business logic. Coordinates between View and Data layers.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Data Layer</h6>
+            <p>dio for API calls, Hive for local caching. Supplies clean data to ViewModels.</p>
+          </div>
         </div>
+      </div>
+
+      <div class="col-lg-7">
+        <p class="section-eyebrow mb-1">Complete Stack</p>
+        <h2 class="fw-bold mb-3">All Technologies</h2>
+        <div>
+          <span class="tech-pill highlight">Flutter</span>
+          <span class="tech-pill">Dart</span>
+          <span class="tech-pill">MVVM</span>
+          <span class="tech-pill highlight">Hive</span>
+          <span class="tech-pill highlight">dio</span>
+          <span class="tech-pill highlight">image_gallery_saver_plus</span>
+          <span class="tech-pill highlight">wallpaper_manager_flutter</span>
+          <span class="tech-pill highlight">Material 3</span>
+          <span class="tech-pill">iOS</span>
+          <span class="tech-pill">Android</span>
+        </div>
+
+        <div class="mt-4 p-4 rounded-3 bg-white border">
+          <p class="section-eyebrow mb-2">My Role</p>
+          <p class="mb-0 text-muted" style="font-size:.92rem;">
+            Built <strong>Sketra</strong> as an independent project — designed and developed
+            the full app from scratch using Flutter and Material 3. Key work included
+            implementing the <strong>MVVM</strong> architecture, integrating <strong>dio</strong>
+            for API-backed wallpaper fetching, using <strong>Hive</strong> for offline caching,
+            and wiring <strong>image_gallery_saver_plus</strong> and <strong>wallpaper_manager_flutter</strong>
+            for the download and wallpaper-setting features.
+          </p>
+        </div>
+
+        <div class="mt-3">
+          <div class="screens-row">
+            <img src="android-sketra-portrait-1.png" alt="Sketra Android Screen" height="180">
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <br><br><br>
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <h1>Android App Available soon!</h1>
-                <br>
-                <h5>Enjoy the same seamless wallpaper experience on your Android device.</h5>
-                <br>
-                <div class="container center">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="app-store-badge.png" class="rounded float-start" alt="Download on the App Store" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="google-play-badge.png" class="rounded float-start" alt="Get it on Google Play" width="138"
-                                    height="50">
-                            </a>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <img src="android-sketra-portrait-1.png" alt="" width="275" height="575">
-            </div>
-        </div>
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
+      <a href="../../index.html">← Back to Portfolio</a>
     </div>
-
-    <br><br><br>
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <img src="ic_technology-flutter_logo.png" alt="Flutter Logo" width="400">
-            </div>
-            <div class="col">
-                <h1>Built with Flutter for iOS and Android</h1>
-                <br>
-                <h5>Sketra is developed using Flutter with Material 3 design, ensuring smooth performance and a modern experience across both platforms.</h5>
-                <br>
-                <h6>Key technologies and packages used:</h6>
-                <ul class="list-unstyled">
-                    <li>• provider: ^6.0.5</li>
-                    <li>• image_gallery_saver_plus: ^4.0.1</li>
-                    <li>• dio: ^5.9.0</li>
-                    <li>• uuid: ^4.4.2</li>
-                    <li>• fluttertoast: ^8.2.12</li>
-                    <li>• wallpaper_manager_flutter: 1.0.1</li>
-                    <li>• flutter_launcher_icons: "^0.14.4"</li>
-                </ul>
-                <br>
-                <div class="container center">
-                    <div class="row">
-                        <div class="col"></div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="app-store-badge.png" class="rounded float-start" alt="Download on the App Store" width="138" height="50">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="#">
-                                <img src="google-play-badge.png" class="rounded float-start" alt="Get it on Google Play" width="138" height="50">
-                            </a>
-                        </div>
-                        <div class="col"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br><br><br>
-
-    <!-- MARK: - Footer -->
-    <div class="text-bg-dark p-3">
-        <div class="container text-center mb-5 mt-2">
-            <br><br>
-            <img src="ic_sketra_app-rounded-corner-(for-portfolio-website).png" alt="" width="150" height="150">
-            <br><br>
-            <h3>Sketra</h3>
-            <p class="lead">Contact</p>
-            <a href="mailto: arifinfrds.engineer@gmail.com" class="btn btn-success">arifinfrds.engineer@gmail.com</a>
-            <a href="https://www.instagram.com/arifinfrds" class="btn btn-danger" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
-
-        <div class="container text-center mb-5 mt-2">
-            <p>© 2025 Sketra</p>
-        </div>
-    </div>
-
+    <small style="color:#555;">Portfolio page by Arifin Firdaus.</small>
+  </div>
+</footer>
 </body>
-
 </html>

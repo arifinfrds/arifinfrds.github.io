@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tokopedia – iOS App | Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --tp-green:  #00AA5B;
+      --tp-dark:   #00291A;
+      --tp-card:   #f4faf7;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1a1a1a; }
+
+    .navbar { background: var(--tp-dark); }
+
+    .hero {
+      background: linear-gradient(140deg, #00291A 0%, #003d25 60%, #00291A 100%);
+      color: #fff;
+      padding: 72px 0 56px;
+    }
+    .hero h1 { font-weight: 800; font-size: 2.6rem; }
+    .hero p.lead { color: #a8e6c7; max-width: 560px; }
+
+    .app-icon-tp {
+      width: 96px; height: 96px; border-radius: 22px;
+      background: var(--tp-green);
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; font-size: .75rem; letter-spacing: -.5px;
+      box-shadow: 0 6px 28px rgba(0,170,91,.45);
+      text-align: center; padding: 8px;
+    }
+
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--tp-green);
+    }
+
+    .tech-pill {
+      display: inline-block; background: #fff;
+      border: 1.5px solid #e0e0e0; border-radius: 8px;
+      padding: 6px 14px; font-size: .82rem; font-weight: 600; color: #333;
+      margin: 4px 3px; transition: border-color .15s, color .15s;
+    }
+    .tech-pill:hover { border-color: var(--tp-green); color: var(--tp-green); }
+    .tech-pill.highlight { background: #e8faf2; border-color: var(--tp-green); color: var(--tp-green); }
+
+    .resp-card {
+      background: var(--tp-card); border-radius: 14px;
+      padding: 24px; height: 100%; border: none;
+    }
+    .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+
+    .arch-layer {
+      border-left: 3px solid var(--tp-green); padding: 12px 18px;
+      margin-bottom: 12px; background: #fff; border-radius: 0 10px 10px 0;
+    }
+    .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
+    .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    footer { background: var(--tp-dark); color: #888; padding: 40px 0; }
+    footer a { color: #a8e6c7; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
+  <span class="navbar-brand fw-bold">Tokopedia</span>
+  <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="mb-3">
+          <span class="badge bg-success me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:var(--tp-green) !important;">iOS</span>
+          <span class="badge bg-secondary" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px;">Swift</span>
+        </div>
+        <h1>Tokopedia</h1>
+        <p class="lead mt-2">
+          One of Indonesia's leading e-commerce platforms connecting millions of buyers and sellers.
+          I was working at <strong style="color:#fff;">Tokopedia</strong> as an iOS Engineer,
+          contributing to features that serve millions of users across the platform.
+        </p>
+        <div class="mt-4">
+          <a href="https://www.tokopedia.com" target="_blank" rel="noopener"
+             class="btn btn-outline-light btn-sm">tokopedia.com ↗</a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <div class="app-icon-tp mx-auto">Tokopedia</div>
+        <img src="../../img/portfolio_tokopedia.png" alt="Tokopedia iOS App" class="img-fluid mt-4 rounded-3"
+             style="max-width:260px; box-shadow:0 8px 32px rgba(0,0,0,.4);">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering</p>
+    <h2 class="fw-bold mb-1">Tech Stack</h2>
+    <p class="text-muted mb-4">Technologies and frameworks used while working on the Tokopedia iOS app.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🎨</div>
+          <h6>UI — Texture (AsyncDisplayKit)</h6>
+          <p>Built UI with <strong>Texture</strong> (formerly AsyncDisplayKit), enabling highly performant, asynchronous layout and rendering — essential for Tokopedia's complex, data-dense feed and product listing screens.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">Texture</span>
+            <span class="tech-pill highlight">AsyncDisplayKit</span>
+            <span class="tech-pill">Swift</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🏛️</div>
+          <h6>Architecture</h6>
+          <p>Applied <strong>MVVM</strong> with <strong>Clean Architecture</strong> for clear separation between UI, business logic, and data — enabling independent testing and scalability across Tokopedia's feature-rich codebase.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVVM</span>
+            <span class="tech-pill">Clean Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🌐</div>
+          <h6>Networking — Moya &amp; GraphQL</h6>
+          <p>Used <strong>Moya</strong> for REST-based API calls with a type-safe endpoint layer. Adopted <strong>GraphQL</strong> for flexible, efficient data fetching — reducing over-fetching on complex product and feed queries.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Moya</span>
+            <span class="tech-pill highlight">GraphQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🔁</div>
+          <h6>Reactive — RxSwift</h6>
+          <p><strong>RxSwift</strong> was the primary reactive framework for data binding, event streams, and ViewModel state management — coordinating complex async flows across features like search, cart, and checkout.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">RxSwift</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="resp-card">
+          <div class="icon">🧪</div>
+          <h6>Testing — TDD &amp; Unit Tests</h6>
+          <p>Followed <strong>Test-Driven Development (TDD)</strong> as the standard engineering practice. Unit tests covered ViewModels, Use Cases, and data-layer logic — ensuring correctness and preventing regressions in a high-traffic production app.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Unit Testing</span>
+            <span class="tech-pill">TDD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture + Role -->
+<section class="py-5" style="background:#f4faf7;">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="section-eyebrow mb-1">Structure</p>
+        <h2 class="fw-bold mb-3">Clean Architecture Layers</h2>
+        <p class="text-muted">Clean layer separation allows Tokopedia's large engineering team to work independently and ship features safely at scale.</p>
+        <div class="mt-4">
+          <div class="arch-layer">
+            <h6>Presentation Layer</h6>
+            <p>Texture (ASDisplayNode) Views &amp; ViewModels. RxSwift-driven state, no business logic.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Domain Layer</h6>
+            <p>Use Cases &amp; Entities. Pure Swift — no framework dependencies. Fully unit-testable.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Data Layer</h6>
+            <p>Repositories, Moya REST + GraphQL services. Maps response DTOs to domain models.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <p class="section-eyebrow mb-1">Complete Stack</p>
+        <h2 class="fw-bold mb-3">All Technologies</h2>
+        <div>
+          <span class="tech-pill">Swift</span>
+          <span class="tech-pill highlight">Texture</span>
+          <span class="tech-pill highlight">AsyncDisplayKit</span>
+          <span class="tech-pill highlight">RxSwift</span>
+          <span class="tech-pill">Moya</span>
+          <span class="tech-pill highlight">GraphQL</span>
+          <span class="tech-pill">MVVM</span>
+          <span class="tech-pill">Clean Architecture</span>
+          <span class="tech-pill">TDD</span>
+          <span class="tech-pill">Unit Testing</span>
+        </div>
+
+        <div class="mt-4 p-4 rounded-3 bg-white border">
+          <p class="section-eyebrow mb-2">My Role</p>
+          <p class="mb-0 text-muted" style="font-size:.92rem;">
+            I was working at <strong>Tokopedia</strong> as an iOS Engineer, contributing to features
+            used by millions of users daily. Key work included building performant UI with
+            <strong>Texture (AsyncDisplayKit)</strong>, implementing <strong>GraphQL</strong> queries
+            for efficient data loading, managing reactive data flows with <strong>RxSwift</strong>,
+            and maintaining quality through <strong>TDD</strong> and unit testing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="https://www.tokopedia.com" target="_blank" rel="noopener" class="me-3">tokopedia.com ↗</a>
+      <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
+      <a href="../../index.html">← Back to Portfolio</a>
+    </div>
+    <small style="color:#555;">Portfolio page by Arifin Firdaus.</small>
+  </div>
+</footer>
+</body>
+</html>

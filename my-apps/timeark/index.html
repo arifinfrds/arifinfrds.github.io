@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeARK – iOS App | Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --ta-blue:     #1565C0;
+      --ta-blue-dk:  #0D47A1;
+      --ta-blue-lt:  #E3F2FD;
+      --ta-dark:     #0f172a;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* ── Navbar ── */
+    .navbar { background: var(--ta-dark); }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--ta-dark) 0%, #0d2a6b 100%);
+      color: #fff;
+      padding: 72px 0 56px;
+    }
+    .hero h1 { font-weight: 800; font-size: 2.6rem; }
+    .hero p.lead { color: #90CAF9; max-width: 560px; }
+
+    .app-icon-box {
+      width: 100px; height: 100px;
+      background: var(--ta-blue);
+      border-radius: 24px;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; font-size: 1rem;
+      box-shadow: 0 8px 32px rgba(21,101,192,.5);
+      letter-spacing: -0.5px;
+    }
+
+    .badge-platform {
+      font-size: .72rem; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
+    }
+    .badge-unlisted {
+      font-size: .72rem; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
+      background: rgba(255,214,0,.15); color: #FFD600;
+      border: 1px solid rgba(255,214,0,.4);
+    }
+
+    .unlisted-callout {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: .85rem;
+      color: #cce4ff;
+      margin-top: 24px;
+    }
+    .unlisted-callout strong { color: #FFD600; }
+
+    /* ── Section eyebrow ── */
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--ta-blue);
+    }
+
+    /* ── Tech pills ── */
+    .tech-pill {
+      display: inline-block;
+      background: #fff;
+      border: 1.5px solid #dde3ef;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #333;
+      margin: 4px 3px;
+      transition: border-color .15s, color .15s;
+    }
+    .tech-pill:hover { border-color: var(--ta-blue); color: var(--ta-blue); }
+    .tech-pill.highlight {
+      background: var(--ta-blue-lt);
+      border-color: var(--ta-blue);
+      color: var(--ta-blue);
+    }
+
+    /* ── Cards ── */
+    .resp-card {
+      background: #f7f9fc;
+      border-radius: 14px;
+      padding: 24px;
+      height: 100%;
+      border: none;
+    }
+    .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+
+    /* ── Architecture layers ── */
+    .arch-layer {
+      border-left: 3px solid var(--ta-blue);
+      padding: 12px 18px;
+      margin-bottom: 12px;
+      background: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+    .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
+    .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    /* ── Footer ── */
+    footer { background: var(--ta-dark); color: #888; padding: 40px 0; }
+    footer a { color: #90CAF9; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
+  <span class="navbar-brand fw-bold d-flex align-items-center gap-2">
+    <span style="background:var(--ta-blue); color:#fff; border-radius:6px; padding:2px 8px; font-size:.8rem; font-weight:900;">TA</span>
+    TimeARK
+  </span>
+  <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="mb-3 d-flex align-items-center gap-2 flex-wrap">
+          <span class="badge-platform badge bg-primary">iOS</span>
+          <span class="badge-platform badge bg-secondary">Swift</span>
+          <span class="badge-unlisted">🔒 Unlisted App</span>
+        </div>
+        <h1>TimeARK</h1>
+        <p class="lead mt-2">
+          A workforce management iOS app for attendance tracking, clock in/out,
+          leave requests, and HR services. I was working at
+          <strong style="color:#fff;">ICTechnology Pty Ltd</strong> and contributed to TimeARK as an iOS Engineer.
+        </p>
+        <div class="unlisted-callout">
+          <strong>⚠️ Unlisted iOS App</strong> — Not searchable on the App Store.
+          TimeARK iOS is distributed via a <strong>private Apple Unlisted App link</strong>,
+          following Apple's B2B enterprise distribution model. Employees receive the install
+          link directly from their organisation.
+        </div>
+        <div class="mt-4">
+          <a href="https://play.google.com/store/apps/details?id=com.ictechnology.binah&hl=id"
+             target="_blank" rel="noopener"
+             class="btn btn-outline-light btn-sm">View Android on Google Play ↗</a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <div class="app-icon-box mx-auto">TimeArk</div>
+        <div class="mt-3" style="color:#64B5F6; font-size:.8rem;">
+          iOS &amp; Android
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Stack ── -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering</p>
+    <h2 class="fw-bold mb-1">Tech Stack</h2>
+    <p class="text-muted mb-4">Technologies and frameworks used to build the iOS client.</p>
+
+    <div class="row g-4">
+
+      <!-- UI -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🎨</div>
+          <h6>UI &amp; Presentation</h6>
+          <p>Built entirely with <strong>SwiftUI</strong>, using declarative, state-driven UI components. All development and profiling done in <strong>Xcode</strong>.</p>
+          <div class="mt-3">
+            <span class="tech-pill">SwiftUI</span>
+            <span class="tech-pill">Xcode</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🏛️</div>
+          <h6>Architecture</h6>
+          <p>Structured with <strong>MVVM</strong> on top of <strong>Clean Architecture</strong>, keeping Presentation, Domain, and Data layers cleanly separated and independently testable.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVVM</span>
+            <span class="tech-pill">Clean Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🌐</div>
+          <h6>Networking</h6>
+          <p>All API communication handled via <strong>Moya</strong>, providing a type-safe, enum-based abstraction over the network layer with clearly defined endpoint targets.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Moya</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concurrency -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">⚡</div>
+          <h6>Concurrency &amp; Reactivity</h6>
+          <p><strong>Combine</strong> for reactive data flow between ViewModels and views. <strong>async/await</strong> for structured concurrency in network requests and async operations.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Combine</span>
+            <span class="tech-pill">async / await</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CoreLocation -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">📍</div>
+          <h6>Location Services — CoreLocation</h6>
+          <p>Used <strong>CoreLocation</strong> to validate employee clock-in location against geofenced worksites — ensuring attendance is recorded only from authorised premises.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">CoreLocation</span>
+            <span class="tech-pill highlight">Geofencing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Push Notifications -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🔔</div>
+          <h6>Push Notifications</h6>
+          <p>Integrated <strong>Push Notifications</strong> via APNs to alert employees of shift reminders, leave status updates, and HR announcements in real time.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Push Notifications</span>
+            <span class="tech-pill">APNs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testing -->
+      <div class="col-md-12">
+        <div class="resp-card">
+          <div class="icon">🧪</div>
+          <h6>Testing — TDD &amp; Unit Tests</h6>
+          <p><strong>Test-Driven Development (TDD)</strong> was the primary development approach. Unit tests written using <strong>XCTest</strong> covering ViewModels, Use Cases, and Repository implementations. The Clean Architecture layering ensured each unit could be tested in full isolation.</p>
+          <div class="mt-3">
+            <span class="tech-pill">XCTest</span>
+            <span class="tech-pill">TDD</span>
+            <span class="tech-pill">Unit Testing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Architecture + Full Stack ── -->
+<section class="py-5" style="background: #f7f9fc;">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="section-eyebrow mb-1">Structure</p>
+        <h2 class="fw-bold mb-3">Clean Architecture Layers</h2>
+        <p class="text-muted">
+          Dependencies only flow inward — the Domain layer has zero external
+          dependencies, making it the most stable and fully unit-testable layer.
+        </p>
+        <div class="mt-4">
+          <div class="arch-layer">
+            <h6>Presentation Layer</h6>
+            <p>SwiftUI Views &amp; ViewModels. Observes state from Domain, handles UI events. No business logic.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Domain Layer</h6>
+            <p>Use Cases &amp; Entities. Pure Swift — framework-independent. Fully covered by XCTest unit tests.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Data Layer</h6>
+            <p>Repository implementations, Moya API services, CoreLocation integration. Maps DTOs to domain models.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <p class="section-eyebrow mb-1">Complete Stack</p>
+        <h2 class="fw-bold mb-3">All Technologies</h2>
+        <div>
+          <span class="tech-pill">SwiftUI</span>
+          <span class="tech-pill">Xcode</span>
+          <span class="tech-pill">MVVM</span>
+          <span class="tech-pill">Clean Architecture</span>
+          <span class="tech-pill">Moya</span>
+          <span class="tech-pill">Combine</span>
+          <span class="tech-pill">async / await</span>
+          <span class="tech-pill highlight">CoreLocation</span>
+          <span class="tech-pill highlight">Geofencing</span>
+          <span class="tech-pill">Push Notifications</span>
+          <span class="tech-pill">XCTest</span>
+          <span class="tech-pill">TDD</span>
+          <span class="tech-pill">Unit Testing</span>
+          <span class="tech-pill">APNs</span>
+          <span class="tech-pill">REST API</span>
+          <span class="tech-pill">Unlisted App Distribution</span>
+        </div>
+
+        <div class="mt-4 p-4 rounded-3 bg-white border">
+          <p class="section-eyebrow mb-2">My Role</p>
+          <p class="mb-0 text-muted" style="font-size:.92rem;">
+            I was working at <strong>ICTechnology Pty Ltd</strong> as an iOS Engineer on the TimeARK project — responsible for building
+            the native iOS client from the ground up. Key contributions included implementing
+            the clock in/out flow, integrating CoreLocation for geofenced attendance validation,
+            wiring the Moya networking layer, setting up Combine-based reactive state in ViewModels,
+            integrating Push Notifications, and writing unit tests following TDD with XCTest.
+          </p>
+        </div>
+
+        <div class="mt-3 p-4 rounded-3 border" style="background:#fff3cd; border-color:#ffc107 !important;">
+          <p class="section-eyebrow mb-1" style="color:#856404;">Distribution</p>
+          <p class="mb-0" style="font-size:.88rem; color:#664d03;">
+            The iOS app is published as an <strong>Unlisted App</strong> on the Apple App Store —
+            not discoverable through search or browse, accessible only via a direct private link
+            provided by the client organisation. This follows Apple's approved B2B distribution model.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="https://play.google.com/store/apps/details?id=com.ictechnology.binah&hl=id"
+         target="_blank" rel="noopener" class="me-3">Google Play ↗</a>
+      <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
+      <a href="../../index.html">← Back to Portfolio</a>
+    </div>
+    <small style="color:#334155;">Portfolio page by Arifin Firdaus.</small>
+  </div>
+</footer>
+
+</body>
+</html>

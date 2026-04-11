@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boxwise – iOS App | Arifin Firdaus</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bw-red: #C0392B;
+      --bw-dark: #1a1a1a;
+      --bw-gray: #f5f5f7;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* ── Navbar ── */
+    .navbar { background: var(--bw-dark); }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--bw-dark);
+      color: #fff;
+      padding: 72px 0 56px;
+    }
+    .hero .app-icon {
+      width: 96px; height: 96px;
+      border-radius: 22px;
+      object-fit: contain;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .hero h1 { font-weight: 800; font-size: 2.6rem; }
+    .hero p.lead { color: #bbb; max-width: 560px; }
+    .badge-platform {
+      font-size: .72rem; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+    }
+
+    /* ── Section headings ── */
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: var(--bw-red);
+    }
+
+    /* ── Tech stack pills ── */
+    .tech-pill {
+      display: inline-block;
+      background: #fff;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #333;
+      margin: 4px 3px;
+      transition: border-color .15s, color .15s;
+    }
+    .tech-pill:hover { border-color: var(--bw-red); color: var(--bw-red); }
+    .tech-pill.highlight {
+      background: #fdecea;
+      border-color: var(--bw-red);
+      color: var(--bw-red);
+    }
+
+    /* ── Architecture diagram ── */
+    .arch-layer {
+      border-left: 3px solid var(--bw-red);
+      padding: 12px 18px;
+      margin-bottom: 12px;
+      background: #fff;
+      border-radius: 0 10px 10px 0;
+    }
+    .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
+    .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    /* ── Responsibility cards ── */
+    .resp-card {
+      background: var(--bw-gray);
+      border-radius: 14px;
+      padding: 24px;
+      height: 100%;
+      border: none;
+    }
+    .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+
+    /* ── Footer ── */
+    footer { background: var(--bw-dark); color: #888; padding: 40px 0; }
+    footer a { color: #ccc; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
+  <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="https://box-wise.org" target="_blank" rel="noopener">
+    <img src="https://box-wise.org/wp-content/uploads/2024/09/Boxwise-logo-1.png"
+         alt="Boxwise" width="28" height="28" style="border-radius:6px; background:#fff; padding:2px;">
+    Boxwise
+  </a>
+  <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="mb-3">
+          <span class="badge-platform badge bg-danger me-2">iOS</span>
+          <span class="badge-platform badge bg-secondary">Swift</span>
+        </div>
+        <h1>Boxwise</h1>
+        <p class="lead mt-2">
+          A purpose-driven educational platform for boxers — delivering structured
+          learning in financial literacy, personal development, and wellbeing.
+          Endorsed by two-time world champion <strong style="color:#fff;">Billy Dib</strong>
+          in partnership with the WBC.
+        </p>
+        <div class="mt-4">
+          <a href="https://box-wise.org" target="_blank" rel="noopener"
+             class="btn btn-outline-light btn-sm me-2">Visit box-wise.org ↗</a>
+        </div>
+      </div>
+      <div class="col-lg-5 text-center">
+        <img src="https://box-wise.org/wp-content/uploads/2024/09/Boxwise-logo-1.png"
+             alt="Boxwise Logo" class="app-icon">
+        <div class="mt-3" style="color:#888; font-size:.8rem;">
+          Available on Apple App Store &amp; Google Play
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Stack ── -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering</p>
+    <h2 class="fw-bold mb-1">Tech Stack</h2>
+    <p class="text-muted mb-4">Technologies and frameworks used to build the iOS client.</p>
+
+    <div class="row g-4">
+
+      <!-- UI Layer -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🎨</div>
+          <h6>UI &amp; Presentation</h6>
+          <p>Built with <strong>SwiftUI</strong> throughout, leveraging declarative views, state-driven updates, and native Apple design patterns. Developed and debugged entirely in <strong>Xcode</strong>.</p>
+          <div class="mt-3">
+            <span class="tech-pill">SwiftUI</span>
+            <span class="tech-pill">Xcode</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🏛️</div>
+          <h6>Architecture</h6>
+          <p>Followed <strong>MVVM</strong> with <strong>Clean Architecture</strong> layering — separating Presentation, Domain, and Data concerns for long-term maintainability and testability.</p>
+          <div class="mt-3">
+            <span class="tech-pill">MVVM</span>
+            <span class="tech-pill">Clean Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🌐</div>
+          <h6>Networking</h6>
+          <p>API calls managed through <strong>Moya</strong> (built on Alamofire), providing a type-safe, protocol-oriented networking layer with clearly structured endpoint definitions.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Moya</span>
+            <span class="tech-pill">REST API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Async & Reactive -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">⚡</div>
+          <h6>Concurrency &amp; Reactivity</h6>
+          <p>Used Swift <strong>Combine</strong> for reactive data streams and state propagation. Adopted <strong>async/await</strong> for structured concurrency in network and data fetch operations.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Combine</span>
+            <span class="tech-pill">async / await</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Media Playback -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">▶️</div>
+          <h6>Media Playback — AVKit</h6>
+          <p>Integrated <strong>AVKit / AVPlayer</strong> to stream and play in-app educational video content — course lessons and training material delivered as on-demand video.</p>
+          <div class="mt-3">
+            <span class="tech-pill highlight">AVKit</span>
+            <span class="tech-pill highlight">AVPlayer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Push Notifications -->
+      <div class="col-md-6">
+        <div class="resp-card">
+          <div class="icon">🔔</div>
+          <h6>Push Notifications</h6>
+          <p>Implemented <strong>Push Notifications</strong> via APNs to re-engage users with course reminders, content updates, and subscription alerts.</p>
+          <div class="mt-3">
+            <span class="tech-pill">Push Notifications</span>
+            <span class="tech-pill">APNs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testing -->
+      <div class="col-md-12">
+        <div class="resp-card">
+          <div class="icon">🧪</div>
+          <h6>Testing — TDD &amp; Unit Tests</h6>
+          <p>Applied <strong>Test-Driven Development (TDD)</strong> as a core practice. Unit tests written with <strong>XCTest</strong>, covering ViewModels, Use Cases, and Repository logic. The Clean Architecture layering made isolating units for testing straightforward and reliable.</p>
+          <div class="mt-3">
+            <span class="tech-pill">XCTest</span>
+            <span class="tech-pill">TDD</span>
+            <span class="tech-pill">Unit Testing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Architecture Overview ── -->
+<section class="py-5" style="background: var(--bw-gray);">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <p class="section-eyebrow mb-1">Structure</p>
+        <h2 class="fw-bold mb-3">Clean Architecture Layers</h2>
+        <p class="text-muted">
+          The codebase is structured around Clean Architecture principles, ensuring
+          each layer has a single responsibility and dependencies only point inward.
+        </p>
+        <div class="mt-4">
+          <div class="arch-layer">
+            <h6>Presentation Layer</h6>
+            <p>SwiftUI Views &amp; ViewModels. Observes state, dispatches user events. No business logic.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Domain Layer</h6>
+            <p>Use Cases &amp; Entities. Pure Swift — no framework dependencies. Fully unit-testable.</p>
+          </div>
+          <div class="arch-layer">
+            <h6>Data Layer</h6>
+            <p>Repositories, Moya-backed API Services, local persistence. Maps DTOs to domain models.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="section-eyebrow mb-1">Complete Stack</p>
+        <h2 class="fw-bold mb-3">All Technologies</h2>
+        <div>
+          <span class="tech-pill">SwiftUI</span>
+          <span class="tech-pill">Xcode</span>
+          <span class="tech-pill">MVVM</span>
+          <span class="tech-pill">Clean Architecture</span>
+          <span class="tech-pill">Moya</span>
+          <span class="tech-pill">Combine</span>
+          <span class="tech-pill">async / await</span>
+          <span class="tech-pill highlight">AVKit</span>
+          <span class="tech-pill highlight">AVPlayer</span>
+          <span class="tech-pill">Push Notifications</span>
+          <span class="tech-pill">XCTest</span>
+          <span class="tech-pill">TDD</span>
+          <span class="tech-pill">Unit Testing</span>
+          <span class="tech-pill">APNs</span>
+          <span class="tech-pill">REST API</span>
+        </div>
+
+        <div class="mt-4 p-4 rounded-3 bg-white border">
+          <p class="section-eyebrow mb-2">My Role</p>
+          <p class="mb-0 text-muted" style="font-size:.92rem;">
+            I was working at <strong>ICTechnology Pty Ltd</strong> as an iOS Engineer on the Boxwise project — responsible for building
+            the native iOS app from the ground up using SwiftUI and Clean Architecture.
+            Key responsibilities included implementing the video playback feature with AVPlayer,
+            setting up the Moya networking layer, wiring Combine-based reactive state, writing
+            unit tests following TDD, and integrating Push Notifications.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container text-center">
+    <img src="https://box-wise.org/wp-content/uploads/2024/09/Boxwise-logo-1.png"
+         alt="Boxwise" width="48" height="48"
+         style="border-radius:12px; background:#fff; padding:3px; margin-bottom:12px;">
+    <div class="mb-3">
+      <a href="https://box-wise.org" target="_blank" rel="noopener" class="me-3">box-wise.org ↗</a>
+      <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
+      <a href="../../index.html">← Back to Portfolio</a>
+    </div>
+    <small style="color:#555;">Portfolio page by Arifin Firdaus.</small>
+  </div>
+</footer>
+
+</body>
+</html>
