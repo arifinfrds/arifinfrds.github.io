@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TimeARK – iOS App | Arifin Firdaus</title>
+  <title>TalentraSuite – iOS App | Arifin Firdaus</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
-      --ta-blue:     #1565C0;
-      --ta-blue-dk:  #0D47A1;
-      --ta-blue-lt:  #E3F2FD;
-      --ta-dark:     #0f172a;
+      --ts-purple:    #4F46E5;
+      --ts-purple-dk: #3730A3;
+      --ts-purple-lt: #EEF2FF;
+      --ts-dark:      #0f172a;
     }
 
     body {
@@ -19,53 +19,50 @@
     }
 
     /* ── Navbar ── */
-    .navbar { background: var(--ta-dark); }
+    .navbar { background: var(--ts-dark); }
 
     /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, var(--ta-dark) 0%, #0d2a6b 100%);
+      background: linear-gradient(135deg, var(--ts-dark) 0%, #1e1457 100%);
       color: #fff;
       padding: 72px 0 56px;
     }
     .hero h1 { font-weight: 800; font-size: 2.6rem; }
-    .hero p.lead { color: #90CAF9; max-width: 560px; }
+    .hero p.lead { color: #c7d2fe; max-width: 560px; }
 
     .app-icon-box {
       width: 100px; height: 100px;
-      background: var(--ta-blue);
+      background: var(--ts-purple);
       border-radius: 24px;
       display: inline-flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 900; font-size: 1rem;
-      box-shadow: 0 8px 32px rgba(21,101,192,.5);
+      color: #fff; font-weight: 900; font-size: .75rem;
+      box-shadow: 0 8px 32px rgba(79,70,229,.5);
       letter-spacing: -0.5px;
+      text-align: center;
+      padding: 8px;
+      line-height: 1.3;
     }
 
     .badge-platform {
       font-size: .72rem; font-weight: 700; letter-spacing: .8px;
       text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
     }
-    .badge-unlisted {
-      font-size: .72rem; font-weight: 700; letter-spacing: .8px;
-      text-transform: uppercase; padding: 4px 12px; border-radius: 50px;
-      background: rgba(255,214,0,.15); color: #FFD600;
-      border: 1px solid rgba(255,214,0,.4);
-    }
 
-    .unlisted-callout {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 12px;
-      padding: 16px 20px;
-      font-size: .85rem;
-      color: #cce4ff;
-      margin-top: 24px;
+    /* ── App Store CTA ── */
+    .appstore-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: #0f172a;
+      border-radius: 10px; padding: 10px 20px;
+      text-decoration: none; font-weight: 700; font-size: .88rem;
+      transition: opacity .15s;
+      margin-top: 20px;
     }
-    .unlisted-callout strong { color: #FFD600; }
+    .appstore-btn:hover { opacity: .88; color: #0f172a; }
 
     /* ── Section eyebrow ── */
     .section-eyebrow {
       font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
-      text-transform: uppercase; color: var(--ta-blue);
+      text-transform: uppercase; color: var(--ts-purple);
     }
 
     /* ── Tech pills ── */
@@ -81,14 +78,14 @@
       margin: 4px 3px;
       transition: border-color .15s, color .15s;
     }
-    .tech-pill:hover { border-color: var(--ta-blue); color: var(--ta-blue); }
+    .tech-pill:hover { border-color: var(--ts-purple); color: var(--ts-purple); }
     .tech-pill.highlight {
-      background: var(--ta-blue-lt);
-      border-color: var(--ta-blue);
-      color: var(--ta-blue);
+      background: var(--ts-purple-lt);
+      border-color: var(--ts-purple);
+      color: var(--ts-purple);
     }
 
-    /* ── Cards ── */
+    /* ── Feature cards ── */
     .resp-card {
       background: #f7f9fc;
       border-radius: 14px;
@@ -102,7 +99,7 @@
 
     /* ── Architecture layers ── */
     .arch-layer {
-      border-left: 3px solid var(--ta-blue);
+      border-left: 3px solid var(--ts-purple);
       padding: 12px 18px;
       margin-bottom: 12px;
       background: #fff;
@@ -129,9 +126,17 @@
       margin-bottom: 12px;
     }
 
+    /* ── Screenshot ── */
+    .screenshot-hero {
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(79,70,229,.25);
+      max-width: 100%;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
     /* ── Footer ── */
-    footer { background: var(--ta-dark); color: #888; padding: 40px 0; }
-    footer a { color: #90CAF9; }
+    footer { background: var(--ts-dark); color: #888; padding: 40px 0; }
+    footer a { color: #a5b4fc; }
     footer a:hover { color: #fff; }
   </style>
 </head>
@@ -142,8 +147,8 @@
 <!-- Navbar -->
 <nav class="navbar navbar-dark px-4 d-flex justify-content-between align-items-center">
   <span class="navbar-brand fw-bold d-flex align-items-center gap-2">
-    <span style="background:var(--ta-blue); color:#fff; border-radius:6px; padding:2px 8px; font-size:.8rem; font-weight:900;">TA</span>
-    TimeARK
+    <span style="background:var(--ts-purple); color:#fff; border-radius:6px; padding:2px 8px; font-size:.8rem; font-weight:900;">TS</span>
+    TalentraSuite
   </span>
   <a href="../../index.html" class="btn btn-outline-light btn-sm">← Portfolio</a>
 </nav>
@@ -154,40 +159,101 @@
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
         <div class="mb-3 d-flex align-items-center gap-2 flex-wrap">
-          <span class="badge-platform badge bg-primary">iOS</span>
+          <span class="badge-platform badge" style="background:var(--ts-purple);">iOS</span>
           <span class="badge-platform badge bg-secondary">Swift</span>
-          <span class="badge-unlisted">🔒 Unlisted App</span>
+          <span class="badge-platform badge bg-success">App Store</span>
         </div>
-        <h1>TimeARK</h1>
+        <h1>TalentraSuite</h1>
         <p class="lead mt-2">
-          A workforce management iOS app for attendance tracking, clock in/out,
-          leave requests, and HR services. I was working at
-          <strong style="color:#fff;">ICTechnology Pty Ltd</strong> and contributed to TimeARK as an iOS Engineer.
+          A secure Employee Self-Service (ESS) iOS app designed to streamline HR operations
+          and improve workforce productivity. I worked at
+          <strong style="color:#fff;">ICTechnology Pty Ltd</strong> and contributed to TalentraSuite as an iOS Engineer.
         </p>
-        <div class="unlisted-callout">
-          <strong>⚠️ Unlisted iOS App</strong> — Not searchable on the App Store.
-          TimeARK iOS is distributed via a <strong>private Apple Unlisted App link</strong>,
-          following Apple's B2B enterprise distribution model. Employees receive the install
-          link directly from their organisation.
-        </div>
-        <div class="mt-4">
-          <a href="https://play.google.com/store/apps/details?id=com.ictechnology.binah&hl=id"
-             target="_blank" rel="noopener"
-             class="btn btn-outline-light btn-sm">View Android on Google Play ↗</a>
-        </div>
+        <a href="https://apps.apple.com/id/app/talentrasuite/id6759237976"
+           target="_blank" rel="noopener" class="appstore-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 814 1000" fill="currentColor">
+            <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-42.3-150.3-113.7C156.1 740.8 113.5 641 113.5 546c0-153.3 100.1-234.3 196.4-234.3 52.7 0 96.5 34.6 129.4 34.6 31.3 0 80.4-36.9 140.3-36.9 22.7 0 108.2 2.6 168.1 80.8zm-325.1-93.8c6.4-36.5 32.7-66.8 59-85.2 28.8-19.9 73.4-35.6 109.1-35.6 2.6 0 5.2.2 7.8.5.3 3.8.5 7.7.5 12.1 0 33.3-11.3 68.1-30.5 96.1-17.3 25.7-55.1 56.4-101.8 56.4-2.6 0-5.2-.1-7.8-.4-.8-14.8-1.5-29.5 1-44z"/>
+          </svg>
+          View on App Store
+        </a>
       </div>
       <div class="col-lg-5 text-center">
-        <div class="app-icon-box mx-auto">TimeArk</div>
-        <div class="mt-3" style="color:#64B5F6; font-size:.8rem;">
-          iOS &amp; Android
+        <img
+          src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/77/34/32/7734325a-97d0-d077-6370-070517a247e1/Placeholder.mill/1200x630wa.jpg"
+          alt="TalentraSuite App Screenshot"
+          class="screenshot-hero"
+        >
+        <div class="mt-3" style="color:#a5b4fc; font-size:.8rem;">
+          iOS · Business · ICTechnology Pty Ltd
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── Tech Stack ── -->
+<!-- ── App Features ── -->
 <section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Functionality</p>
+    <h2 class="fw-bold mb-1">Key Features</h2>
+    <p class="text-muted mb-4">Core HR self-service features delivered in the app.</p>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">🏖️</div>
+          <h6>Leave Management</h6>
+          <p>Submit and track leave requests with real-time approval status updates from managers.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">⏱️</div>
+          <h6>Attendance &amp; Time Tracking</h6>
+          <p>View attendance records, monitor working hours, and track daily clock-in / clock-out history.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">✅</div>
+          <h6>Manager Approvals</h6>
+          <p>Approve requests and manage team activities on the go — empowering managers with mobile HR oversight.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">💼</div>
+          <h6>Payslip &amp; Employee Data</h6>
+          <p>Securely access personal information, employment records, and payslip documents anytime.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">🔔</div>
+          <h6>Notifications &amp; Alerts</h6>
+          <p>Stay informed with real-time push notifications for approvals, reminders, and HR updates.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">🔒</div>
+          <h6>Secure Enterprise Access</h6>
+          <p>Authentication tied to an organisation's TalentraSuite HR system — accessible only to authorised employees.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Stack ── -->
+<section class="py-5" style="background: #f7f9fc;">
   <div class="container">
     <p class="section-eyebrow mb-1">Engineering</p>
     <h2 class="fw-bold mb-1">Tech Stack</h2>
@@ -197,7 +263,7 @@
 
       <!-- UI -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">🎨</div>
           <h6>UI &amp; Presentation</h6>
           <p>Built entirely with <strong>SwiftUI</strong>, using declarative, state-driven UI components. All development and profiling done in <strong>Xcode</strong>.</p>
@@ -210,7 +276,7 @@
 
       <!-- Architecture -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">🏛️</div>
           <h6>Architecture</h6>
           <p>Structured with <strong>MVVM</strong> on top of <strong>Clean Architecture</strong>, keeping Presentation, Domain, and Data layers cleanly separated and independently testable.</p>
@@ -223,7 +289,7 @@
 
       <!-- Networking -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">🌐</div>
           <h6>Networking</h6>
           <p>All API communication handled via <strong>Moya</strong>, providing a type-safe, enum-based abstraction over the network layer with clearly defined endpoint targets.</p>
@@ -236,10 +302,10 @@
 
       <!-- Concurrency -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">⚡</div>
           <h6>Concurrency &amp; Reactivity</h6>
-          <p><strong>Combine</strong> for reactive data flow between ViewModels and views. <strong>async/await</strong> for structured concurrency in network requests and async operations.</p>
+          <p><strong>Combine</strong> for reactive data flow between ViewModels and views. <strong>async/await</strong> for structured concurrency in network and async operations.</p>
           <div class="mt-3">
             <span class="tech-pill">Combine</span>
             <span class="tech-pill">async / await</span>
@@ -249,10 +315,10 @@
 
       <!-- CoreLocation -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">📍</div>
           <h6>Location Services — CoreLocation</h6>
-          <p>Used <strong>CoreLocation</strong> to validate employee clock-in location against geofenced worksites — ensuring attendance is recorded only from authorised premises.</p>
+          <p>Used <strong>CoreLocation</strong> to validate employee attendance location — ensuring clock-in is recorded only from authorised premises with geofencing support.</p>
           <div class="mt-3">
             <span class="tech-pill highlight">CoreLocation</span>
             <span class="tech-pill highlight">Geofencing</span>
@@ -262,10 +328,10 @@
 
       <!-- Push Notifications -->
       <div class="col-md-6">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">🔔</div>
           <h6>Push Notifications</h6>
-          <p>Integrated <strong>Push Notifications</strong> via APNs to alert employees of shift reminders, leave status updates, and HR announcements in real time.</p>
+          <p>Integrated <strong>Push Notifications</strong> via APNs to alert employees of leave approvals, attendance reminders, and HR announcements in real time.</p>
           <div class="mt-3">
             <span class="tech-pill">Push Notifications</span>
             <span class="tech-pill">APNs</span>
@@ -275,10 +341,10 @@
 
       <!-- Testing -->
       <div class="col-md-12">
-        <div class="resp-card">
+        <div class="resp-card" style="background:#fff;">
           <div class="icon">🧪</div>
           <h6>Testing — TDD &amp; Unit Tests</h6>
-          <p><strong>Test-Driven Development (TDD)</strong> was the primary development approach. Unit tests written using <strong>XCTest</strong>, concentrated on the <strong>Data Layer</strong> (Repository and Data Source implementations) and <strong>ViewModels</strong> — achieving near 100% coverage on these layers. The layered architecture keeps each unit independently testable.</p>
+          <p><strong>Test-Driven Development (TDD)</strong> was the primary development approach. Unit tests written with <strong>XCTest</strong>, concentrated on the <strong>Data Layer</strong> (Repository and Data Source implementations) and <strong>ViewModels</strong> — achieving near 100% coverage on these layers. The layered architecture keeps each unit independently testable.</p>
           <div class="mt-3">
             <span class="tech-pill">XCTest</span>
             <span class="tech-pill">TDD</span>
@@ -291,8 +357,8 @@
   </div>
 </section>
 
-<!-- ── Architecture + Full Stack ── -->
-<section class="py-5" style="background: #f7f9fc;">
+<!-- ── Architecture + Role ── -->
+<section class="py-5">
   <div class="container">
     <div class="row g-5 align-items-start">
       <div class="col-lg-5">
@@ -339,28 +405,34 @@
           <span class="tech-pill">Unit Testing</span>
           <span class="tech-pill">APNs</span>
           <span class="tech-pill">REST API</span>
-          <span class="tech-pill">Unlisted App Distribution</span>
         </div>
 
         <div class="mt-4 p-4 rounded-3 bg-white border">
           <p class="section-eyebrow mb-2">My Role</p>
           <p class="mb-0 text-muted" style="font-size:.92rem;">
-            I was working at <strong>ICTechnology Pty Ltd</strong> as an iOS Engineer on the TimeARK project — responsible for building
-            the native iOS client from the ground up. Key contributions included implementing
-            the clock in/out flow, integrating CoreLocation for geofenced attendance validation,
-            wiring the Moya networking layer, setting up Combine-based reactive state in ViewModels,
+            I worked at <strong>ICTechnology Pty Ltd</strong> as an iOS Engineer on TalentraSuite — responsible for building
+            the native iOS client. Key contributions included implementing
+            the leave management flow, attendance &amp; time tracking, integrating CoreLocation
+            for geofenced attendance validation, wiring the Moya networking layer,
+            setting up Combine-based reactive state in ViewModels,
             integrating Push Notifications, and writing unit tests following TDD with XCTest
             — focused on Repository, Data Source, and ViewModel layers.
           </p>
         </div>
 
-        <div class="mt-3 p-4 rounded-3 border" style="background:#fff3cd; border-color:#ffc107 !important;">
-          <p class="section-eyebrow mb-1" style="color:#856404;">Distribution</p>
-          <p class="mb-0" style="font-size:.88rem; color:#664d03;">
-            The iOS app is published as an <strong>Unlisted App</strong> on the Apple App Store —
-            not discoverable through search or browse, accessible only via a direct private link
-            provided by the client organisation. This follows Apple's approved B2B distribution model.
+        <div class="mt-3 p-4 rounded-3 border" style="background:#eef2ff; border-color:#c7d2fe !important;">
+          <p class="section-eyebrow mb-1" style="color:#3730a3;">Distribution</p>
+          <p class="mb-0" style="font-size:.88rem; color:#312e81;">
+            TalentraSuite is <strong>publicly available on the App Store</strong> —
+            however, it requires a valid account provided by your employer or organisation that has
+            implemented the TalentraSuite HR system. The app is intended for authorised enterprise users only.
           </p>
+          <a href="https://apps.apple.com/id/app/talentrasuite/id6759237976"
+             target="_blank" rel="noopener"
+             class="btn btn-sm mt-3"
+             style="background:var(--ts-purple); color:#fff; font-weight:600;">
+            View on App Store ↗
+          </a>
         </div>
       </div>
     </div>
@@ -368,7 +440,7 @@
 </section>
 
 <!-- ── AI Agentic Coding ── -->
-<section class="py-5">
+<section class="py-5" style="background:#f7f9fc;">
   <div class="container">
     <div class="ai-section">
       <div class="row align-items-center g-4">
@@ -379,7 +451,7 @@
           </div>
           <h3 class="fw-bold mb-3" style="color:#fff;">Built with an AI Coding Agent</h3>
           <p style="color:#c7d2fe; font-size:.93rem; margin-bottom:16px;">
-            TimeARK was developed with hands-on use of an AI coding agent throughout the process —
+            TalentraSuite was developed with hands-on use of an AI coding agent throughout the process —
             not just for boilerplate, but as a genuine development companion.
           </p>
           <div class="row g-3">
@@ -425,12 +497,35 @@
   </div>
 </section>
 
+<!-- App Info -->
+<section class="py-4" style="background:#f7f9fc; border-top:1px solid #e2e8f0;">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3 text-center">
+        <div style="font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#94a3b8;">Category</div>
+        <div style="font-weight:700; margin-top:4px;">Business</div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div style="font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#94a3b8;">Platform</div>
+        <div style="font-weight:700; margin-top:4px;">iOS 16.0+</div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div style="font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#94a3b8;">Developer</div>
+        <div style="font-weight:700; margin-top:4px;">ICTechnology Pty Ltd</div>
+      </div>
+      <div class="col-6 col-md-3 text-center">
+        <div style="font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:#94a3b8;">Size</div>
+        <div style="font-weight:700; margin-top:4px;">21 MB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   <div class="container text-center">
     <div class="mb-3">
-      <a href="https://play.google.com/store/apps/details?id=com.ictechnology.binah&hl=id"
-         target="_blank" rel="noopener" class="me-3">Google Play ↗</a>
+      <a href="https://apps.apple.com/id/app/talentrasuite/id6759237976" target="_blank" rel="noopener" class="me-3">App Store ↗</a>
       <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
       <a href="../../index.html">← Back to Portfolio</a>
     </div>
