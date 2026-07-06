@@ -107,11 +107,19 @@
       transition: border-color .15s, box-shadow .15s;
     }
     .exp-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(59,130,246,.1); }
-    .exp-card .company { font-weight: 800; font-size: .95rem; margin-bottom: 2px; }
+    .exp-card .company { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: 800; font-size: .95rem; margin-bottom: 2px; }
     .exp-card .role-tag { font-size: .78rem; color: #64748b; font-weight: 500; }
+    .exp-years { font-size: .72rem; color: #94a3b8; font-weight: 600; white-space: nowrap; }
     .exp-dot {
       width: 8px; height: 8px; border-radius: 50%;
       display: inline-block; margin-right: 6px;
+    }
+
+    /* ── Education strip ── */
+    .education-section { padding: 56px 0; border-bottom: 1px solid #e2e8f0; }
+    .edu-logo {
+      width: 40px; height: 40px; object-fit: contain; flex-shrink: 0;
+      border-radius: 8px; background: #fff; border: 1px solid #e2e8f0; padding: 4px;
     }
 
     /* ── Portfolio cards ── */
@@ -212,6 +220,20 @@
     .older-item h6 { font-weight: 700; font-size: .9rem; margin-bottom: 3px; }
     .older-item p  { font-size: .82rem; color: #64748b; margin: 0; }
 
+    /* ── Writing ── */
+    .writing-section { padding: 72px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+    .post-card {
+      background: #fff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      height: 100%;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .post-card:hover { border-color: var(--accent); box-shadow: 0 4px 20px rgba(59,130,246,.1); }
+    .post-card .post-date { font-size: .68rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--accent); }
+    .post-card h6 { font-weight: 700; font-size: .88rem; margin: 6px 0 0; line-height: 1.4; }
+
     /* ── Footer ── */
     footer {
       background: var(--dark);
@@ -243,7 +265,10 @@
   <span class="navbar-brand">Arifin Firdaus</span>
   <div class="d-none d-md-flex">
     <a href="#experience" class="nav-link-custom">Experience</a>
+    <a href="#education" class="nav-link-custom">Education</a>
+    <a href="#certifications" class="nav-link-custom">Certifications</a>
     <a href="#portfolio" class="nav-link-custom">Portfolio</a>
+    <a href="#writing" class="nav-link-custom">Writing</a>
     <a href="#contact" class="nav-link-custom">Contact</a>
   </div>
 </nav>
@@ -256,7 +281,7 @@
         <div class="role">iOS Engineer</div>
         <h1>Arifin Firdaus</h1>
         <p class="mt-3">
-          iOS Engineer with hands-on experience across fintech, e-commerce, cloud storage,
+          iOS Engineer with hands-on experience across e-commerce, cloud storage,
           healthcare, and productivity — shipping apps used by millions.
           Passionate about clean architecture, test-driven development, and building
           software that scales.
@@ -266,11 +291,11 @@
           Previously at
         </div>
         <div>
-          <span class="company-tag">MEGA The Privacy Company</span>
-          <span class="company-tag">Tokopedia</span>
-          <span class="company-tag">Ice House</span>
-          <span class="company-tag">ICTechnology Pty Ltd</span>
-          <span class="company-tag">Apple Developer Academy</span>
+          <span class="company-tag">ICTechnology Pty Ltd (2025–Now)</span>
+          <span class="company-tag">MEGA The Privacy Company (2023–2024)</span>
+          <span class="company-tag">Tokopedia (2022)</span>
+          <span class="company-tag">Ice House (2021–2022)</span>
+          <span class="company-tag">Apple Developer Academy (2020)</span>
         </div>
 
         <div class="hero-cta mt-5">
@@ -293,49 +318,8 @@
       <div class="col-md-6 col-lg-4">
         <div class="exp-card">
           <div class="company">
-            <span class="exp-dot" style="background:#D9001E;"></span>MEGA The Privacy Company
-          </div>
-          <div class="role-tag mt-1">iOS Engineer</div>
-          <div class="mt-2">
-            <span class="tech-mini">SwiftUI</span><span class="tech-mini">UIKit</span>
-            <span class="tech-mini">AVKit</span><span class="tech-mini">Combine</span>
-            <span class="tech-mini">Clean Arch</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="exp-card">
-          <div class="company">
-            <span class="exp-dot" style="background:#00AA5B;"></span>Tokopedia
-          </div>
-          <div class="role-tag mt-1">iOS Engineer</div>
-          <div class="mt-2">
-            <span class="tech-mini">Texture</span><span class="tech-mini">RxSwift</span>
-            <span class="tech-mini">GraphQL</span><span class="tech-mini">Moya</span>
-            <span class="tech-mini">Clean Arch</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="exp-card">
-          <div class="company">
-            <span class="exp-dot" style="background:#006494;"></span>Ice House
-          </div>
-          <div class="role-tag mt-1">iOS Engineer · Prodia Project</div>
-          <div class="mt-2">
-            <span class="tech-mini">RxSwift</span><span class="tech-mini">GraphQL</span>
-            <span class="tech-mini">Moya</span><span class="tech-mini">MVVM</span>
-            <span class="tech-mini">Clean Arch</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="exp-card">
-          <div class="company">
-            <span class="exp-dot" style="background:#1565C0;"></span>ICTechnology Pty Ltd
+            <span><span class="exp-dot" style="background:#1565C0;"></span>ICTechnology Pty Ltd</span>
+            <span class="exp-years">2025 – Now</span>
           </div>
           <div class="role-tag mt-1">iOS Engineer · TalentraSuite, TimeARK &amp; Boxwise</div>
           <div class="mt-2">
@@ -349,12 +333,143 @@
       <div class="col-md-6 col-lg-4">
         <div class="exp-card">
           <div class="company">
-            <span class="exp-dot" style="background:#555;"></span>Apple Developer Academy
+            <span><span class="exp-dot" style="background:#D9001E;"></span>MEGA The Privacy Company</span>
+            <span class="exp-years">2023 – 2024</span>
+          </div>
+          <div class="role-tag mt-1">Intermediate iOS Engineer</div>
+          <div class="mt-2">
+            <span class="tech-mini">SwiftUI</span><span class="tech-mini">UIKit</span>
+            <span class="tech-mini">AVKit</span><span class="tech-mini">Combine</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span><span class="exp-dot" style="background:#00AA5B;"></span>Tokopedia</span>
+            <span class="exp-years">2022</span>
+          </div>
+          <div class="role-tag mt-1">Senior iOS Engineer</div>
+          <div class="mt-2">
+            <span class="tech-mini">Texture</span><span class="tech-mini">RxSwift</span>
+            <span class="tech-mini">GraphQL</span><span class="tech-mini">Moya</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span><span class="exp-dot" style="background:#006494;"></span>Ice House</span>
+            <span class="exp-years">2021 – 2022</span>
+          </div>
+          <div class="role-tag mt-1">iOS Engineer · Prodia Project</div>
+          <div class="mt-2">
+            <span class="tech-mini">RxSwift</span><span class="tech-mini">GraphQL</span>
+            <span class="tech-mini">Moya</span><span class="tech-mini">MVVM</span>
+            <span class="tech-mini">Clean Arch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="exp-card">
+          <div class="company">
+            <span><span class="exp-dot" style="background:#555;"></span>Apple Developer Academy</span>
+            <span class="exp-years">2020</span>
           </div>
           <div class="role-tag mt-1">Student / Developer</div>
           <div class="mt-2">
             <span class="tech-mini">Swift</span><span class="tech-mini">iOS</span>
             <span class="tech-mini">macOS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Education ── -->
+<section class="education-section" id="education">
+  <div class="container">
+    <p class="section-eyebrow">Academics</p>
+    <h2 class="fw-bold mb-5">Education</h2>
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <div class="exp-card">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="img/logo_binus_university.png" alt="BINUS logo" class="edu-logo">
+            <div class="company" style="flex:1; margin-bottom:0;">
+              <span>Bina Nusantara University (BINUS)</span>
+              <span class="exp-years">2025 – Now</span>
+            </div>
+          </div>
+          <div class="role-tag mt-1">Master of Computer Science · Data Science &amp; AI</div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="exp-card">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="img/logo_universitas_brawijaya.png" alt="Brawijaya University logo" class="edu-logo">
+            <div class="company" style="flex:1; margin-bottom:0;">
+              <span>Brawijaya University</span>
+              <span class="exp-years">2015 – 2020</span>
+            </div>
+          </div>
+          <div class="role-tag mt-1">Bachelor of Computer Science · Software Engineering &amp; Mobile Software Engineering</div>
+          <div class="mt-2">
+            <span class="tech-mini">HEMOCS Entertainment Terminal App (iOS)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications ── -->
+<section class="education-section" id="certifications">
+  <div class="container">
+    <p class="section-eyebrow">Continuous Learning</p>
+    <h2 class="fw-bold mb-5">Certifications</h2>
+    <div class="row g-3">
+
+      <div class="col-md-6">
+        <div class="exp-card">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="img/logo_essential_developer.png" alt="Essential Developer Academy logo" class="edu-logo">
+            <div class="company" style="flex:1; margin-bottom:0;">
+              <span>iOS Lead Essentials</span>
+              <span class="exp-years">2022</span>
+            </div>
+          </div>
+          <div class="role-tag mt-1">Essential Developer Academy · by Caio Zullo &amp; Mike Apostolakis</div>
+          <div class="mt-2">
+            <span class="tech-mini">TDD</span><span class="tech-mini">BDD</span>
+            <span class="tech-mini">Clean Arch</span><span class="tech-mini">Use Cases</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="exp-card">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="img/logo_udemy.png" alt="Udemy logo" class="edu-logo">
+            <div class="company" style="flex:1; margin-bottom:0;">
+              <span>Testing iOS Apps · BDD Using Swift</span>
+              <span class="exp-years">2020</span>
+            </div>
+          </div>
+          <div class="role-tag mt-1">Udemy · by Mohammad Azam</div>
+          <div class="mt-2">
+            <span class="tech-mini">Unit Testing</span><span class="tech-mini">BDD</span>
+            <span class="tech-mini">Swift</span>
           </div>
         </div>
       </div>
@@ -666,6 +781,47 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ── Writing ── -->
+<section class="writing-section" id="writing">
+  <div class="container">
+    <p class="section-eyebrow">Tech Blog</p>
+    <h2 class="fw-bold mb-2">Writing</h2>
+    <p class="mb-4" style="color:#64748b; max-width:640px;">
+      I write about iOS architecture, clean code, and AI/ML fundamentals at
+      <a href="https://arifinfrds.com" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600;">arifinfrds.com</a>.
+    </p>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-6 col-lg-3">
+        <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="post-card d-block text-decoration-none">
+          <div class="post-date">Jun 2026</div>
+          <h6>The Vanishing Gradient Problem</h6>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="post-card d-block text-decoration-none">
+          <div class="post-date">Jun 2026</div>
+          <h6>The World Almost Gave Up on Neural Networks — Twice</h6>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="post-card d-block text-decoration-none">
+          <div class="post-date">Oct 2025</div>
+          <h6>Leveraging the Adapter Pattern in Flutter</h6>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="post-card d-block text-decoration-none">
+          <div class="post-date">Jul 2025</div>
+          <h6>Speed Coding – Unit Testing the MVVM in Swift</h6>
+        </a>
+      </div>
+    </div>
+
+    <a href="https://arifinfrds.com" target="_blank" rel="noopener" class="btn-outline-cta" style="background:#fff;">Read more on arifinfrds.com →</a>
   </div>
 </section>
 
