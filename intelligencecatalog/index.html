@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligence Catalog — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Intelligence Catalog, an on-device AI app for iOS, iPadOS, and macOS. No data collection — everything runs locally on your device.">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+  :root {
+    --ic-accent: #788CFF;
+    --ic-bg: #F2F2F7;
+    --ic-bg-elevated: #FFFFFF;
+    --ic-text: #1C1C1E;
+    --ic-text-secondary: #6C6C70;
+    --ic-border: rgba(60, 60, 67, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ic-bg: #000000;
+      --ic-bg-elevated: #1C1C1E;
+      --ic-text: #F2F2F7;
+      --ic-text-secondary: #98989D;
+      --ic-border: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  * { -webkit-font-smoothing: antialiased; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--ic-bg);
+    color: var(--ic-text);
+  }
+
+  a { color: var(--ic-accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .navbar-ic {
+    background-color: color-mix(in srgb, var(--ic-bg-elevated) 80%, transparent);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--ic-border);
+  }
+
+  .navbar-ic .navbar-brand {
+    font-weight: 700;
+    color: var(--ic-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #22D3EE, #3B82F6, #8B5CF6, #EC4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 5rem;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .effective-date {
+    color: var(--ic-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ic-card {
+    background: var(--ic-bg-elevated);
+    border: 1px solid var(--ic-border);
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p, li {
+    color: var(--ic-text-secondary);
+    line-height: 1.6;
+  }
+
+  .summary {
+    background: color-mix(in srgb, var(--ic-accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--ic-accent) 25%, transparent);
+  }
+
+  .summary p { color: var(--ic-text); font-weight: 600; margin-bottom: 0; }
+
+  footer {
+    border-top: 1px solid var(--ic-border);
+    color: var(--ic-text-secondary);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-ic py-2">
+  <div class="container" style="max-width:720px;">
+    <a class="navbar-brand" href="../my-apps/intelligence-catalog-landing-page/index.html">
+      <span class="brand-icon"><i class="bi bi-stack"></i></span>
+      Intelligence Catalog
+    </a>
+  </div>
+</nav>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <div class="effective-date">Effective July 17, 2026</div>
+
+  <div class="ic-card summary">
+    <p>Intelligence Catalog does not collect, store, or transmit any personal data. Every demo runs entirely on your device — nothing you provide is ever sent to us or anyone else.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>What This App Does</h2>
+    <p>Intelligence Catalog is an interactive knowledge base and playground for on-device AI on iOS, iPadOS, and macOS. It lets you run real Core ML models, Vision tasks, Apple Intelligence Foundation Models, and Natural Language tasks directly on your device.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Information We Collect</h2>
+    <p>None. Intelligence Catalog has no user accounts, no sign-in, no analytics SDKs, no crash reporters, no advertising identifiers, and no backend server of any kind. We do not know who uses this app, how often, or what for.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Photos, Camera, and Text You Provide</h2>
+    <p>When you choose a photo, take a picture, draw on the canvas, or type text to try a demo, that content is used only to run the selected on-device model (Core ML, Vision, Foundation Models, or Natural Language) and to display the result to you. It is processed locally on your device using Apple's frameworks and is never uploaded, logged, or shared — it exists only for the duration of that demo run.</p>
+    <p>The app requests camera access solely so you can photograph a subject to run through a demo; photo library access uses Apple's PhotosPicker, which runs out-of-process and never grants the app direct access to your photo library.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Third-Party Services</h2>
+    <p>Intelligence Catalog does not integrate any third-party analytics, advertising, or data-processing services. All inference is performed using Apple's own on-device frameworks (Core ML, Vision, Foundation Models, Natural Language), which do not send your input off-device.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Children's Privacy</h2>
+    <p>Since the app collects no data from anyone, it does not knowingly collect data from children either. The app is suitable for general audiences.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Changes to This Policy</h2>
+    <p>If this policy ever changes — for example, if a future version adds an optional server-backed feature — this page will be updated and the effective date above will reflect the change.</p>
+  </div>
+
+  <div class="ic-card">
+    <h2>Contact</h2>
+    <p>Questions about this policy or the app can be sent to <a href="mailto:arifinfrds.engineer@gmail.com">arifinfrds.engineer@gmail.com</a>.</p>
+  </div>
+</main>
+
+<footer class="py-4">
+  <div class="container text-center" style="max-width:720px;">
+    &copy; 2026 Arifin Firdaus
+  </div>
+</footer>
+
+</body>
+</html>
