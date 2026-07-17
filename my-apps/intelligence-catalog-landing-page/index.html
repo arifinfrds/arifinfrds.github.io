@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligence Catalog — Explore On-Device AI</title>
+<meta name="description" content="Intelligence Catalog is an interactive knowledge base and playground for on-device AI on iOS, iPadOS, and macOS — discover, learn, and run real Core ML, Vision, Foundation Models, and Natural Language demos.">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+  :root {
+    --ic-accent: #788CFF;
+    --ic-accent-rgb: 120, 140, 255;
+    --ic-cyan: #22D3EE;
+    --ic-blue: #3B82F6;
+    --ic-purple: #8B5CF6;
+    --ic-pink: #EC4899;
+    --ic-radius: 12px;
+    --bs-border-radius: 12px;
+    --bs-border-radius-lg: 12px;
+    --bs-border-radius-sm: 10px;
+    --ic-bg: #F2F2F7;
+    --ic-bg-elevated: #FFFFFF;
+    --ic-bg-secondary: #FFFFFF;
+    --ic-text: #1C1C1E;
+    --ic-text-secondary: #6C6C70;
+    --ic-border: rgba(60, 60, 67, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ic-bg: #000000;
+      --ic-bg-elevated: #1C1C1E;
+      --ic-bg-secondary: #1C1C1E;
+      --ic-text: #F2F2F7;
+      --ic-text-secondary: #98989D;
+      --ic-border: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  * { -webkit-font-smoothing: antialiased; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--ic-bg);
+    color: var(--ic-text);
+  }
+
+  a { text-decoration: none; }
+
+  .text-secondary-ic { color: var(--ic-text-secondary) !important; }
+
+  /* Navbar */
+  .navbar-ic {
+    background-color: rgba(var(--ic-bg-elevated-rgb, 255, 255, 255), 0.8);
+    background-color: color-mix(in srgb, var(--ic-bg-elevated) 80%, transparent);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--ic-border);
+  }
+
+  .navbar-ic .navbar-brand {
+    font-weight: 700;
+    color: var(--ic-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navbar-ic .nav-link {
+    color: var(--ic-text-secondary);
+    font-weight: 500;
+  }
+
+  .navbar-ic .nav-link:hover { color: var(--ic-accent); }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--ic-cyan), var(--ic-blue), var(--ic-purple), var(--ic-pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: -20% -10% auto -10%;
+    height: 720px;
+    background: radial-gradient(60% 60% at 30% 20%, rgba(34, 211, 238, 0.25), transparent 70%),
+                radial-gradient(50% 50% at 75% 10%, rgba(139, 92, 246, 0.22), transparent 70%),
+                radial-gradient(45% 45% at 55% 40%, rgba(236, 72, 153, 0.18), transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--ic-cyan), var(--ic-blue), var(--ic-purple), var(--ic-pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2.75rem;
+    box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.45);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+  }
+
+  .hero .lede {
+    font-size: 1.2rem;
+    color: var(--ic-text-secondary);
+    max-width: 640px;
+  }
+
+  .pill-row .badge {
+    background: color-mix(in srgb, var(--ic-accent) 14%, transparent);
+    color: var(--ic-accent);
+    font-weight: 600;
+    padding: 0.5em 0.9em;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+
+  .btn-accent {
+    background: var(--ic-accent);
+    border-color: var(--ic-accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--ic-radius);
+  }
+  .btn-accent:hover {
+    background: color-mix(in srgb, var(--ic-accent) 85%, black);
+    border-color: color-mix(in srgb, var(--ic-accent) 85%, black);
+    color: #fff;
+  }
+
+  .btn-outline-ic {
+    border: 1.5px solid var(--ic-border);
+    color: var(--ic-text);
+    font-weight: 600;
+    padding: 0.65rem 1.5rem;
+    border-radius: var(--ic-radius);
+    background: var(--ic-bg-elevated);
+  }
+  .btn-outline-ic:hover {
+    border-color: var(--ic-accent);
+    color: var(--ic-accent);
+  }
+
+  /* Section headings */
+  .eyebrow {
+    color: var(--ic-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+  }
+
+  section h2 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  /* Cards */
+  .ic-card {
+    background: var(--ic-bg-elevated);
+    border: 1px solid var(--ic-border);
+    border-radius: var(--ic-radius);
+    padding: 1.75rem;
+    height: 100%;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .ic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -18px rgba(0,0,0,0.25);
+    border-color: color-mix(in srgb, var(--ic-accent) 40%, var(--ic-border));
+  }
+
+  .ic-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .bg-cyan   { background: var(--ic-cyan); }
+  .bg-blue   { background: var(--ic-blue); }
+  .bg-purple { background: var(--ic-purple); }
+  .bg-pink   { background: var(--ic-pink); }
+
+  .ic-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .ic-card p {
+    color: var(--ic-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* Framework cards */
+  .framework-card {
+    background: var(--ic-bg-elevated);
+    border: 1px solid var(--ic-border);
+    border-radius: var(--ic-radius);
+    padding: 1.5rem;
+    text-align: center;
+    height: 100%;
+  }
+
+  .framework-card .fw-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--ic-accent) 14%, transparent);
+    color: var(--ic-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin: 0 auto 1rem;
+  }
+
+  /* Task chips */
+  .task-chip {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--ic-border);
+    background: var(--ic-bg-elevated);
+    color: var(--ic-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0.25rem;
+  }
+
+  .stat-block {
+    text-align: center;
+  }
+  .stat-block .num {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--ic-accent);
+    letter-spacing: -0.02em;
+  }
+  .stat-block .label {
+    color: var(--ic-text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  /* Quote / About */
+  .quote-section {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--ic-cyan) 10%, transparent), color-mix(in srgb, var(--ic-purple) 10%, transparent));
+    border-top: 1px solid var(--ic-border);
+    border-bottom: 1px solid var(--ic-border);
+  }
+  .quote-section blockquote {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--ic-border);
+    color: var(--ic-text-secondary);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--ic-text-secondary); }
+  footer a:hover { color: var(--ic-accent); }
+
+  section { padding-top: 5rem; padding-bottom: 5rem; }
+
+  /* Phone frames */
+  .phone-frame {
+    width: 240px;
+    aspect-ratio: 9 / 19.5;
+    border-radius: 42px;
+    border: 6px solid #000;
+    background: #000;
+    box-shadow: 0 24px 48px -20px rgba(0,0,0,0.35);
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .phone-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .phone-caption {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--ic-text);
+  }
+  .phone-caption small {
+    display: block;
+    font-weight: 400;
+    color: var(--ic-text-secondary);
+  }
+  .mock-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 10px 10px;
+    box-sizing: border-box;
+  }
+  .mock-statusbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  .mock-title {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    padding: 0 4px;
+  }
+  .mock-segmented {
+    display: flex;
+    background: #1c1c1e;
+    border-radius: 7px;
+    padding: 2px;
+    margin: 0 4px 10px;
+  }
+  .mock-segmented span {
+    flex: 1;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .mock-segmented span.active { background: #48484a; }
+  .mock-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    padding: 0 4px;
+  }
+  .mock-card {
+    background: #1c1c1e;
+    border-radius: 8px;
+    padding: 8px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .mock-card .mock-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--ic-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .mock-card .mock-name { font-weight: 700; font-size: 8.5px; margin-top: 4px; }
+  .mock-card .mock-chip {
+    align-self: flex-start;
+    background: rgba(120,140,255,0.18);
+    color: #a5b1ff;
+    border-radius: 999px;
+    padding: 1px 5px;
+    font-size: 6.5px;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+  .mock-detail-hero {
+    background: #1c1c1e;
+    border-radius: 10px;
+    margin: 0 4px 10px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .mock-detail-hero .mock-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 8px;
+    border-radius: 10px;
+    background: var(--ic-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .mock-detail-hero .mock-model-name { font-size: 13px; font-weight: 800; }
+  .mock-detail-hero .mock-model-sub { color: #98989d; font-size: 8px; margin-top: 2px; }
+  .mock-section-label {
+    font-weight: 700;
+    font-size: 8.5px;
+    color: #98989d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0 8px;
+    margin-bottom: 4px;
+  }
+  .mock-row {
+    background: #1c1c1e;
+    border-radius: 8px;
+    margin: 0 4px 6px;
+    padding: 7px 9px;
+  }
+  .mock-cta {
+    margin-top: auto;
+    background: var(--ic-accent);
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 9px;
+    margin: 8px 4px 0;
+    font-size: 9.5px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-ic py-2">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="brand-icon"><i class="bi bi-stack"></i></span>
+      Intelligence Catalog
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#screenshots">Screenshots</a></li>
+        <li class="nav-item"><a class="nav-link" href="#catalog">Catalog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn btn-accent btn-sm" href="#catalog">Explore the Catalog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="container position-relative text-center" style="z-index:1;">
+    <div class="hero-icon mx-auto"><i class="bi bi-stack"></i></div>
+    <h1 class="mb-3">Explore On-Device AI</h1>
+    <p class="lede mx-auto mb-4">
+      Intelligence Catalog is an interactive knowledge base and playground for on-device AI —
+      discover, learn, and experience real models running through curated demos and
+      educational content, right on your iPhone, iPad, and Mac.
+    </p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+      <a href="#catalog" class="btn btn-accent">Explore the Catalog</a>
+      <a href="#features" class="btn btn-outline-ic">See How It Works</a>
+    </div>
+    <div class="pill-row d-flex justify-content-center gap-2 flex-wrap">
+      <span class="badge"><i class="bi bi-book me-1"></i>Learn</span>
+      <span class="badge"><i class="bi bi-grid me-1"></i>Explore</span>
+      <span class="badge"><i class="bi bi-play-circle me-1"></i>Run</span>
+      <span class="badge"><i class="bi bi-lightbulb me-1"></i>Understand</span>
+    </div>
+  </div>
+</header>
+
+<!-- Features -->
+<section id="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="eyebrow mb-2">Why Intelligence Catalog</div>
+      <h2>A hands-on tour of Apple's on-device AI</h2>
+      <p class="text-secondary-ic mx-auto" style="max-width:600px;">
+        Designed to feel like a mix of Apple sample code, Apple Developer Documentation,
+        and an interactive AI museum.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="ic-card">
+          <div class="ic-icon-badge bg-cyan"><i class="bi bi-grid-fill"></i></div>
+          <h3>Browse Real Models</h3>
+          <p>Explore a curated catalog of Apple's Core ML and Vision models.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ic-card">
+          <div class="ic-icon-badge bg-blue"><i class="bi bi-play-circle-fill"></i></div>
+          <h3>Run Live Demos</h3>
+          <p>Try each model yourself with your own photos and text.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ic-card">
+          <div class="ic-icon-badge bg-purple"><i class="bi bi-journal-bookmark-fill"></i></div>
+          <h3>Learn How It Works</h3>
+          <p>See inputs, outputs, and how-to-use tips for every model.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="ic-card">
+          <div class="ic-icon-badge bg-pink"><i class="bi bi-shield-lock-fill"></i></div>
+          <h3>100% On-Device</h3>
+          <p>Every demo runs locally — nothing you provide ever leaves your device.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Screenshots -->
+<section id="screenshots">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="eyebrow mb-2">See It In Action</div>
+      <h2>From first launch to live results</h2>
+      <p class="text-secondary-ic mx-auto" style="max-width:600px;">
+        A real capture of the app's first-launch experience, next to the Gallery and Model Detail
+        screens you'll land on right after.
+      </p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-center gap-5">
+      <div>
+        <div class="phone-frame">
+          <img src="images/screenshot-onboarding.png" alt="Intelligence Catalog onboarding screen">
+        </div>
+        <div class="phone-caption">Onboarding<small>Actual app screenshot</small></div>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <img src="images/screenshot-gallery.png" alt="Intelligence Catalog Gallery screen">
+        </div>
+        <div class="phone-caption">Gallery<small>Actual app screenshot</small></div>
+      </div>
+      <div>
+        <div class="phone-frame">
+          <img src="images/screenshot-modeldetail.png" alt="Intelligence Catalog Model Detail screen for FastViT">
+        </div>
+        <div class="phone-caption">Model Detail<small>Actual app screenshot</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Catalog -->
+<section id="catalog" style="background: var(--ic-bg-secondary); border-top: 1px solid var(--ic-border); border-bottom: 1px solid var(--ic-border);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="eyebrow mb-2">The Catalog</div>
+      <h2>36 tasks. Four Apple frameworks. One app.</h2>
+      <p class="text-secondary-ic mx-auto" style="max-width:600px;">
+        Real, bundled Core ML models alongside native Vision and Natural Language tasks and
+        Apple Intelligence–powered Foundation Models — spanning image and text understanding.
+      </p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-6 col-md-3">
+        <div class="stat-block"><div class="num">36</div><div class="label">Total Tasks</div></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-block"><div class="num">10</div><div class="label">Bundled Core ML Models</div></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-block"><div class="num">19</div><div class="label">Native Vision Tasks</div></div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-block"><div class="num">4</div><div class="label">Frameworks</div></div>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3">
+        <div class="framework-card">
+          <div class="fw-icon"><i class="bi bi-cpu"></i></div>
+          <h3 class="h5 mb-2">Core ML</h3>
+          <p class="text-secondary-ic mb-0" style="font-size:0.9rem;">FastViT, MobileNetV2, ResNet-50, YOLOv3, DETR, DeepLabv3, Depth Anything V2, MNIST, and more.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="framework-card">
+          <div class="fw-icon"><i class="bi bi-eye"></i></div>
+          <h3 class="h5 mb-2">Vision</h3>
+          <p class="text-secondary-ic mb-0" style="font-size:0.9rem;">Face, barcode, animal &amp; pose detection, text recognition, saliency, document scanning, and more.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="framework-card">
+          <div class="fw-icon"><i class="bi bi-stars"></i></div>
+          <h3 class="h5 mb-2">Foundation Models</h3>
+          <p class="text-secondary-ic mb-0" style="font-size:0.9rem;">Apple Intelligence–powered summarization and structured data extraction.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="framework-card">
+          <div class="fw-icon"><i class="bi bi-chat-square-text"></i></div>
+          <h3 class="h5 mb-2">Natural Language</h3>
+          <p class="text-secondary-ic mb-0" style="font-size:0.9rem;">Sentiment analysis, tokenization, language ID, named entity recognition, and part-of-speech tagging.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <h3 class="h5 mb-3">Explore tasks across the catalog</h3>
+      <div>
+        <span class="task-chip">Image Classification</span>
+        <span class="task-chip">Object Detection</span>
+        <span class="task-chip">Semantic Segmentation</span>
+        <span class="task-chip">Depth Estimation</span>
+        <span class="task-chip">Drawing Classification</span>
+        <span class="task-chip">Text Recognition (OCR)</span>
+        <span class="task-chip">Face Detection</span>
+        <span class="task-chip">Barcode Detection</span>
+        <span class="task-chip">Animal Detection</span>
+        <span class="task-chip">Person Segmentation</span>
+        <span class="task-chip">Pose Detection</span>
+        <span class="task-chip">Saliency</span>
+        <span class="task-chip">Rectangle Detection</span>
+        <span class="task-chip">Contour Detection</span>
+        <span class="task-chip">Horizon Detection</span>
+        <span class="task-chip">Document Recognition</span>
+        <span class="task-chip">Image Aesthetics Scoring</span>
+        <span class="task-chip">Question Answering</span>
+        <span class="task-chip">Summarization</span>
+        <span class="task-chip">Structured Extraction</span>
+        <span class="task-chip">Sentiment Analysis</span>
+        <span class="task-chip">Tokenization</span>
+        <span class="task-chip">Language Identification</span>
+        <span class="task-chip">Named Entity Recognition</span>
+        <span class="task-chip">Part-of-Speech Tagging</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote / About -->
+<section id="about" class="quote-section text-center">
+  <div class="container">
+    <blockquote class="mb-4">
+      "An interactive playground for Apple's on-device AI — learn, explore, run, and understand,
+      all in one native app."
+    </blockquote>
+    <p class="text-secondary-ic mb-0">Built natively in SwiftUI for iOS, iPadOS &amp; Mac · Fully on-device · Dark mode supported</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <div class="d-flex align-items-center gap-2">
+      <span class="brand-icon" style="width:24px;height:24px;font-size:0.75rem;"><i class="bi bi-stack"></i></span>
+      <span>Intelligence Catalog</span>
+    </div>
+    <div>&copy; 2026 Arifin Firdaus</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
