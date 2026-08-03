@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quran Firdaus 4.2 – Offline Quran App for iOS, iPadOS & macOS | Arifin Firdaus</title>
-  <meta name="description" content="Quran Firdaus: an offline Quran reading app for iPhone, iPad, and Mac with 150+ reciters, curated Dua, AI-personalized recommendations, widgets, and Siri Shortcuts. Built with SwiftUI — and in 2026, with Claude Code agentic engineering.">
+  <meta name="description" content="Quran Firdaus: an offline Quran reading app for iPhone, iPad, and Mac with 150+ reciters, curated Dua, time-aware recommendations, widgets, and Siri Shortcuts. Built with SwiftUI — and in 2026, with Claude Code agentic engineering.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
@@ -91,6 +91,8 @@
       background: var(--qf-green); border: 3px solid #fff; box-shadow: 0 0 0 3px #d8f3dc;
     }
     .timeline-item.now::before { background: #1b9c73; box-shadow: 0 0 0 4px #95D5B2; }
+    .timeline-item.upcoming::before { background: #fff; border: 3px dashed var(--qf-green); box-shadow: none; }
+    .timeline-item.upcoming .timeline-year { color: #888; }
     .timeline-year { font-weight: 800; font-size: 1.3rem; color: var(--qf-green); }
     .timeline-item p { color: #555; font-size: .9rem; margin: 4px 0 0; }
 
@@ -120,15 +122,15 @@
           <span class="badge" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#1b9c73;">v4.2</span>
         </div>
         <div class="app-icon-qf mb-3">
-          <img src="Quran Firdaus App Logo V2 rounded corner.png" alt="Quran Firdaus app icon">
+          <img src="app-icon-current.png" alt="Quran Firdaus app icon">
         </div>
         <h1>Quran Firdaus</h1>
         <p class="lead mt-2">
-          A modern, 100% offline Quran reading app for iPhone, iPad, and Mac — the diacritized
-          Uthmani text, English &amp; Indonesian translations, recitation from 150+ reciters, a
-          curated Dua collection, and a personalized <strong style="color:#fff;">For You</strong> tab
-          that recommends verses based on the time of day. Built entirely in <strong style="color:#fff;">SwiftUI</strong>,
-          with full dark mode support.
+          A modern Quran reading app for iPhone, iPad, and Mac — the diacritized Uthmani text and
+          English &amp; Indonesian translations read fully offline, with online audio recitation from
+          150+ reciters, a curated Dua collection, and a personalized
+          <strong style="color:#fff;">For You</strong> tab that recommends verses based on the time
+          of day. Built entirely in <strong style="color:#fff;">SwiftUI</strong>, with full dark mode support.
         </p>
         <div class="mt-4">
           <a href="https://apps.apple.com/id/app/quran-firdaus/id1669556184" target="_blank" rel="noopener" class="btn btn-light fw-bold px-4 py-2 rounded-pill">
@@ -155,8 +157,8 @@
       <div class="col-md-6 col-lg-4">
         <div class="resp-card">
           <div class="icon">📖</div>
-          <h6>Offline Reading, 5 Calligraphy Fonts</h6>
-          <p>The full diacritized Uthmani Arabic text, with English and Indonesian (Kemenag) translations, bundled entirely offline. Choose from 5 Quran fonts, including Amiri Quran and DigitalKhatt Madina.</p>
+          <h6>Offline Reading, Up to 4 Arabic Fonts</h6>
+          <p>The full diacritized Uthmani Arabic text, with English and Indonesian translations, read entirely offline — no connection needed. Choose from up to 4 Arabic reading fonts to match your taste.</p>
           <img src="screenshot-iphone-reading.png" alt="Quran reading view on iPhone" class="card-shot">
         </div>
       </div>
@@ -165,8 +167,16 @@
         <div class="resp-card">
           <div class="icon">🎧</div>
           <h6>150+ Reciters</h6>
-          <p>Full audio recitation with background playback and Lock Screen artwork. Pick your preferred reciter from a library of 150+ voices, right from Settings.</p>
+          <p>Streamed audio recitation with background playback and Lock Screen artwork. Pick your preferred voice — from Mishary Alafasy to Yasser Al Dosari — from a library of 150+ reciters in Settings.</p>
           <img src="screenshot-iphone-settings.png" alt="Reciter and font settings on iPhone" class="card-shot">
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">💡</div>
+          <h6>Motivational Verses</h6>
+          <p>An NLP-based sentiment analysis feature scores verses on-device and surfaces uplifting, motivational ones through a dedicated filter — no server round-trip, no data leaving your device.</p>
         </div>
       </div>
 
@@ -251,7 +261,7 @@
           <span class="tech-pill">iPadOS</span>
           <span class="tech-pill">macOS</span>
           <span class="tech-pill">Dark Mode</span>
-          <span class="tech-pill">Offline</span>
+          <span class="tech-pill">Offline Reading</span>
         </div>
 
         <div class="mt-4 p-4 rounded-3 bg-white border">
@@ -261,9 +271,9 @@
             developed the full app from scratch, from the original 2023 reading experience through
             the 2026 rebuild. Key engineering work includes the cross-platform <strong>SwiftUI</strong> UI,
             the offline <strong>CoreData</strong> Quran dataset, <strong>SwiftData</strong>-backed Dua bookmarks,
-            an on-device <strong>Natural Language</strong> sentiment model for motivational-verse filtering,
-            and the <strong>WidgetKit</strong> / <strong>App Intents</strong> integrations that power the
-            widget, notifications, and Siri Shortcuts.
+            an on-device <strong>Natural Language</strong> sentiment-analysis (NLP) model for motivational-verse
+            filtering, and the <strong>WidgetKit</strong> / <strong>App Intents</strong> integrations that power
+            the widget, notifications, and Siri Shortcuts.
           </p>
         </div>
       </div>
@@ -337,19 +347,24 @@
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2025</div>
-        <p><strong>The comeback, and the growth year.</strong> Development resumes in April with v1.4.x–v1.7.x,
-        the "Quran Firdaus+" rebrand, and bookmarks. By autumn: Siri &amp; App Intents, an on-device
-        motivational-verse filter, and a full audio player with reciter selection. The year closes with
+        <p><strong>The comeback, and the growth year.</strong> Development resumes in April with v1.4.x–v1.7.x
+        and bookmarks. By autumn: Siri &amp; App Intents, an on-device NLP-based sentiment filter for
+        motivational verses, and a full audio player with reciter selection. The year closes with
         <strong>v3.0.0</strong> on December 31 — an architecture refactor setting up everything that follows.</p>
       </div>
       <div class="timeline-item now">
         <div class="timeline-year">2026</div>
         <p><strong>The biggest leap yet — and an agentic one.</strong> <strong>v4.0.0</strong> (July) brings
-        diacritized Uthmani text, 5 Quran fonts, and restores native macOS support. <strong>v4.2.0</strong>
-        (August) adds Home &amp; Lock Screen widgets, scheduled notifications, and the personalized "For You" tab.
-        Just as significantly, 2026 is the year the engineering workflow itself changes: feature planning and
-        day-to-day development move to <strong>agentic AI coding with Claude Code skills</strong> — the same
-        workflow now proposed to carry Quran Firdaus onto its next platform.</p>
+        diacritized Uthmani text, up to 4 Arabic reading fonts, and restores native macOS support.
+        <strong>v4.2.0</strong> (August) adds Home &amp; Lock Screen widgets, scheduled notifications, and the
+        personalized "For You" tab. Just as significantly, 2026 is the year the engineering workflow itself
+        changes: feature planning and day-to-day development move to <strong>agentic AI coding with Claude
+        Code skills</strong>.</p>
+      </div>
+      <div class="timeline-item upcoming">
+        <div class="timeline-year">Coming Soon</div>
+        <p><strong>Coming to Android.</strong> A native Android app is next on the roadmap — planned to be
+        built with the same agentic Claude Code workflow driving iOS, iPadOS, and macOS development today.</p>
       </div>
     </div>
   </div>
