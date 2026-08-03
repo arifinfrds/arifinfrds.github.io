@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quran Firdaus – iOS App | Arifin Firdaus</title>
+  <title>Quran Firdaus 4.2 – Offline Quran App for iOS, iPadOS & macOS | Arifin Firdaus</title>
+  <meta name="description" content="Quran Firdaus: an offline Quran reading app for iPhone, iPad, and Mac with 150+ reciters, curated Dua, AI-personalized recommendations, widgets, and Siri Shortcuts. Built with SwiftUI — and in 2026, with Claude Code agentic engineering.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
@@ -25,11 +26,10 @@
 
     .app-icon-qf {
       width: 96px; height: 96px; border-radius: 22px;
-      background: var(--qf-green);
-      display: inline-flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 900; font-size: 1.4rem;
+      overflow: hidden; display: inline-flex; align-items: center; justify-content: center;
       box-shadow: 0 6px 28px rgba(45,106,79,.55);
     }
+    .app-icon-qf img { width: 100%; height: 100%; object-fit: cover; }
 
     .section-eyebrow {
       font-size: .72rem; font-weight: 700; letter-spacing: 1.2px;
@@ -52,6 +52,10 @@
     .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
     .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
     .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+    .resp-card img.card-shot {
+      width: 100%; border-radius: 10px; margin-top: 14px;
+      border: 1px solid #e0e0e0; box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
 
     .arch-layer {
       border-left: 3px solid var(--qf-green); padding: 12px 18px;
@@ -59,6 +63,36 @@
     }
     .arch-layer h6 { font-weight: 700; margin-bottom: 2px; font-size: .9rem; }
     .arch-layer p  { font-size: .82rem; color: #666; margin: 0; }
+
+    /* Agentic AI / Claude section */
+    .agentic-section {
+      background: linear-gradient(140deg, #1B4332 0%, #081C15 100%);
+      color: #fff;
+    }
+    .agentic-section .section-eyebrow { color: #95D5B2; }
+    .skill-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px; padding: 20px; height: 100%;
+    }
+    .skill-card h6 { font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .skill-card p { font-size: .84rem; color: #cfe9dc; margin: 0; }
+    .skill-card code {
+      display: inline-block; font-size: .74rem; color: #95D5B2;
+      background: rgba(149,213,178,.12); border-radius: 6px; padding: 2px 8px; margin-bottom: 10px;
+    }
+
+    /* Milestones timeline */
+    .timeline { position: relative; margin-left: 8px; padding-left: 28px; border-left: 3px solid #d8f3dc; }
+    .timeline-item { position: relative; padding-bottom: 34px; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -35px; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--qf-green); border: 3px solid #fff; box-shadow: 0 0 0 3px #d8f3dc;
+    }
+    .timeline-item.now::before { background: #1b9c73; box-shadow: 0 0 0 4px #95D5B2; }
+    .timeline-year { font-weight: 800; font-size: 1.3rem; color: var(--qf-green); }
+    .timeline-item p { color: #555; font-size: .9rem; margin: 4px 0 0; }
 
     footer { background: var(--qf-dark); color: #888; padding: 40px 0; }
     footer a { color: #95D5B2; }
@@ -82,63 +116,93 @@
         <div class="mb-3">
           <span class="badge me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:var(--qf-green);">iOS</span>
           <span class="badge me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#555;">iPadOS</span>
-          <span class="badge" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#555;">macOS</span>
+          <span class="badge me-2" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#555;">macOS</span>
+          <span class="badge" style="font-size:.72rem; font-weight:700; letter-spacing:.8px; text-transform:uppercase; padding:4px 12px; border-radius:50px; background:#1b9c73;">v4.2</span>
+        </div>
+        <div class="app-icon-qf mb-3">
+          <img src="Quran Firdaus App Logo V2 rounded corner.png" alt="Quran Firdaus app icon">
         </div>
         <h1>Quran Firdaus</h1>
         <p class="lead mt-2">
-          An offline Quran reading app for Apple platforms — iOS, iPadOS, and macOS.
-          Built entirely with <strong style="color:#fff;">SwiftUI</strong> with full dark mode support,
-          100% offline functionality, and smooth native performance across all supported devices.
+          A modern, 100% offline Quran reading app for iPhone, iPad, and Mac — the diacritized
+          Uthmani text, English &amp; Indonesian translations, recitation from 150+ reciters, a
+          curated Dua collection, and a personalized <strong style="color:#fff;">For You</strong> tab
+          that recommends verses based on the time of day. Built entirely in <strong style="color:#fff;">SwiftUI</strong>,
+          with full dark mode support.
         </p>
+        <div class="mt-4">
+          <a href="https://apps.apple.com/id/app/quran-firdaus/id1669556184" target="_blank" rel="noopener" class="btn btn-light fw-bold px-4 py-2 rounded-pill">
+            Download on the App Store
+          </a>
+        </div>
       </div>
       <div class="col-lg-5 text-center">
-        <div class="app-icon-qf mx-auto">☪</div>
-        <img src="ipad-dark-master-detail.png" alt="Quran Firdaus on iPad" class="img-fluid mt-4 rounded-3"
-             style="max-width:340px; box-shadow:0 8px 32px rgba(0,0,0,.5);">
+        <img src="screenshot-ipad-split.png" alt="Quran Firdaus split-view reading on iPad" class="img-fluid rounded-3"
+             style="max-width:420px; box-shadow:0 8px 32px rgba(0,0,0,.5);">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Tech Stack -->
+<!-- Features -->
 <section class="py-5">
   <div class="container">
-    <p class="section-eyebrow mb-1">Engineering</p>
-    <h2 class="fw-bold mb-1">Tech Stack</h2>
-    <p class="text-muted mb-4">Technologies used to build Quran Firdaus across iOS, iPadOS, and macOS.</p>
+    <p class="section-eyebrow mb-1">What's Inside</p>
+    <h2 class="fw-bold mb-1">Everything you need to read, listen, and reflect</h2>
+    <p class="text-muted mb-4">Quran Firdaus 4.2 — released August 2026.</p>
 
     <div class="row g-4">
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-4">
         <div class="resp-card">
-          <div class="icon">🎨</div>
-          <h6>UI — SwiftUI</h6>
-          <p>Built entirely with <strong>SwiftUI</strong>, leveraging its cross-platform capabilities to share a single declarative UI codebase across iPhone, iPad, and Mac — with platform-adaptive layouts and native dark mode support.</p>
-          <div class="mt-3">
-            <span class="tech-pill highlight">SwiftUI</span>
-          </div>
+          <div class="icon">📖</div>
+          <h6>Offline Reading, 5 Calligraphy Fonts</h6>
+          <p>The full diacritized Uthmani Arabic text, with English and Indonesian (Kemenag) translations, bundled entirely offline. Choose from 5 Quran fonts, including Amiri Quran and DigitalKhatt Madina.</p>
+          <img src="screenshot-iphone-reading.png" alt="Quran reading view on iPhone" class="card-shot">
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-4">
         <div class="resp-card">
-          <div class="icon">💾</div>
-          <h6>Local Persistence — CoreData</h6>
-          <p><strong>CoreData</strong> stores the full Quran text locally, enabling completely offline reading without any network dependency — fast queries across all 114 surahs and 6,236 ayahs.</p>
-          <div class="mt-3">
-            <span class="tech-pill highlight">CoreData</span>
-          </div>
+          <div class="icon">🎧</div>
+          <h6>150+ Reciters</h6>
+          <p>Full audio recitation with background playback and Lock Screen artwork. Pick your preferred reciter from a library of 150+ voices, right from Settings.</p>
+          <img src="screenshot-iphone-settings.png" alt="Reciter and font settings on iPhone" class="card-shot">
         </div>
       </div>
 
-      <div class="col-md-12">
+      <div class="col-md-6 col-lg-4">
         <div class="resp-card">
-          <div class="icon">⚡</div>
-          <h6>Concurrency — async / await</h6>
-          <p>Used <strong>async/await</strong> (Swift Concurrency) for all asynchronous operations — including loading Quran data from CoreData, search queries, and bookmarking — keeping the UI thread free and the experience smooth.</p>
-          <div class="mt-3">
-            <span class="tech-pill highlight">async / await</span>
-            <span class="tech-pill">Swift Concurrency</span>
-          </div>
+          <div class="icon">🤲</div>
+          <h6>Curated Dua</h6>
+          <p>A themed collection of supplications — Forgiveness, Protection &amp; Refuge, Guidance, Gratitude, and more — each sourced verse-by-verse, with its own saved-Dua list.</p>
+          <img src="screenshot-iphone-dua.png" alt="Curated Dua tab on iPhone" class="card-shot">
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">✨</div>
+          <h6>For You — Personalized, Time-Aware</h6>
+          <p>A "Right Now" card recommends a Surah based on the time of day (Fajr, before sleep, Friday, and more), alongside a most-visited-chapters chart of your own reading habits.</p>
+          <img src="screenshot-iphone-foryou.png" alt="For You personalized recommendations tab on iPhone" class="card-shot">
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">🧩</div>
+          <h6>Widgets &amp; Notifications</h6>
+          <p>A configurable Home Screen and Lock Screen widget — choose Arabic-only, with translation, or Dua content — plus scheduled verse notifications, new in v4.2.</p>
+          <img src="screenshot-widget-lockscreen.png" alt="Quran Firdaus Lock Screen widget" class="card-shot">
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="resp-card">
+          <div class="icon">🗣️</div>
+          <h6>Siri &amp; Shortcuts</h6>
+          <p>Six built-in App Intents — ask Siri for a random verse, your bookmark, a Surah recommendation, your most-visited chapters, or a motivational verse, hands-free.</p>
+          <img src="screenshot-siri-shortcuts.png" alt="Quran Firdaus Siri Shortcuts" class="card-shot">
         </div>
       </div>
     </div>
@@ -156,17 +220,18 @@
         <div class="mt-4">
           <div class="arch-layer">
             <h6>iPhone (iOS)</h6>
-            <p>Compact layout — surah list, reader view, bookmarks. Full dark mode.</p>
+            <p>Compact layout — Quran, Dua, and For You tabs, plus the audio mini-player. Full dark mode.</p>
           </div>
           <div class="arch-layer">
             <h6>iPad (iPadOS)</h6>
-            <p>Master-detail split view — browse surahs on the left, read on the right. Optimised for large screens.</p>
+            <p>Master-detail split view — browse chapters on the left, read on the right. Optimised for large screens.</p>
           </div>
           <div class="arch-layer">
             <h6>Mac (macOS)</h6>
-            <p>Native Mac experience via SwiftUI Mac target. Sidebar navigation.</p>
+            <p>Native Mac app (Apple Silicon &amp; Intel) via the same SwiftUI codebase — restored and hardened in v4.0.</p>
           </div>
         </div>
+        <img src="screenshot-macos-dua.png" alt="Quran Firdaus Dua tab on macOS" class="img-fluid rounded-3 mt-4 border">
       </div>
 
       <div class="col-lg-7">
@@ -175,8 +240,13 @@
         <div>
           <span class="tech-pill highlight">SwiftUI</span>
           <span class="tech-pill highlight">CoreData</span>
+          <span class="tech-pill highlight">SwiftData</span>
           <span class="tech-pill highlight">async / await</span>
           <span class="tech-pill">Swift Concurrency</span>
+          <span class="tech-pill">WidgetKit</span>
+          <span class="tech-pill">App Intents</span>
+          <span class="tech-pill">Swift Charts</span>
+          <span class="tech-pill">Natural Language (on-device AI)</span>
           <span class="tech-pill">iOS</span>
           <span class="tech-pill">iPadOS</span>
           <span class="tech-pill">macOS</span>
@@ -188,12 +258,98 @@
           <p class="section-eyebrow mb-2">My Role</p>
           <p class="mb-0 text-muted" style="font-size:.92rem;">
             Built <strong>Quran Firdaus</strong> as an independent personal project — designed and
-            developed the full app from scratch. Key work included architecting the
-            <strong>SwiftUI</strong> cross-platform UI, modelling and seeding all Quran data
-            in <strong>CoreData</strong>, and using <strong>async/await</strong> for smooth,
-            non-blocking data access across iPhone, iPad, and Mac.
+            developed the full app from scratch, from the original 2023 reading experience through
+            the 2026 rebuild. Key engineering work includes the cross-platform <strong>SwiftUI</strong> UI,
+            the offline <strong>CoreData</strong> Quran dataset, <strong>SwiftData</strong>-backed Dua bookmarks,
+            an on-device <strong>Natural Language</strong> sentiment model for motivational-verse filtering,
+            and the <strong>WidgetKit</strong> / <strong>App Intents</strong> integrations that power the
+            widget, notifications, and Siri Shortcuts.
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Agentic AI / Claude Skills -->
+<section class="py-5 agentic-section">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Engineering Workflow — 2026</p>
+    <h2 class="fw-bold mb-2">Built with Agentic AI — Claude Code Skills</h2>
+    <p class="mb-4" style="color:#cfe9dc; max-width:720px;">
+      Starting in 2026, Quran Firdaus development embraced <strong>agentic AI coding with Claude Code</strong>.
+      Feature planning happens as a design conversation with Claude before a line of code is written, and the
+      day-to-day engineering work — from scaffolding new API layers to shipping App Store releases — runs
+      through a set of custom <strong>Claude skills</strong> built specifically for this codebase's architecture.
+    </p>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card">
+          <code>data-layer</code>
+          <h6>Data Layer Generator</h6>
+          <p>Scaffolds and reviews new API domains following the app's Model → TargetType → RemoteDataSource → Repository architecture.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card">
+          <code>unit-testing</code>
+          <h6>Unit Test Writer</h6>
+          <p>Writes and reviews XCTest and Swift Testing coverage for repositories and view models against the project's own testing conventions.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card">
+          <code>prepare-app-store-release</code>
+          <h6>Release Automation</h6>
+          <p>Drives version bumps, screenshot renewal, and build archive/export/upload through the App Store Connect API.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="skill-card">
+          <code>post-release-sync</code>
+          <h6>Post-Release Sync</h6>
+          <p>Merges and tags the release once Apple approves it — kept as a separate, explicit step so main only ever reflects what's actually live.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-4 mb-0" style="color:#95D5B2; font-size:.85rem;">
+      Even this landing page update was researched and shipped by a Claude Code agent — reading the live
+      codebase, pulling current App Store screenshots, and publishing the result.
+    </p>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section class="py-5">
+  <div class="container">
+    <p class="section-eyebrow mb-1">Since 2023</p>
+    <h2 class="fw-bold mb-4">Milestones, Year by Year</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">2023</div>
+        <p><strong>Quran Firdaus is born.</strong> First commit in January; the original SwiftUI master-detail
+        reading experience takes shape, culminating in v1.4.0 that April and steady iteration through the year.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <p><strong>A quiet year.</strong> No shipped releases — the calm before a much larger rebuild.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <p><strong>The comeback, and the growth year.</strong> Development resumes in April with v1.4.x–v1.7.x,
+        the "Quran Firdaus+" rebrand, and bookmarks. By autumn: Siri &amp; App Intents, an on-device
+        motivational-verse filter, and a full audio player with reciter selection. The year closes with
+        <strong>v3.0.0</strong> on December 31 — an architecture refactor setting up everything that follows.</p>
+      </div>
+      <div class="timeline-item now">
+        <div class="timeline-year">2026</div>
+        <p><strong>The biggest leap yet — and an agentic one.</strong> <strong>v4.0.0</strong> (July) brings
+        diacritized Uthmani text, 5 Quran fonts, and restores native macOS support. <strong>v4.2.0</strong>
+        (August) adds Home &amp; Lock Screen widgets, scheduled notifications, and the personalized "For You" tab.
+        Just as significantly, 2026 is the year the engineering workflow itself changes: feature planning and
+        day-to-day development move to <strong>agentic AI coding with Claude Code skills</strong> — the same
+        workflow now proposed to carry Quran Firdaus onto its next platform.</p>
       </div>
     </div>
   </div>
@@ -203,6 +359,7 @@
 <footer>
   <div class="container text-center">
     <div class="mb-3">
+      <a href="https://apps.apple.com/id/app/quran-firdaus/id1669556184" target="_blank" rel="noopener" class="me-3">App Store</a>
       <a href="mailto:arifinfrds.engineer@gmail.com" class="me-3">arifinfrds.engineer@gmail.com</a>
       <a href="../../index.html">← Back to Portfolio</a>
     </div>
