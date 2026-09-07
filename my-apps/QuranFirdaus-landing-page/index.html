@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quran Firdaus 4.2 – Offline Quran App for iOS, iPadOS & macOS | Arifin Firdaus</title>
-  <meta name="description" content="Quran Firdaus: an offline Quran reading app for iPhone, iPad, and Mac with 150+ reciters, curated Dua, time-aware recommendations, widgets, and Siri Shortcuts. Built with SwiftUI — and in 2026, with Claude Code agentic engineering.">
+  <title>Quran Firdaus 4.2 – Offline Quran App for iOS, iPadOS, macOS & Android | Arifin Firdaus</title>
+  <meta name="description" content="Quran Firdaus: an offline Quran reading app for iPhone, iPad, and Mac with 150+ reciters, curated Dua, time-aware recommendations, widgets, and Siri Shortcuts — with a native Jetpack Compose Android app coming soon. Built with SwiftUI and Kotlin, and in 2026, with Claude Code agentic engineering.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root {
@@ -99,6 +99,55 @@
     footer { background: var(--qf-dark); color: #888; padding: 40px 0; }
     footer a { color: #95D5B2; }
     footer a:hover { color: #fff; }
+
+    /* Android section */
+    .android-section .arch-layer { background: #fff; }
+    .badge-android {
+      font-size: .72rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px; background: #3DDC84; color: #081C15;
+    }
+
+    /* Device mockup frames (CSS-only, no external mockup tool) */
+    .phone-mockup {
+      position: relative; display: inline-block; width: 240px;
+      background: linear-gradient(160deg, #2b2b2b, #0d0d0d);
+      border-radius: 40px; padding: 10px;
+      box-shadow: 0 24px 50px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .phone-mockup .screen {
+      position: relative; border-radius: 30px; overflow: hidden;
+      background: #000; line-height: 0;
+    }
+    .phone-mockup .screen img { width: 100%; display: block; }
+    .phone-mockup .cam {
+      position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #050505; box-shadow: 0 0 0 2px rgba(255,255,255,.05); z-index: 2;
+    }
+    .phone-mockup .side-btn {
+      position: absolute; right: -2px; width: 3px; border-radius: 2px 0 0 2px;
+      background: #050505;
+    }
+    .phone-mockup .side-btn.power { top: 90px; height: 46px; }
+    .phone-mockup .side-btn.vol   { top: 150px; height: 66px; }
+    .phone-caption { font-size: .8rem; color: #666; font-weight: 600; margin-top: 14px; }
+
+    .tablet-mockup {
+      position: relative; display: inline-block; width: 100%; max-width: 720px;
+      background: linear-gradient(160deg, #2b2b2b, #0d0d0d);
+      border-radius: 26px; padding: 16px;
+      box-shadow: 0 30px 70px rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .tablet-mockup .screen {
+      position: relative; border-radius: 12px; overflow: hidden;
+      background: #000; line-height: 0;
+    }
+    .tablet-mockup .screen img { width: 100%; display: block; }
+    .tablet-mockup .cam {
+      position: absolute; top: 50%; left: 8px; transform: translateY(-50%);
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #050505; box-shadow: 0 0 0 2px rgba(255,255,255,.05); z-index: 2;
+    }
   </style>
 </head>
 <body>
@@ -281,16 +330,103 @@
   </div>
 </section>
 
+<!-- Android Platform -->
+<section class="py-5 android-section">
+  <div class="container">
+    <span class="badge-android mb-2 d-inline-block">Android · Coming Soon</span>
+    <p class="section-eyebrow mb-1">New Platform</p>
+    <h2 class="fw-bold mb-3">Now Coming to Android</h2>
+    <p class="text-muted mb-5" style="max-width:720px;">
+      A native Android app is in its final stretch of development — not a port of the SwiftUI views,
+      but rebuilt from scratch with <strong>Jetpack Compose</strong> and Android's own <strong>Material
+      3</strong> design language. It mirrors the same content and information architecture as iOS
+      — offline Quran reading, 150+ streamed reciters, curated Dua, and the personalized For You tab
+      — adapted to platform-native conventions (adaptive master-detail layouts on tablets, predictive
+      back, WorkManager-scheduled notifications) rather than a literal visual clone. Built end-to-end
+      with the same agentic <strong>Claude Code</strong> workflow driving iOS development below.
+    </p>
+
+    <div class="row g-4 justify-content-center text-center mb-5">
+      <div class="col-md-6 col-lg-4">
+        <div class="phone-mockup">
+          <span class="cam"></span>
+          <span class="side-btn power"></span>
+          <span class="side-btn vol"></span>
+          <div class="screen">
+            <img src="screenshot-android-phone-main.png" alt="Quran Firdaus chapter list on Android">
+          </div>
+        </div>
+        <p class="phone-caption">Chapter list — Material 3</p>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="phone-mockup">
+          <span class="cam"></span>
+          <span class="side-btn power"></span>
+          <span class="side-btn vol"></span>
+          <div class="screen">
+            <img src="screenshot-android-phone-player.png" alt="Quran Firdaus full-screen audio player on Android">
+          </div>
+        </div>
+        <p class="phone-caption">Full-screen audio player</p>
+      </div>
+    </div>
+
+    <div class="text-center mb-3">
+      <div class="tablet-mockup">
+        <span class="cam"></span>
+        <div class="screen">
+          <img src="screenshot-android-tablet.png" alt="Quran Firdaus adaptive master-detail layout on an Android tablet, dark mode, Indonesian translation">
+        </div>
+      </div>
+      <p class="phone-caption">Adaptive master-detail layout on tablet — dark mode, Indonesian translation</p>
+    </div>
+
+    <div class="mt-5">
+      <p class="section-eyebrow mb-2">Android Tech Stack</p>
+      <div>
+        <span class="tech-pill highlight">Kotlin</span>
+        <span class="tech-pill highlight">Jetpack Compose</span>
+        <span class="tech-pill highlight">Material 3</span>
+        <span class="tech-pill">Hilt (DI)</span>
+        <span class="tech-pill">Coroutines &amp; Flow</span>
+        <span class="tech-pill">Room</span>
+        <span class="tech-pill">DataStore</span>
+        <span class="tech-pill">WorkManager</span>
+        <span class="tech-pill">Media3 / ExoPlayer</span>
+        <span class="tech-pill">Retrofit &amp; OkHttp</span>
+        <span class="tech-pill">Adaptive (ListDetailPaneScaffold)</span>
+        <span class="tech-pill">Navigation Compose</span>
+        <span class="tech-pill">JUnit4 · MockK · Turbine</span>
+      </div>
+
+      <div class="mt-4 p-4 rounded-3" style="background:var(--qf-card);">
+        <p class="section-eyebrow mb-2">Architecture</p>
+        <p class="mb-0 text-muted" style="font-size:.92rem;">
+          A layered <strong>Model → ApiService → RemoteDataSource → Repository → ViewModel</strong> data
+          layer feeds unidirectional-data-flow Compose screens via <strong>StateFlow</strong>. Playback
+          runs on a <strong>Media3</strong> foreground service with a shared, app-lifetime
+          <strong>ExoPlayer</strong> instance so the mini-player survives tab navigation. Adaptive
+          layouts use <code>ListDetailPaneScaffold</code> to collapse to single-pane push navigation
+          on phones and expand to a permanent two-pane split on tablets and foldables from the same
+          composables — no separate tablet codebase.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Agentic AI / Claude Skills -->
 <section class="py-5 agentic-section">
   <div class="container">
     <p class="section-eyebrow mb-1">Engineering Workflow — 2026</p>
     <h2 class="fw-bold mb-2">Built with Agentic AI — Claude Code Skills</h2>
     <p class="mb-4" style="color:#cfe9dc; max-width:720px;">
-      Starting in 2026, Quran Firdaus development embraced <strong>agentic AI coding with Claude Code</strong>.
-      Feature planning happens as a design conversation with Claude before a line of code is written, and the
-      day-to-day engineering work — from scaffolding new API layers to shipping App Store releases — runs
-      through a set of custom <strong>Claude skills</strong> built specifically for this codebase's architecture.
+      Starting in 2026, Quran Firdaus development embraced <strong>agentic AI coding with Claude Code</strong> —
+      across both the existing Swift codebase and the new Kotlin/Jetpack Compose Android app being built
+      alongside it. Feature planning happens as a design conversation with Claude before a line of code is
+      written, and the day-to-day engineering work — from scaffolding new API layers to shipping releases —
+      runs through a set of custom <strong>Claude skills</strong> built specifically for each codebase's own
+      architecture.
     </p>
     <div class="row g-3">
       <div class="col-md-6 col-lg-3">
@@ -363,8 +499,10 @@
       </div>
       <div class="timeline-item upcoming">
         <div class="timeline-year">Coming Soon</div>
-        <p><strong>Coming to Android.</strong> A native Android app is next on the roadmap — planned to be
-        built with the same agentic Claude Code workflow driving iOS, iPadOS, and macOS development today.</p>
+        <p><strong>Android, in its final stretch.</strong> A native Jetpack Compose rebuild — not a port
+        of the SwiftUI views — has been in active agentic development with Claude Code and is now deep into
+        polish: adaptive tablet layouts, Material 3 theming, and real-device bug-fix passes ahead of a first
+        release.</p>
       </div>
     </div>
   </div>
