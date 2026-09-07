@@ -52,6 +52,10 @@
     .resp-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
     .resp-card h6 { font-weight: 700; margin-bottom: 6px; }
     .resp-card p { font-size: .85rem; color: #555; margin: 0; }
+    .resp-card img.card-shot {
+      width: 100%; border-radius: 10px; margin-top: 14px;
+      border: 1px solid #e0e0e0; box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
 
     .arch-layer {
       border-left: 3px solid var(--qf-green); padding: 12px 18px;
@@ -144,46 +148,6 @@
       width: 7px; height: 7px; border-radius: 50%;
       background: #050505; box-shadow: 0 0 0 2px rgba(255,255,255,.05); z-index: 2;
     }
-
-    /* iPhone frame (Dynamic Island style, matching iPhone 15 Pro Max proportions) —
-       compact variant sized for the feature-card thumbnails. */
-    .iphone-mockup {
-      position: relative; display: block; width: 100%; max-width: 190px;
-      margin: 14px auto 0;
-      background: linear-gradient(155deg, #3a3a3c, #161618);
-      border-radius: 13%/6%;
-      padding: 4% 3.2%;
-      box-shadow: 0 10px 26px rgba(0,0,0,.2), inset 0 0 0 1px rgba(255,255,255,.07);
-    }
-    .iphone-mockup .screen {
-      position: relative; border-radius: 10%/4.6%; overflow: hidden;
-      background: #000; line-height: 0;
-    }
-    .iphone-mockup .screen img { width: 100%; display: block; }
-    .iphone-mockup .island {
-      position: absolute; top: 3.2%; left: 50%; transform: translateX(-50%);
-      width: 30%; height: 3.4%; min-height: 8px; border-radius: 50px;
-      background: #000; z-index: 2;
-    }
-
-    /* iPad frame — standalone hero size, portrait orientation, single top camera. */
-    .ipad-mockup {
-      position: relative; display: inline-block; width: 100%; max-width: 360px;
-      background: linear-gradient(155deg, #d7d9dc, #a9adb2);
-      border-radius: 8%/3.6%;
-      padding: 3.5%;
-      box-shadow: 0 20px 50px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.4);
-    }
-    .ipad-mockup .screen {
-      position: relative; border-radius: 4%/1.8%; overflow: hidden;
-      background: #000; line-height: 0;
-    }
-    .ipad-mockup .screen img { width: 100%; display: block; }
-    .ipad-mockup .cam {
-      position: absolute; top: 1.5%; left: 50%; transform: translateX(-50%);
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #050505; box-shadow: 0 0 0 2px rgba(0,0,0,.15); z-index: 2;
-    }
   </style>
 </head>
 <body>
@@ -224,12 +188,8 @@
         </div>
       </div>
       <div class="col-lg-5 text-center">
-        <div class="ipad-mockup" style="max-width:420px;">
-          <span class="cam"></span>
-          <div class="screen">
-            <img src="screenshot-ipad-split.png" alt="Quran Firdaus split-view reading on iPad">
-          </div>
-        </div>
+        <img src="screenshot-ipad-split.png" alt="Quran Firdaus split-view reading on iPad" class="img-fluid rounded-3"
+             style="max-width:420px; box-shadow:0 8px 32px rgba(0,0,0,.5);">
       </div>
     </div>
   </div>
@@ -248,12 +208,7 @@
           <div class="icon">📖</div>
           <h6>Offline Reading, Up to 4 Arabic Fonts</h6>
           <p>The full diacritized Uthmani Arabic text, with English and Indonesian translations, read entirely offline — no connection needed. Choose from up to 4 Arabic reading fonts to match your taste.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-iphone-reading.png" alt="Quran reading view on iPhone">
-            </div>
-          </div>
+          <img src="screenshot-iphone-reading.png" alt="Quran reading view on iPhone" class="card-shot">
         </div>
       </div>
 
@@ -262,12 +217,7 @@
           <div class="icon">🎧</div>
           <h6>150+ Reciters</h6>
           <p>Streamed audio recitation with background playback and Lock Screen artwork. Pick your preferred voice — from Mishary Alafasy to Yasser Al Dosari — from a library of 150+ reciters in Settings.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-iphone-settings.png" alt="Reciter and font settings on iPhone">
-            </div>
-          </div>
+          <img src="screenshot-iphone-settings.png" alt="Reciter and font settings on iPhone" class="card-shot">
         </div>
       </div>
 
@@ -284,12 +234,7 @@
           <div class="icon">🤲</div>
           <h6>Curated Dua</h6>
           <p>A themed collection of supplications — Forgiveness, Protection &amp; Refuge, Guidance, Gratitude, and more — each sourced verse-by-verse, with its own saved-Dua list.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-iphone-dua.png" alt="Curated Dua tab on iPhone">
-            </div>
-          </div>
+          <img src="screenshot-iphone-dua.png" alt="Curated Dua tab on iPhone" class="card-shot">
         </div>
       </div>
 
@@ -298,12 +243,7 @@
           <div class="icon">✨</div>
           <h6>For You — Personalized, Time-Aware</h6>
           <p>A "Right Now" card recommends a Surah based on the time of day (Fajr, before sleep, Friday, and more), alongside a most-visited-chapters chart of your own reading habits.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-iphone-foryou.png" alt="For You personalized recommendations tab on iPhone">
-            </div>
-          </div>
+          <img src="screenshot-iphone-foryou.png" alt="For You personalized recommendations tab on iPhone" class="card-shot">
         </div>
       </div>
 
@@ -312,12 +252,7 @@
           <div class="icon">🧩</div>
           <h6>Widgets &amp; Notifications</h6>
           <p>A configurable Home Screen and Lock Screen widget — choose Arabic-only, with translation, or Dua content — plus scheduled verse notifications, new in v4.2.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-widget-lockscreen.png" alt="Quran Firdaus Lock Screen widget">
-            </div>
-          </div>
+          <img src="screenshot-widget-lockscreen.png" alt="Quran Firdaus Lock Screen widget" class="card-shot">
         </div>
       </div>
 
@@ -326,12 +261,7 @@
           <div class="icon">🗣️</div>
           <h6>Siri &amp; Shortcuts</h6>
           <p>Six built-in App Intents — ask Siri for a random verse, your bookmark, a Surah recommendation, your most-visited chapters, or a motivational verse, hands-free.</p>
-          <div class="iphone-mockup">
-            <span class="island"></span>
-            <div class="screen">
-              <img src="screenshot-siri-shortcuts.png" alt="Quran Firdaus Siri Shortcuts">
-            </div>
-          </div>
+          <img src="screenshot-siri-shortcuts.png" alt="Quran Firdaus Siri Shortcuts" class="card-shot">
         </div>
       </div>
     </div>
